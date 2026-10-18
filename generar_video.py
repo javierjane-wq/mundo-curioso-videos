@@ -25,6 +25,14 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 CANAL = "MUNDO CURIOSO 5000"
 W, H, FPS = 1080, 1920, 30
 AQUI = os.path.dirname(os.path.abspath(__file__))
+SR = 44100
+
+def load_wav(path):
+    """Carga un WAV mono/estéreo como float32 mono a 44,1 kHz (None si no existe)."""
+    if not os.path.exists(path): return None
+    raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", path, "-f", "f32le", "-ac", "1", "-ar", str(SR), "-"],
+                         capture_output=True, check=True).stdout
+    return np.frombuffer(raw, np.float32).astype(np.float64)
 
 def _font_path(names):
     for d in ["/usr/share/fonts/opentype/inter/", "/usr/share/fonts/truetype/dejavu/"]:
@@ -152,7 +160,13 @@ class Video:
     def __init__(self, g):
         assert len(g["datos"]) == 4, "El guion necesita exactamente 4 datos"
         pal = PALETAS[int(g.get("paleta", 0)) % len(PALETAS)]
-        t = [0.0, 3.0, 6.4, 9.8, 13.2, 16.6, 19.6]
+        # Voz grabada (voz/intro.wav y voz/outro.wav): alarga gancho y cierre para que quepa
+        self.voz = {k: load_wav(os.path.join(AQUI, "voz", f"{k}.wav")) for k in ("intro", "outro")}
+        hook_d = max(3.0, len(self.voz["intro"]) / SR + 0.5) if self.voz["intro"] is not None else 3.0
+        cta_d = max(3.0, len(self.voz["outro"]) / SR + 0.7) if self.voz["outro"] is not None else 3.0
+        t = [0.0, hook_d]
+        for _ in range(4): t.append(t[-1] + 3.4)
+        t.append(t[-1] + cta_d)
         self.scenes = [dict(kind="hook", t0=t[0], t1=t[1], bg=pal[0])]
         for i, dato in enumerate(g["datos"]):
             s = dict(kind="fact", t0=t[i + 1], t1=t[i + 2], n=i + 1, bg=pal[i + 1])
@@ -276,8 +290,23 @@ def make_audio(path, video, seed=1):
     for s in video.scenes:
         if s["kind"] == "fact": add(blip, s["t0"] + 0.2)
     add(blip * 1.4, video.scenes[-1]["t0"] + 0.8)   # botón de suscripción
-    fo = int(0.8 * SR); out[-fo:] *= np.linspace(1, 0, fo)
-    out = np.tanh(out * 1.2); out /= np.max(np.abs(out)) * 1.12
+    music = np.tanh(out * 1.2); music /= np.max(np.abs(music)) * 1.12
+
+    # Voz: intro al empezar el gancho, outro al empezar el cierre; la música baja mientras se habla
+    voice = np.zeros(n); duck = np.zeros(n)
+    for clip, at in ((video.voz.get("intro"), 0.25), (video.voz.get("outro"), video.scenes[-1]["t0"] + 0.35)):
+        if clip is None: continue
+        i = int(at * SR); j = min(n, i + len(clip))
+        voice[i:j] += clip[: j - i]
+        duck[max(0, i - int(0.15 * SR)):min(n, j + int(0.25 * SR))] = 1.0
+    if voice.any():
+        k = int(0.12 * SR); duck = np.convolve(duck, np.ones(k) / k, mode="same")   # transiciones suaves
+        music_gain = 0.6 - 0.42 * np.clip(duck, 0, 1)
+        out = music * music_gain + voice * 0.95
+    else:
+        out = music * 0.9
+    fo = int(0.6 * SR); out[-fo:] *= np.linspace(1, 0, fo)
+    out = np.clip(out, -0.98, 0.98)
     pcm = (out * 32767).astype(np.int16)
     with wave.open(path, "wb") as w:
         w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR)
@@ -292,7 +321,7 @@ def main():
     if "--preview" in sys.argv:
         prev = os.path.join(tempfile.gettempdir(), f"preview_{g['id']}")
         os.makedirs(prev, exist_ok=True)
-        frames = [v.render(int(sec * FPS)).resize((360, 640)) for sec in (1.6, 4.8, 8.2, 11.6, 15.0, 18.6)]
+        frames = [v.render(int(sec * FPS)).resize((360, 640)) for sec in [sc['t0'] + 0.8 * (sc['t1'] - sc['t0']) for sc in v.scenes]]
         sheet = Image.new("RGB", (360 * 6, 640))
         for i, f in enumerate(frames): sheet.paste(f, (i * 360, 0))
         sheet.save(os.path.join(prev, "hoja.png")); print(os.path.join(prev, "hoja.png")); return

@@ -1,6 +1,6 @@
 # Mundo Curioso 5000 · vídeos
 
-Shorts verticales (1080×1920, ~20 s) de curiosidades del mundo para el canal de YouTube Mundo Curioso 5000. Cada vídeo termina invitando a suscribirse.
+Shorts verticales (1080×1920, ~25 s) de curiosidades del mundo para el canal de YouTube Mundo Curioso 5000. Cada vídeo lleva la voz grabada del canal (`voz/intro.wav` al empezar y `voz/outro.wav` al cerrar, con la música bajando mientras se habla) y termina invitando a suscribirse. No borres ni cambies esos audios.
 
 ## Cómo se genera un vídeo
 
