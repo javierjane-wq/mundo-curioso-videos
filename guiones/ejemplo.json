@@ -1,0 +1,15 @@
+{
+  "id": "ejemplo",
+  "paleta": 0,
+  "gancho": ["4 curiosidades del mundo", "que te van a *sorprender*"],
+  "pista": "LA ÚLTIMA ES INCREÍBLE",
+  "datos": [
+    {"grande": "11", "lineas": ["husos horarios tiene *Rusia*", "Cuando unos cenan,", "otros ya *desayunan*"]},
+    {"grande": "60%", "contar": [0, 60, "{}%"], "lineas": ["de los lagos del mundo", "están en *Canadá*"]},
+    {"grande": "4.000 km", "contar": [0, 4000, "{} km"], "lineas": ["de ancho tiene *Australia*", "La Luna mide 3.474 km", "*¡Australia es más ancha!*"]},
+    {"grande": "3 BILLONES", "lineas": ["de *árboles* hay en la Tierra", "Más que *estrellas*", "en la Vía Láctea"]}
+  ],
+  "titulo": "4 curiosidades del mundo que no sabías 🌍 #shorts",
+  "descripcion": "¿Cuál te ha sorprendido más? 👇 Suscríbete a Mundo Curioso 5000 para 3 curiosidades nuevas cada día. #curiosidades #sabiasque #datoscuriosos #mundo",
+  "etiquetas": ["curiosidades", "sabias que", "datos curiosos", "mundo", "shorts"]
+}
