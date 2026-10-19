@@ -1,0 +1,60 @@
+{
+  "id": "2026-10-19-3",
+  "paleta": 3,
+  "gancho": [
+    "4 datos del espacio",
+    "que te dejarán *flipando*"
+  ],
+  "pista": "EL ÚLTIMO ES DE LOCOS",
+  "datos": [
+    {
+      "grande": "8 MIN",
+      "lineas": [
+        "tarda la luz del *Sol*",
+        "en llegar a la Tierra",
+        "Lo ves *en el pasado*"
+      ]
+    },
+    {
+      "grande": "1.300",
+      "contar": [
+        0,
+        1300,
+        "{}"
+      ],
+      "lineas": [
+        "*Tierras* cabrían",
+        "dentro de *Júpiter*"
+      ]
+    },
+    {
+      "grande": "FLOTA",
+      "lineas": [
+        "*Saturno* es menos denso",
+        "que el *agua*"
+      ]
+    },
+    {
+      "grande": "243 DÍAS",
+      "contar": [
+        0,
+        243,
+        "{} días"
+      ],
+      "lineas": [
+        "tarda *Venus* en girar",
+        "sobre sí mismo",
+        "*¡Más que su año: 225!*"
+      ]
+    }
+  ],
+  "titulo": "4 datos del espacio que te dejarán flipando 🪐 #shorts",
+  "descripcion": "¿Cuál te ha volado la cabeza? 👇 Suscríbete a Mundo Curioso 5000 para 3 curiosidades nuevas cada día. #curiosidades #espacio #sabiasque #astronomia #datoscuriosos",
+  "etiquetas": [
+    "curiosidades",
+    "espacio",
+    "sabias que",
+    "astronomia",
+    "shorts"
+  ]
+}

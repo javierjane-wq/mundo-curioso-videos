@@ -1,0 +1,59 @@
+{
+  "id": "2026-10-19-1",
+  "paleta": 1,
+  "gancho": [
+    "4 datos de animales",
+    "que *no* te vas a creer"
+  ],
+  "pista": "EL ÚLTIMO ES RARÍSIMO",
+  "datos": [
+    {
+      "grande": "3",
+      "lineas": [
+        "corazones tiene el *pulpo*",
+        "Y su sangre es *azul*"
+      ]
+    },
+    {
+      "grande": "1.200",
+      "contar": [
+        0,
+        1200,
+        "{}"
+      ],
+      "lineas": [
+        "latidos por minuto puede",
+        "alcanzar un *colibrí*"
+      ]
+    },
+    {
+      "grande": "180 kg",
+      "contar": [
+        0,
+        180,
+        "{} kg"
+      ],
+      "lineas": [
+        "pesa el *corazón* de",
+        "una *ballena azul*"
+      ]
+    },
+    {
+      "grande": "CUBOS",
+      "lineas": [
+        "Así son las cacas",
+        "del *wombat*",
+        "*¡Con forma de dado!*"
+      ]
+    }
+  ],
+  "titulo": "4 datos de animales que no te vas a creer 🐙 #shorts",
+  "descripcion": "¿Qué animal te ha sorprendido más? 👇 Suscríbete a Mundo Curioso 5000 para 3 curiosidades nuevas cada día. #curiosidades #animales #sabiasque #datoscuriosos #naturaleza",
+  "etiquetas": [
+    "curiosidades",
+    "animales",
+    "sabias que",
+    "datos curiosos",
+    "shorts"
+  ]
+}
