@@ -18,3 +18,15 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-10-19 · 2026-10-19-3 · En Júpiter cabrían unas 1.300 Tierras
 - 2026-10-19 · 2026-10-19-3 · Saturno es menos denso que el agua
 - 2026-10-19 · 2026-10-19-3 · Venus tarda 243 días en girar sobre sí mismo, más que su año (225 días)
+- 2026-10-20 · 2026-10-20-1 · El Vaticano mide 0,44 km², el país más pequeño del mundo
+- 2026-10-20 · 2026-10-20-1 · Indonesia tiene más de 17.000 islas
+- 2026-10-20 · 2026-10-20-1 · Canadá tiene la costa más larga del mundo, unos 202.000 km
+- 2026-10-20 · 2026-10-20-1 · Francia tiene 12 husos horarios gracias a sus territorios de ultramar (récord mundial)
+- 2026-10-20 · 2026-10-20-2 · La Gran Muralla china mide 21.196 km con todos sus tramos
+- 2026-10-20 · 2026-10-20-2 · La guerra más corta: Zanzíbar contra Reino Unido (1896), unos 38 minutos
+- 2026-10-20 · 2026-10-20-2 · En Oxford ya se enseñaba en 1096; Tenochtitlan se fundó en 1325
+- 2026-10-20 · 2026-10-20-2 · Cleopatra vivió más cerca de la llegada a la Luna que de la construcción de la Gran Pirámide
+- 2026-10-20 · 2026-10-20-3 · El Salto Ángel (Venezuela), la cascada más alta, tiene 979 m de caída
+- 2026-10-20 · 2026-10-20-3 · Algunos bambúes pueden crecer 91 cm en un día
+- 2026-10-20 · 2026-10-20-3 · La fosa de las Marianas tiene casi 11 km de profundidad; el Everest cabría dentro
+- 2026-10-20 · 2026-10-20-3 · Un rayo calienta el aire a unos 30.000 °C, 5 veces más que la superficie del Sol

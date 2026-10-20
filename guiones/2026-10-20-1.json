@@ -1,0 +1,60 @@
+{
+  "id": "2026-10-20-1",
+  "paleta": 1,
+  "gancho": [
+    "4 datos de países",
+    "que *nadie* te contó"
+  ],
+  "pista": "EL ÚLTIMO TE VA A PILLAR",
+  "datos": [
+    {
+      "grande": "0,44 km²",
+      "lineas": [
+        "mide el *Vaticano*",
+        "El país más *pequeño*",
+        "del mundo"
+      ]
+    },
+    {
+      "grande": "17.000",
+      "contar": [
+        0,
+        17000,
+        "{}"
+      ],
+      "lineas": [
+        "islas y más tiene",
+        "*Indonesia*"
+      ]
+    },
+    {
+      "grande": "202.000 km",
+      "contar": [
+        0,
+        202000,
+        "{} km"
+      ],
+      "lineas": [
+        "de *costa* tiene Canadá",
+        "*¡La más larga del mundo!*"
+      ]
+    },
+    {
+      "grande": "12",
+      "lineas": [
+        "husos horarios tiene",
+        "*Francia*, el récord",
+        "gracias a sus *territorios*"
+      ]
+    }
+  ],
+  "titulo": "4 datos de países que nadie te contó 🗺️ #shorts",
+  "descripcion": "¿Cuál de estos países te ha sorprendido más? 👇 Suscríbete a Mundo Curioso 5000 para 3 curiosidades nuevas cada día. #curiosidades #paises #geografia #sabiasque #datoscuriosos",
+  "etiquetas": [
+    "curiosidades",
+    "paises",
+    "geografia",
+    "sabias que",
+    "shorts"
+  ]
+}
