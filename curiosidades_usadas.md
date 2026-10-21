@@ -30,3 +30,15 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-10-20 · 2026-10-20-3 · Algunos bambúes pueden crecer 91 cm en un día
 - 2026-10-20 · 2026-10-20-3 · La fosa de las Marianas tiene casi 11 km de profundidad; el Everest cabría dentro
 - 2026-10-20 · 2026-10-20-3 · Un rayo calienta el aire a unos 30.000 °C, 5 veces más que la superficie del Sol
+- 2026-10-21 · 2026-10-21-1 · La lengua de una jirafa puede medir unos 50 cm
+- 2026-10-21 · 2026-10-21-1 · Los flamencos son rosas por los carotenoides de lo que comen (algas y pequeños crustáceos)
+- 2026-10-21 · 2026-10-21-1 · Un halcón peregrino alcanzó 389 km/h en picado, el animal más rápido
+- 2026-10-21 · 2026-10-21-1 · Los tiburones existen desde hace unos 450 millones de años, antes que los árboles
+- 2026-10-21 · 2026-10-21-2 · La orilla del Mar Muerto está a más de 430 m bajo el nivel del mar, el punto más bajo en tierra firme
+- 2026-10-21 · 2026-10-21-2 · El lago Baikal tiene 1.642 m de profundidad, el lago más profundo del mundo
+- 2026-10-21 · 2026-10-21-2 · La Antártida, con unos 14 millones de km², es el desierto más grande del mundo
+- 2026-10-21 · 2026-10-21-2 · La cima del Chimborazo está más lejos del centro de la Tierra que la del Everest
+- 2026-10-21 · 2026-10-21-3 · La Luna se aleja de la Tierra unos 3,8 cm cada año
+- 2026-10-21 · 2026-10-21-3 · Olympus Mons, en Marte, mide unos 22 km de alto, 2,5 veces el Everest
+- 2026-10-21 · 2026-10-21-3 · Las huellas de los astronautas en la Luna pueden durar millones de años porque no hay viento
+- 2026-10-21 · 2026-10-21-3 · Una cucharadita de estrella de neutrones pesaría unos mil millones de toneladas

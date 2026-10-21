@@ -1,0 +1,61 @@
+{
+  "id": "2026-10-21-1",
+  "paleta": 1,
+  "gancho": [
+    "4 datos de animales",
+    "que *no* te vas a creer"
+  ],
+  "pista": "EL ÚLTIMO ES DE LOCOS",
+  "datos": [
+    {
+      "grande": "50 cm",
+      "contar": [
+        0,
+        50,
+        "{} cm"
+      ],
+      "lineas": [
+        "puede medir la *lengua*",
+        "de una *jirafa*"
+      ]
+    },
+    {
+      "grande": "ROSA",
+      "lineas": [
+        "El *flamenco* es rosa",
+        "por lo que *come*:",
+        "algas y gambitas"
+      ]
+    },
+    {
+      "grande": "389 km/h",
+      "contar": [
+        0,
+        389,
+        "{} km/h"
+      ],
+      "lineas": [
+        "alcanzó un *halcón*",
+        "*peregrino* en picado",
+        "¡El animal más *rápido*!"
+      ]
+    },
+    {
+      "grande": "TIBURONES",
+      "lineas": [
+        "existen desde antes",
+        "que los *árboles*",
+        "¡hace unos *450 M de años*!"
+      ]
+    }
+  ],
+  "titulo": "4 datos de animales que no te vas a creer 🦈 #shorts",
+  "descripcion": "¿Cuál de estos animales te ha sorprendido más? 👇 Suscríbete a Mundo Curioso 5000 para 3 curiosidades nuevas cada día. #curiosidades #animales #naturaleza #sabiasque #datoscuriosos",
+  "etiquetas": [
+    "curiosidades",
+    "animales",
+    "datos curiosos",
+    "sabias que",
+    "shorts"
+  ]
+}
