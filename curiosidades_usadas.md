@@ -42,3 +42,15 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-10-21 · 2026-10-21-3 · Olympus Mons, en Marte, mide unos 22 km de alto, 2,5 veces el Everest
 - 2026-10-21 · 2026-10-21-3 · Las huellas de los astronautas en la Luna pueden durar millones de años porque no hay viento
 - 2026-10-21 · 2026-10-21-3 · Una cucharadita de estrella de neutrones pesaría unos mil millones de toneladas
+- 2026-10-22 · 2026-10-22-1 · El embarazo de una elefanta dura unos 22 meses
+- 2026-10-22 · 2026-10-22-1 · Un koala puede dormir hasta 22 horas al día
+- 2026-10-22 · 2026-10-22-1 · El ajolote regenera patas, partes del corazón y de la médula espinal
+- 2026-10-22 · 2026-10-22-1 · El tiburón de Groenlandia puede vivir unos 400 años, el vertebrado más longevo
+- 2026-10-22 · 2026-10-22-2 · El cerebro pesa un 2 % del cuerpo pero gasta un 20 % de la energía
+- 2026-10-22 · 2026-10-22-2 · Somos alrededor de 1 cm más altos por la mañana que por la noche
+- 2026-10-22 · 2026-10-22-2 · El esmalte dental es lo más duro del cuerpo humano
+- 2026-10-22 · 2026-10-22-2 · Humanos y jirafas tienen 7 vértebras en el cuello
+- 2026-10-22 · 2026-10-22-3 · Nepal tiene la única bandera nacional no rectangular
+- 2026-10-22 · 2026-10-22-3 · Japón tiene 14.125 islas según el recuento de 2023
+- 2026-10-22 · 2026-10-22-3 · Uzbekistán y Liechtenstein son los únicos países doblemente sin litoral
+- 2026-10-22 · 2026-10-22-3 · Las islas Diomedes (Rusia y EE. UU.) están a 3,8 km pero con 21 horas de diferencia horaria
