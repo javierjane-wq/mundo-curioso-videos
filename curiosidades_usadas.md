@@ -54,3 +54,15 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-10-22 · 2026-10-22-3 · Japón tiene 14.125 islas según el recuento de 2023
 - 2026-10-22 · 2026-10-22-3 · Uzbekistán y Liechtenstein son los únicos países doblemente sin litoral
 - 2026-10-22 · 2026-10-22-3 · Las islas Diomedes (Rusia y EE. UU.) están a 3,8 km pero con 21 horas de diferencia horaria
+- 2026-10-23 · 2026-10-23-1 · El océano Pacífico (unos 165 millones de km²) es más grande que toda la tierra firme junta
+- 2026-10-23 · 2026-10-23-1 · Alrededor de la mitad del oxígeno de la Tierra procede del océano (fitoplancton)
+- 2026-10-23 · 2026-10-23-1 · La sal de los océanos cubriría la tierra firme con una capa de unos 150 m
+- 2026-10-23 · 2026-10-23-1 · En el Punto Nemo, los humanos más cercanos suelen ser los astronautas de la Estación Espacial
+- 2026-10-23 · 2026-10-23-2 · Nintendo se fundó en 1889 vendiendo cartas de juego (hanafuda)
+- 2026-10-23 · 2026-10-23-2 · La Torre Eiffel tenía permiso para 20 años; la radio la salvó del desmontaje
+- 2026-10-23 · 2026-10-23-2 · Había vikingos en América (L'Anse aux Meadows) en el año 1021, 471 años antes que Colón
+- 2026-10-23 · 2026-10-23-2 · Los mamuts lanudos seguían vivos (isla de Wrangel) cuando se construían las pirámides de Egipto
+- 2026-10-23 · 2026-10-23-3 · Botánicamente, los plátanos son bayas y las fresas no
+- 2026-10-23 · 2026-10-23-3 · Hyperion, una secuoya roja de California, mide unos 116 m: el árbol vivo más alto
+- 2026-10-23 · 2026-10-23-3 · Pepper X (2,69 millones SHU) es el chile más picante según Guinness, más de 300 veces un jalapeño
+- 2026-10-23 · 2026-10-23-3 · Pando (Utah) es un bosque de álamos que es un solo organismo de unas 6.000 toneladas

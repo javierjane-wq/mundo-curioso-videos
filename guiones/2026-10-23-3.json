@@ -1,0 +1,59 @@
+{
+  "id": "2026-10-23-3",
+  "paleta": 3,
+  "gancho": [
+    "4 datos de plantas",
+    "que te van a *sorprender*"
+  ],
+  "pista": "EL CUARTO TE ROMPE LA CABEZA",
+  "datos": [
+    {
+      "grande": "BAYAS",
+      "lineas": [
+        "son los *plátanos*",
+        "Y las *fresas*... ¡no!"
+      ]
+    },
+    {
+      "grande": "116 m",
+      "contar": [
+        0,
+        116,
+        "{} m"
+      ],
+      "lineas": [
+        "mide *Hyperion*,",
+        "el árbol más alto del mundo"
+      ]
+    },
+    {
+      "grande": "PEPPER X",
+      "lineas": [
+        "es el chile más *picante*",
+        "Pica más de *300 veces*",
+        "lo que un jalapeño"
+      ]
+    },
+    {
+      "grande": "6.000 t",
+      "contar": [
+        0,
+        6000,
+        "{} t"
+      ],
+      "lineas": [
+        "pesa *Pando*, un bosque",
+        "que es *un solo* ser vivo"
+      ]
+    }
+  ],
+  "titulo": "4 datos de plantas que te van a sorprender 🌳 #shorts",
+  "descripcion": "¿Cuál de estos datos no conocías? 👇 Suscríbete a Mundo Curioso 5000 para 3 curiosidades nuevas cada día. #curiosidades #plantas #naturaleza #sabiasque #datoscuriosos",
+  "etiquetas": [
+    "curiosidades",
+    "plantas",
+    "naturaleza",
+    "sabías que",
+    "shorts"
+  ]
+}
