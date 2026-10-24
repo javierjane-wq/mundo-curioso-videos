@@ -1,0 +1,15 @@
+{
+  "id": "2026-10-24-1",
+  "paleta": 1,
+  "gancho": ["4 rarezas animales", "que parecen de *ciencia ficción*"],
+  "pista": "EL CUARTO BRILLA",
+  "datos": [
+    {"grande": "5 cm", "contar": [0, 5, "{} cm"], "lineas": ["mide el ojo de un *avestruz*", "¡Es más grande", "que su *cerebro*!"]},
+    {"grande": "PATAS", "lineas": ["Las *mariposas* saborean", "con las patas", "al posarse en algo"]},
+    {"grande": "564 m", "contar": [0, 564, "{} m"], "lineas": ["bajo el mar buceó", "un *pingüino emperador*", "Récord entre las *aves*"]},
+    {"grande": "UV", "lineas": ["El *ornitorrinco* brilla", "verde-azulado bajo", "luz *ultravioleta*"]}
+  ],
+  "titulo": "4 rarezas animales que parecen ciencia ficción 🐧 #shorts",
+  "descripcion": "¿Cuál de estos animales te ha dejado con la boca abierta? 👇 Suscríbete a Mundo Curioso 5000 para 3 curiosidades nuevas cada día. #curiosidades #animales #sabiasque #datoscuriosos #naturaleza",
+  "etiquetas": ["curiosidades de animales", "sabias que", "datos curiosos", "ornitorrinco", "shorts"]
+}

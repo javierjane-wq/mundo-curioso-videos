@@ -66,3 +66,15 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-10-23 · 2026-10-23-3 · Hyperion, una secuoya roja de California, mide unos 116 m: el árbol vivo más alto
 - 2026-10-23 · 2026-10-23-3 · Pepper X (2,69 millones SHU) es el chile más picante según Guinness, más de 300 veces un jalapeño
 - 2026-10-23 · 2026-10-23-3 · Pando (Utah) es un bosque de álamos que es un solo organismo de unas 6.000 toneladas
+- 2026-10-24 · 2026-10-24-1 · El ojo de un avestruz (unos 5 cm) es más grande que su cerebro
+- 2026-10-24 · 2026-10-24-1 · Las mariposas saborean con las patas
+- 2026-10-24 · 2026-10-24-1 · Un pingüino emperador buceó hasta 564 m, récord entre las aves
+- 2026-10-24 · 2026-10-24-1 · El ornitorrinco brilla verde-azulado bajo luz ultravioleta
+- 2026-10-24 · 2026-10-24-2 · El cuerpo humano tiene unos 37 billones de células (estimación de 37,2 billones)
+- 2026-10-24 · 2026-10-24-2 · El corazón late unas 100.000 veces al día
+- 2026-10-24 · 2026-10-24-2 · Parpadeamos unas 15.000 veces o más al día
+- 2026-10-24 · 2026-10-24-2 · El cuerpo fabrica unos 2 millones de glóbulos rojos por segundo
+- 2026-10-24 · 2026-10-24-3 · El Burj Khalifa (828 m) sigue siendo el edificio más alto del mundo
+- 2026-10-24 · 2026-10-24-3 · Sudán tiene más de 200 pirámides, unas dos veces más que Egipto
+- 2026-10-24 · 2026-10-24-3 · Alaska es a la vez el estado más occidental y más oriental de EE. UU. (Aleutianas cruzan el meridiano 180)
+- 2026-10-24 · 2026-10-24-3 · Rusia (17,1 millones de km²) tiene más superficie que Plutón (unos 16,6 millones de km²)
