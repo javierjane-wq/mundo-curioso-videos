@@ -323,7 +323,7 @@ class Video:
         self.dur = t[-1]
         self.bgs = [gradient(*s["bg"]) for s in self.scenes]
         self.blobs = [blob(420, (255, 255, 255)), blob(330, YELLOW), blob(380, (255, 120, 200))]
-        gancho = g.get("gancho", ["4 curiosidades del mundo", "que te van a *sorprender*"])
+        gancho = g.get("gancho", ["3 curiosidades del mundo", "que te van a *sorprender*"])
         self.hook = dict(
             a=text_img("¿SABÍAS", F_BLACK, 210, WHITE), b=text_img("ESTO?", F_BLACK, 250, YELLOW),
             l1=text_img(gancho[0], F_BOLD, fit_size(gancho[0], F_BOLD, 72, MAXW)),
