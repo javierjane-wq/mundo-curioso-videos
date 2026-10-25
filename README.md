@@ -11,7 +11,7 @@ Shorts verticales (1080×1920, unos 36 s) de curiosidades del mundo para el cana
    `https://raw.githubusercontent.com/javierjane-wq/mundo-curioso-videos/main/videos/<id>.mp4`
 5. El escenario de Make "Mundo Curioso 5000 · Publicar Short" (id 8175470) descarga ese enlace y lo programa en YouTube.
 
-Solo necesita Python con Pillow y numpy, y ffmpeg. Los dibujos los interpreta `dibujos.py`, sin librerías externas.
+Solo necesita Python con Pillow y numpy, y ffmpeg. Los dibujos los interpreta `dibujos.py`, sin librerías externas. Generar un vídeo tarda unos 2 minutos.
 
 ## Formato de cada dato
 
@@ -31,15 +31,28 @@ Solo necesita Python con Pillow y numpy, y ffmpeg. Los dibujos los interpreta `d
 
 ### Dibujo (`dibujo`)
 
-Un SVG dentro del JSON (usa comillas simples dentro del SVG). Estilo de dibujo animado plano:
+Un SVG dentro del JSON (usa comillas simples dentro del SVG). Lo interpreta `dibujos.py`. Estilo: **ilustración vectorial moderna**, como las de una buena app o un canal de divulgación, no un dibujo infantil. Mira los tres de `guiones/ejemplo.json` antes de dibujar.
 
-- `viewBox='0 0 400 400'`, sin texto, sin degradados, sin imágenes y sin figuras con agujeros.
-- Contorno oscuro grueso en todo: `stroke='#1d1b33'` con `stroke-width` de 6 a 9.
-- De 4 a 6 colores vivos y planos. Brillos con formas blancas semitransparentes (`opacity`).
-- Si encaja, carita simpática: ojos ovalados oscuros con un punto blanco, mejillas rosas (`#ff8fa3`, opacidad 0.8) y sonrisa.
-- Un solo motivo grande y claro relacionado con el dato, con uno o dos detalles (estrellas, burbujas, sol…).
-- Elementos permitidos: `circle`, `ellipse`, `rect` (con `rx`), `line`, `polyline`, `polygon`, `path` (M L H V C S Q T A Z), `g` con `transform`.
-- El generador añade un borde blanco de pegatina, sombra y un balanceo suave.
+**Composición**
+- `viewBox='0 0 400 400'`. Toda la escena va dentro de un círculo: define `<clipPath id='c'><circle cx='200' cy='200' r='180'/></clipPath>`, mete la escena en `<g clip-path='url(#c)'>…</g>` y cierra con un aro blanco: `<circle cx='200' cy='200' r='180' fill='none' stroke='#ffffff' stroke-width='10'/>`.
+- Una escena completa, no un objeto suelto: fondo (cielo, mar, espacio, interior…), un motivo principal grande que se reconozca a primera vista y 2 o 3 detalles de apoyo (nubes, sol, burbujas, estrellas, plantas…).
+
+**Volumen y luz**
+- Sin contornos negros. El volumen sale del color: cada forma importante con `linearGradient` o `radialGradient` (de claro a oscuro, con la luz arriba a la izquierda).
+- Sombra propia: una forma más oscura (`opacity` 0.2–0.35) en el lado derecho o abajo, recortada a la figura con su propio `clipPath`.
+- Brillos: trazos o manchas blancas con `opacity` 0.6–0.85 en el lado de la luz. Rayos de luz o halos con degradados que van a transparente (`stop-opacity='0'`).
+- Paleta armónica de 5 a 8 tonos. Fondos más claros y suaves que el motivo para que este destaque.
+- Las caritas (ojos con brillo, mejillas rosas y sonrisa) solo cuando el motivo es un personaje u objeto simpático (una gota, un planeta, un animal). En paisajes, edificios y objetos, nada de caras.
+
+**Partes animadas** (un `<g>` con `data-anim`; dale vida a 2–4 partes por dibujo)
+- `flotar` (sube y baja: nubes, olas, burbujas), `balancear` (oscila: peces, banderas, objetos colgados), `girar` (planetas, ruedas, hélices), `latir` (corazones, estrellas grandes), `parpadear` (los ojos de un personaje: un grupo con los dos ojos) y `brillar` (destellos, soles, halos).
+- Opciones: `data-origen='x y'` (punto de giro o escala; por defecto, el centro de la parte), `data-periodo` (segundos por ciclo), `data-amplitud` (píxeles del viewBox en flotar, grados en balancear, % en latir) y `data-fase` (segundos de desfase entre partes parecidas).
+- No metas un grupo animado dentro de otro.
+
+**Técnica**
+- Elementos: `circle`, `ellipse`, `rect` (con `rx`), `line`, `polyline`, `polygon`, `path` (M L H V C S Q T A Z), `g` con `transform`, `defs`, `linearGradient`, `radialGradient` y `clipPath`. Un `path` con varias subrutas hace huecos (regla par-impar).
+- Sin texto, sin imágenes, sin filtros ni máscaras. Nada de personajes, logotipos ni marcas reales.
+- El generador añade un halo de luz detrás, una sombra suave, la entrada animada y un ligero balanceo de todo el dibujo.
 
 ### Gráfico (`grafico`)
 

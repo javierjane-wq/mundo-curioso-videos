@@ -25,7 +25,7 @@ import json, math, os, subprocess, sys, tempfile, wave
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from dibujos import render_svg
+from dibujos import Ilustracion, render_svg
 
 CANAL = "MUNDO CURIOSO 5000"
 W, H, FPS = 1080, 1920, 30
@@ -165,33 +165,49 @@ def fmt_num(v):
     return f"{v:,.1f}".replace(",", "X").replace(".", ",").replace("X", ".")
 
 # ---------------- dibujos ----------------
-DIBUJO = 480   # lado mayor del dibujo en píxeles
+DIBUJO = 545   # lado mayor del dibujo en píxeles
+
+class Arte:
+    """Ilustración SVG con sus partes animadas, sobre un halo de luz y con sombra suave."""
+    PAD = 60
+    def __init__(self, il):
+        self.il = il
+        w, h = il.size; P = self.PAD
+        self.size = (w + 2 * P, h + 2 * P)
+        # halo: disco de luz blanca muy suave detrás del dibujo
+        yy, xx = np.mgrid[0:self.size[1], 0:self.size[0]].astype(np.float32)
+        r = np.sqrt((xx - self.size[0] / 2) ** 2 + (yy - self.size[1] / 2) ** 2) / (max(w, h) * 0.56)
+        a = np.clip(1 - r, 0, 1) ** 1.6 * 70
+        halo = np.zeros(self.size[::-1] + (4,), np.uint8); halo[..., :3] = 255; halo[..., 3] = a.astype(np.uint8)
+        self.halo = Image.fromarray(halo, "RGBA")
+        self._static = None if il.animada else self._compose(il.frame(0))
+
+    def _compose(self, art):
+        P = self.PAD
+        out = self.halo.copy()
+        sh = Image.new("RGBA", self.size, (0, 0, 0, 0))
+        sha = Image.new("L", self.size, 0); sha.paste(art.getchannel("A"), (P + 6, P + 16))
+        sh.putalpha(sha.point(lambda v: int(v * 0.42)).filter(ImageFilter.GaussianBlur(9)))
+        out.alpha_composite(sh); out.alpha_composite(art, (P, P))
+        return out
+
+    def img(self, t):
+        return self._static if self._static is not None else self._compose(self.il.frame(t))
 
 def sticker(svg):
-    """Dibujo SVG -> pegatina: borde blanco grueso y sombra, como un dibujo animado recortado."""
     try:
-        art = render_svg(svg, DIBUJO)
+        return Arte(Ilustracion(svg, DIBUJO))
     except Exception as e:
         print(f"  aviso: dibujo no válido ({e}); se omite", file=sys.stderr); return None
-    pad = 40
-    base = Image.new("RGBA", (art.width + pad * 2, art.height + pad * 2), (0, 0, 0, 0))
-    base.alpha_composite(art, (pad, pad))
-    a = base.getchannel("A").point(lambda v: 255 if v > 40 else 0)
-    border = a.filter(ImageFilter.MaxFilter(17)).filter(ImageFilter.GaussianBlur(1.2))
-    white = Image.new("RGBA", base.size, (255, 255, 255, 0)); white.putalpha(border)
-    shadow = Image.new("RGBA", base.size, (0, 0, 0, 0)); shadow.putalpha(border.point(lambda v: int(v * 0.45)))
-    shadow = shadow.filter(ImageFilter.GaussianBlur(10))
-    out = Image.new("RGBA", base.size, (0, 0, 0, 0))
-    out.alpha_composite(shadow, (8, 14)); out.alpha_composite(white); out.alpha_composite(base)
-    return out
 
-def draw_sticker(canvas, img, cx, cy, lt, start, alpha, scale=1.0):
-    p = (lt - start) / 0.45
+def draw_sticker(canvas, arte, cx, cy, lt, start, alpha, scale=1.0):
+    p = (lt - start) / 0.5
     if p <= 0 or alpha <= 0.01: return
     s = (0.3 + 0.7 * ease_out_back(p)) * scale
-    ang = 3.5 * math.sin(lt * 2.3) + (1 - ease_out(p)) * -14
-    dy = 12 * math.sin(lt * 3.1)
-    im = img.rotate(ang, resample=Image.BICUBIC, expand=True)
+    ang = 1.5 * math.sin(lt * 1.9) + (1 - ease_out(p)) * -12
+    dy = 7 * math.sin(lt * 2.4)
+    im = arte.img(max(0.0, lt - start))
+    if abs(ang) > 0.05: im = im.rotate(ang, resample=Image.BICUBIC, expand=True)
     paste_scaled(canvas, im, cx, cy, s, min(1, p * 2.5) * alpha, dy=dy)
 
 # ---------------- gráficos ----------------
@@ -375,11 +391,11 @@ class Video:
             if dib is not None:
                 pop(canvas, s["pill"], CX, 440, lt, 0.05, exit_a)
                 k = ease_out(min(1, (lt - tb) / 0.45)) if in_b else 0.0
-                draw_sticker(canvas, dib, CX, 735 - 55 * k, lt, 0.1, exit_a, scale=1 - 0.25 * k)
+                draw_sticker(canvas, dib, CX, 735 - 50 * k, lt, 0.1, exit_a, scale=1 - 0.3 * k)
                 if text_a > 0.01:
-                    pop(canvas, img, CX, 1080, lt, 0.35, text_a, dur=0.4)
+                    pop(canvas, img, CX, 1112, lt, 0.35, text_a, dur=0.4)
                     for i, li in enumerate(s["line_imgs"]):
-                        slide(canvas, li, CX, 1238 + i * 86, lt, 0.75 + i * 0.32, text_a)
+                        slide(canvas, li, CX, 1268 + i * 84, lt, 0.75 + i * 0.32, text_a)
             else:
                 pop(canvas, s["pill"], CX, 560, lt, 0.05, exit_a)
                 if text_a > 0.01:
