@@ -1,15 +1,91 @@
 {
   "id": "ejemplo",
-  "paleta": 0,
-  "gancho": ["4 curiosidades del mundo", "que te van a *sorprender*"],
-  "pista": "LA ÚLTIMA ES INCREÍBLE",
-  "datos": [
-    {"grande": "11", "lineas": ["husos horarios tiene *Rusia*", "Cuando unos cenan,", "otros ya *desayunan*"]},
-    {"grande": "60%", "contar": [0, 60, "{}%"], "lineas": ["de los lagos del mundo", "están en *Canadá*"]},
-    {"grande": "4.000 km", "contar": [0, 4000, "{} km"], "lineas": ["de ancho tiene *Australia*", "La Luna mide 3.474 km", "*¡Australia es más ancha!*"]},
-    {"grande": "3 BILLONES", "lineas": ["de *árboles* hay en la Tierra", "Más que *estrellas*", "en la Vía Láctea"]}
+  "paleta": 1,
+  "gancho": [
+    "3 curiosidades del mundo",
+    "que te van a *sorprender*"
   ],
-  "titulo": "4 curiosidades del mundo que no sabías 🌍 #shorts",
+  "pista": "LA ÚLTIMA ES DE HISTORIA",
+  "datos": [
+    {
+      "grande": "10.210 m",
+      "contar": [
+        0,
+        10210,
+        "{} m"
+      ],
+      "lineas": [
+        "mide el volcán *Mauna Kea*",
+        "desde su base en el",
+        "*fondo del mar* (Hawái)"
+      ],
+      "dibujo": "<svg viewBox='0 0 400 400'><circle cx='330' cy='70' r='30' fill='#ffd60a' stroke='#1d1b33' stroke-width='8'/><rect x='20' y='210' width='360' height='170' rx='30' fill='#2f8fd8' stroke='#1d1b33' stroke-width='8'/><path d='M70 380 L170 90 Q200 70 230 90 L330 380 Z' fill='#9a6440' stroke='#1d1b33' stroke-width='8'/><path d='M127 215 L273 215 L326 370 L74 370 Z' fill='#2f8fd8' opacity='0.5'/><path d='M160 120 L170 90 Q200 70 230 90 L240 120 Q226 136 213 121 Q200 140 187 121 Q174 136 160 120 Z' fill='#ffffff' stroke='#1d1b33' stroke-width='6'/><path d='M24 215 Q67 197 110 215 T200 215 T290 215 T376 215' fill='none' stroke='#cdeeff' stroke-width='8'/><ellipse cx='181' cy='160' rx='9' ry='13' fill='#1d1b33'/><ellipse cx='219' cy='160' rx='9' ry='13' fill='#1d1b33'/><circle cx='184' cy='155' r='3.5' fill='#ffffff'/><circle cx='222' cy='155' r='3.5' fill='#ffffff'/><circle cx='166' cy='184' r='9' fill='#ff8fa3' opacity='0.8'/><circle cx='234' cy='184' r='9' fill='#ff8fa3' opacity='0.8'/><path d='M184 186 Q200 202 216 186' fill='none' stroke='#1d1b33' stroke-width='6'/><circle cx='108' cy='300' r='9' fill='none' stroke='#ffffff' stroke-width='5'/><circle cx='92' cy='272' r='5' fill='none' stroke='#ffffff' stroke-width='4'/><circle cx='300' cy='320' r='7' fill='none' stroke='#ffffff' stroke-width='4'/></svg>",
+      "grafico": {
+        "tipo": "barras",
+        "titulo": "¿Cuál es *más alto*?",
+        "unidad": "m",
+        "items": [
+          {
+            "etiqueta": "Everest (sobre el mar)",
+            "valor": 8849
+          },
+          {
+            "etiqueta": "Mauna Kea (desde su base)",
+            "valor": 10210,
+            "destacar": true
+          }
+        ],
+        "nota": "1.361 m más que el Everest"
+      }
+    },
+    {
+      "grande": "2,5 %",
+      "lineas": [
+        "del agua de la Tierra",
+        "es agua *dulce*",
+        "El resto es *salada*"
+      ],
+      "dibujo": "<svg viewBox='0 0 400 400'><path d='M200 30 C200 30 85 170 85 255 A115 115 0 0 0 315 255 C315 170 200 30 200 30 Z' fill='#3aa8f2' stroke='#1d1b33' stroke-width='9'/><path d='M130 230 C135 195 150 170 165 150' fill='none' stroke='#ffffff' stroke-width='14' opacity='0.8'/><circle cx='128' cy='262' r='8' fill='#ffffff' opacity='0.8'/><ellipse cx='172' cy='255' rx='11' ry='16' fill='#1d1b33'/><ellipse cx='228' cy='255' rx='11' ry='16' fill='#1d1b33'/><circle cx='176' cy='249' r='4.5' fill='#ffffff'/><circle cx='232' cy='249' r='4.5' fill='#ffffff'/><circle cx='150' cy='288' r='11' fill='#ff8fa3' opacity='0.8'/><circle cx='250' cy='288' r='11' fill='#ff8fa3' opacity='0.8'/><path d='M180 292 Q200 316 220 292' fill='#1d1b33' stroke='#1d1b33' stroke-width='6'/><path d='M330 70 L338 92 L360 100 L338 108 L330 130 L322 108 L300 100 L322 92 Z' fill='#ffd60a' stroke='#1d1b33' stroke-width='5'/><path d='M70 90 L75 104 L89 109 L75 114 L70 128 L65 114 L51 109 L65 104 Z' fill='#ffffff' stroke='#1d1b33' stroke-width='4'/></svg>",
+      "grafico": {
+        "tipo": "porcentaje",
+        "titulo": "Toda el agua del planeta",
+        "valor": 2.5,
+        "etiqueta": "solo esto es agua *dulce*"
+      }
+    },
+    {
+      "grande": "1096",
+      "lineas": [
+        "ya había clases en *Oxford*",
+        "Tenochtitlán, la capital",
+        "*azteca*, nació en 1325"
+      ],
+      "dibujo": "<svg viewBox='0 0 400 400'><ellipse cx='200' cy='372' rx='175' ry='16' fill='#000000' opacity='0.18'/><path d='M70 150 L70 200 Q125 228 180 200 L180 150 Z' fill='#33466e' stroke='#1d1b33' stroke-width='8'/><polygon points='125,85 230,128 125,171 20,128' fill='#24324f' stroke='#1d1b33' stroke-width='8'/><path d='M125 128 L210 140 L210 196' fill='none' stroke='#ffd60a' stroke-width='7'/><path d='M201 194 L219 194 L225 228 L195 228 Z' fill='#ffd60a' stroke='#1d1b33' stroke-width='5'/><circle cx='125' cy='128' r='8' fill='#ffd60a' stroke='#1d1b33' stroke-width='4'/><rect x='212' y='318' width='176' height='48' rx='4' fill='#c9a063' stroke='#1d1b33' stroke-width='7'/><rect x='234' y='274' width='132' height='46' rx='4' fill='#d4ad70' stroke='#1d1b33' stroke-width='7'/><rect x='256' y='232' width='88' height='44' rx='4' fill='#ddb97e' stroke='#1d1b33' stroke-width='7'/><rect x='278' y='190' width='44' height='44' rx='4' fill='#e74c3c' stroke='#1d1b33' stroke-width='7'/><rect x='291' y='210' width='18' height='24' fill='#1d1b33'/><rect x='287' y='234' width='26' height='132' fill='#b8894f' stroke='#1d1b33' stroke-width='5'/><circle cx='70' cy='290' r='34' fill='#ffd60a' stroke='#1d1b33' stroke-width='7'/><path d='M70 270 L70 292 L84 300' fill='none' stroke='#1d1b33' stroke-width='6'/></svg>",
+      "grafico": {
+        "tipo": "linea_tiempo",
+        "titulo": "¿Qué fue *antes*?",
+        "items": [
+          {
+            "etiqueta": "1096",
+            "texto": "Clases en|Oxford",
+            "destacar": true
+          },
+          {
+            "etiqueta": "1325",
+            "texto": "Nace|Tenochtitlán"
+          }
+        ],
+        "nota": "229 años de diferencia"
+      }
+    }
+  ],
+  "titulo": "3 curiosidades del mundo que te van a sorprender 🌋 #shorts",
   "descripcion": "¿Cuál te ha sorprendido más? 👇 Suscríbete a Mundo Curioso 5000 para 3 curiosidades nuevas cada día. #curiosidades #sabiasque #datoscuriosos #mundo",
-  "etiquetas": ["curiosidades", "sabias que", "datos curiosos", "mundo", "shorts"]
+  "etiquetas": [
+    "curiosidades",
+    "sabias que",
+    "datos curiosos",
+    "mundo",
+    "shorts"
+  ]
 }

@@ -293,7 +293,9 @@ class Video:
         pal = PALETAS[int(g.get("paleta", 0)) % len(PALETAS)]
         # Voz grabada (voz/intro.wav y voz/outro.wav): alarga gancho y cierre para que quepa
         self.voz = {k: load_wav(os.path.join(AQUI, "voz", f"{k}.wav")) for k in ("intro", "outro")}
-        hook_d = max(3.0, len(self.voz["intro"]) / SR + 0.5) if self.voz["intro"] is not None else 3.0
+        # voz/intro.wav anuncia "4 curiosidades": solo suena en los guiones antiguos de 4 datos
+        if n != 4: self.voz["intro"] = None
+        hook_d = max(3.0, len(self.voz["intro"]) / SR + 0.5) if self.voz["intro"] is not None else 3.4
         cta_d = max(3.0, len(self.voz["outro"]) / SR + 0.7) if self.voz["outro"] is not None else 3.0
         # Duración de cada escena: 3,4 s solo texto; 4,6 s con dibujo; +4,4 s si lleva gráfico
         fases = []
