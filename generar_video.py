@@ -4,23 +4,28 @@ Uso:
     python3 generar_video.py guiones/2026-10-19-1.json          -> videos/2026-10-19-1.mp4
     python3 generar_video.py guiones/2026-10-19-1.json --preview -> fotogramas PNG de control
 
-El guion JSON tiene esta forma (ver guiones/ejemplo.json):
+El guion JSON tiene esta forma (ver guiones/ejemplo.json y README.md):
 {
   "id": "2026-10-19-1",
   "paleta": 0,                       # 0-3, cambia los colores de fondo
-  "gancho": ["4 curiosidades del mundo", "que te van a *sorprender*"],
+  "gancho": ["3 curiosidades del mundo", "que te van a *sorprender*"],
   "pista": "LA ÚLTIMA ES INCREÍBLE",
-  "datos": [                          # exactamente 4
-    {"grande": "11", "lineas": ["husos horarios tiene *Rusia*", "..."]},
+  "datos": [                          # 3 (o 4 en guiones antiguos)
+    {"grande": "11", "lineas": ["husos horarios tiene *Rusia*", "..."],
+     "dibujo": "<svg viewBox='0 0 400 400'>...</svg>",            # opcional: ilustración
+     "grafico": {"tipo": "barras", ...}},                          # opcional: 2.ª parte de la escena
     {"grande": "60%", "contar": [0, 60, "{}%"], "lineas": ["..."]}
   ],
   "titulo": "...", "descripcion": "...", "etiquetas": ["..."]
 }
+Tipos de "grafico": barras, porcentaje, linea_tiempo (formato en README.md).
 Las palabras entre *asteriscos* salen resaltadas en amarillo.
 """
 import json, math, os, subprocess, sys, tempfile, wave
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from dibujos import render_svg
 
 CANAL = "MUNDO CURIOSO 5000"
 W, H, FPS = 1080, 1920, 30
@@ -155,28 +160,164 @@ def slide(canvas, img, cx, cy, lt, start, exit_a, dur=0.3):
     p = (lt - start) / dur
     if p > 0: paste_scaled(canvas, img, cx, cy, 1, min(1, p * 2) * exit_a, dy=(1 - ease_out(p)) * 60)
 
+def fmt_num(v):
+    if isinstance(v, (int, float)) and float(v).is_integer(): return f"{int(v):,}".replace(",", ".")
+    return f"{v:,.1f}".replace(",", "X").replace(".", ",").replace("X", ".")
+
+# ---------------- dibujos ----------------
+DIBUJO = 480   # lado mayor del dibujo en píxeles
+
+def sticker(svg):
+    """Dibujo SVG -> pegatina: borde blanco grueso y sombra, como un dibujo animado recortado."""
+    try:
+        art = render_svg(svg, DIBUJO)
+    except Exception as e:
+        print(f"  aviso: dibujo no válido ({e}); se omite", file=sys.stderr); return None
+    pad = 40
+    base = Image.new("RGBA", (art.width + pad * 2, art.height + pad * 2), (0, 0, 0, 0))
+    base.alpha_composite(art, (pad, pad))
+    a = base.getchannel("A").point(lambda v: 255 if v > 40 else 0)
+    border = a.filter(ImageFilter.MaxFilter(17)).filter(ImageFilter.GaussianBlur(1.2))
+    white = Image.new("RGBA", base.size, (255, 255, 255, 0)); white.putalpha(border)
+    shadow = Image.new("RGBA", base.size, (0, 0, 0, 0)); shadow.putalpha(border.point(lambda v: int(v * 0.45)))
+    shadow = shadow.filter(ImageFilter.GaussianBlur(10))
+    out = Image.new("RGBA", base.size, (0, 0, 0, 0))
+    out.alpha_composite(shadow, (8, 14)); out.alpha_composite(white); out.alpha_composite(base)
+    return out
+
+def draw_sticker(canvas, img, cx, cy, lt, start, alpha, scale=1.0):
+    p = (lt - start) / 0.45
+    if p <= 0 or alpha <= 0.01: return
+    s = (0.3 + 0.7 * ease_out_back(p)) * scale
+    ang = 3.5 * math.sin(lt * 2.3) + (1 - ease_out(p)) * -14
+    dy = 12 * math.sin(lt * 3.1)
+    im = img.rotate(ang, resample=Image.BICUBIC, expand=True)
+    paste_scaled(canvas, im, cx, cy, s, min(1, p * 2.5) * alpha, dy=dy)
+
+# ---------------- gráficos ----------------
+GX0, GX1 = CX - 420, CX + 420      # ancho útil de los gráficos
+
+class Grafico:
+    """Gráfico animado de la segunda parte de una escena. y0 = parte superior del área."""
+    def __init__(self, g):
+        self.g = g; self.tipo = g.get("tipo", "barras")
+        tit = g.get("titulo")
+        self.titulo = text_img(tit, F_BOLD, fit_size(tit, F_BOLD, 64, MAXW)) if tit else None
+        nota = g.get("nota")
+        self.nota = pill(nota.replace("*", "").upper(), 40) if nota else None
+        if self.tipo == "barras":
+            self.items = g.get("items", [])[:4]
+            self.vmax = max([float(i.get("valor", 0)) for i in self.items] + [1e-9])
+            self.labels = [text_img(i.get("etiqueta", ""), F_BOLD, fit_size(i.get("etiqueta", ""), F_BOLD, 56, 620),
+                                    None if not i.get("destacar") else YELLOW, shadow=True) for i in self.items]
+        elif self.tipo == "porcentaje":
+            self.valor = float(g.get("valor", 0))
+            et = g.get("etiqueta", "")
+            self.etiqueta = text_img(et, F_BOLD, fit_size(et, F_BOLD, 62, MAXW)) if et else None
+        elif self.tipo == "linea_tiempo":
+            self.items = g.get("items", [])[:4]
+            self.years = [text_img(str(i.get("etiqueta", "")), F_BLACK, 86, YELLOW if k == len(self.items) - 1 or i.get("destacar") else WHITE)
+                          for k, i in enumerate(self.items)]
+            self.textos = [[text_img(t, F_BOLD, fit_size(t, F_BOLD, 54, 760 / max(1, len(self.items)) + 60), WHITE)
+                            for t in str(i.get("texto", "")).split("|")[:2]] for i in self.items]
+        self._num_cache = {}
+
+    def _num(self, text, size, color):
+        k = (text, size, color)
+        if k not in self._num_cache: self._num_cache[k] = text_img(text, F_BLACK, size, color)
+        return self._num_cache[k]
+
+    def render(self, canvas, lt, alpha, y0=960):
+        """lt = segundos desde que empieza el gráfico."""
+        if lt < 0 or alpha <= 0.01: return
+        y = y0
+        if self.titulo is not None:
+            slide(canvas, self.titulo, CX, y + 30, lt, 0.0, alpha); y += 110
+        layer = Image.new("RGBA", (W, 560), (0, 0, 0, 0)); d = ImageDraw.Draw(layer, "RGBA"); oy = y
+        if self.tipo == "barras":
+            n = len(self.items); row = 150 if n <= 3 else 112
+            for k, (it, lab) in enumerate(zip(self.items, self.labels)):
+                st = 0.25 + k * 0.22; p = ease_out(min(1, max(0, (lt - st) / 1.0)))
+                if lt < st: continue
+                ry = k * row
+                layer.alpha_composite(lab, (GX0 - 28, int(ry - 30)))
+                bw = (GX1 - GX0 - 170) * float(it.get("valor", 0)) / self.vmax * p
+                col = YELLOW if it.get("destacar") else (255, 255, 255)
+                d.rounded_rectangle((GX0, ry + 62, GX0 + max(32, bw), ry + 118), radius=28, fill=col + (235,))
+                val = f"{fmt_num(float(it.get('valor', 0)) * p if p < 1 else it.get('valor', 0))} {it.get('unidad', self.g.get('unidad', ''))}".strip()
+                vi = self._num(val, 52, col)
+                layer.alpha_composite(vi, (int(GX0 + max(32, bw) - 14), int(ry + 90 - vi.height / 2)))
+            used = n * row
+        elif self.tipo == "porcentaje":
+            r, th = 180, 58; cx, cy = CX, 200
+            d.ellipse((cx - r, cy - r, cx + r, cy + r), outline=(255, 255, 255, 60), width=th)
+            p = ease_out(min(1, max(0, (lt - 0.2) / 1.3)))
+            ang = 360 * self.valor / 100 * p
+            if ang > 0.5:
+                d.arc((cx - r, cy - r, cx + r, cy + r), -90, -90 + max(ang, 3), fill=YELLOW + (255,), width=th)
+            v = self.valor * p
+            txt = (f"{v:.1f}".replace(".", ",") if not float(self.valor).is_integer() else f"{int(round(v))}") + " %"
+            ni = self._num(txt, 112, WHITE)
+            layer.alpha_composite(ni, (int(cx - ni.width / 2), int(cy - ni.height / 2)))
+            if self.etiqueta is not None and lt > 0.6:
+                q = ease_out(min(1, (lt - 0.6) / 0.3))
+                e = self.etiqueta.copy(); e.putalpha(e.getchannel("A").point(lambda a: int(a * q)))
+                layer.alpha_composite(e, (int(CX - e.width / 2), int(cy + r + 30 - (1 - q) * 30)))
+            used = 2 * r + 30 + 120
+        else:  # linea_tiempo
+            n = max(1, len(self.items)); ly = 175
+            xs = [GX0 + 110 + (GX1 - GX0 - 250) * (k / (n - 1) if n > 1 else 0.5) for k in range(n)]   # margen extra a la derecha (botones de YouTube)
+            p = ease_out(min(1, max(0, (lt - 0.15) / 1.6)))
+            xe = xs[0] + (xs[-1] - xs[0]) * p
+            d.line((xs[0], ly, xs[-1], ly), fill=(255, 255, 255, 70), width=14)
+            d.line((xs[0], ly, xe, ly), fill=YELLOW + (255,), width=14)
+            for k, x in enumerate(xs):
+                tk = 0.15 + 1.6 * ((x - xs[0]) / (xs[-1] - xs[0]) if n > 1 else 0) * 0.9
+                if lt < tk: continue
+                q = max(0, ease_out_back(min(1, (lt - tk) / 0.35))); rr = 26 * q
+                d.ellipse((x - rr, ly - rr, x + rr, ly + rr), fill=(255, 255, 255, 255), outline=YELLOW + (255,), width=6)
+                yi = self.years[k]; layer.alpha_composite(yi, (int(x - yi.width / 2), int(ly - 40 - yi.height)))
+                for j, ti in enumerate(self.textos[k]):
+                    layer.alpha_composite(ti, (int(x - ti.width / 2), int(ly + 20 + j * 64)))
+            used = ly + 190
+        if alpha < 1: layer.putalpha(layer.getchannel("A").point(lambda a: int(a * alpha)))
+        canvas.alpha_composite(layer, (0, int(oy)))
+        if self.nota is not None:
+            pop(canvas, self.nota, CX, oy + used + 50, lt, 2.0, alpha)
+
 # ---------------- vídeo ----------------
 class Video:
     def __init__(self, g):
-        assert len(g["datos"]) == 4, "El guion necesita exactamente 4 datos"
+        n = len(g["datos"])
+        assert 3 <= n <= 4, "El guion necesita 3 datos (o 4 en el formato antiguo)"
         pal = PALETAS[int(g.get("paleta", 0)) % len(PALETAS)]
         # Voz grabada (voz/intro.wav y voz/outro.wav): alarga gancho y cierre para que quepa
         self.voz = {k: load_wav(os.path.join(AQUI, "voz", f"{k}.wav")) for k in ("intro", "outro")}
         hook_d = max(3.0, len(self.voz["intro"]) / SR + 0.5) if self.voz["intro"] is not None else 3.0
         cta_d = max(3.0, len(self.voz["outro"]) / SR + 0.7) if self.voz["outro"] is not None else 3.0
+        # Duración de cada escena: 3,4 s solo texto; 4,6 s con dibujo; +4,4 s si lleva gráfico
+        fases = []
+        for dato in g["datos"]:
+            a = 4.6 if dato.get("dibujo") else 3.4
+            b = 4.4 if dato.get("grafico") else 0.0
+            fases.append((a, b))
         t = [0.0, hook_d]
-        for _ in range(4): t.append(t[-1] + 3.4)
+        for a, b in fases: t.append(t[-1] + a + b)
         t.append(t[-1] + cta_d)
         self.scenes = [dict(kind="hook", t0=t[0], t1=t[1], bg=pal[0])]
         for i, dato in enumerate(g["datos"]):
-            s = dict(kind="fact", t0=t[i + 1], t1=t[i + 2], n=i + 1, bg=pal[i + 1])
-            s["pill"] = pill(f"CURIOSIDAD {i + 1}/4")
-            s["big_size"] = fit_size(dato["grande"], F_BLACK, 300, MAXW)
+            s = dict(kind="fact", t0=t[i + 1], t1=t[i + 2], n=i + 1, bg=pal[i + 1], tb=fases[i][0])
+            s["pill"] = pill(f"CURIOSIDAD {i + 1}/{n}")
+            s["dibujo"] = sticker(dato["dibujo"]) if dato.get("dibujo") else None
+            big_max = 230 if s["dibujo"] is not None else 300
+            line_max = 68 if s["dibujo"] is not None else 76
+            s["big_size"] = fit_size(dato["grande"], F_BLACK, big_max, MAXW)
             s["big_img"] = text_img(dato["grande"], F_BLACK, s["big_size"], YELLOW)
             if dato.get("contar"): s["count"] = tuple(dato["contar"])
-            s["line_imgs"] = [text_img(l, F_BOLD, fit_size(l, F_BOLD, 76, MAXW)) for l in dato["lineas"][:3]]
+            s["line_imgs"] = [text_img(l, F_BOLD, fit_size(l, F_BOLD, line_max, MAXW)) for l in dato["lineas"][:3]]
+            s["grafico"] = Grafico(dato["grafico"]) if dato.get("grafico") else None
             self.scenes.append(s)
-        self.scenes.append(dict(kind="cta", t0=t[5], t1=t[6], bg=pal[5]))
+        self.scenes.append(dict(kind="cta", t0=t[-2], t1=t[-1], bg=pal[5]))
         self.dur = t[-1]
         self.bgs = [gradient(*s["bg"]) for s in self.scenes]
         self.blobs = [blob(420, (255, 255, 255)), blob(330, YELLOW), blob(380, (255, 120, 200))]
@@ -219,16 +360,32 @@ class Video:
             p = (lt - 1.4) / 0.35
             if p > 0: paste_scaled(canvas, h["p"], CX, 1370, (0.4 + 0.6 * ease_out_back(p)) * pulse, min(1, p * 2.5) * exit_a)
         elif s["kind"] == "fact":
-            pop(canvas, s["pill"], CX, 560, lt, 0.05, exit_a)
+            dib, gra, tb = s["dibujo"], s["grafico"], s["tb"]
+            # Segunda parte (gráfico): el texto se va y el dibujo sube y se encoge
+            in_b = gra is not None and lt >= tb
+            text_a = exit_a * (max(0.0, 1 - (lt - tb) / 0.25) if in_b else 1.0)
             img = s["big_img"]
             if "count" in s:
                 a, b, fmt = s["count"]
                 k = ease_out(min(1, (lt - 0.15) / 0.8))
                 v = int(round(a + (b - a) * k))
                 if v != b: img = text_img(fmt.format(f"{v:,}".replace(",", ".")), F_BLACK, s["big_size"], YELLOW)
-            pop(canvas, img, CX, 790, lt, 0.15, exit_a, dur=0.4)
-            for i, li in enumerate(s["line_imgs"]):
-                slide(canvas, li, CX, 1010 + i * 100, lt, 0.55 + i * 0.32, exit_a)
+            if dib is not None:
+                pop(canvas, s["pill"], CX, 440, lt, 0.05, exit_a)
+                k = ease_out(min(1, (lt - tb) / 0.45)) if in_b else 0.0
+                draw_sticker(canvas, dib, CX, 735 - 55 * k, lt, 0.1, exit_a, scale=1 - 0.25 * k)
+                if text_a > 0.01:
+                    pop(canvas, img, CX, 1080, lt, 0.35, text_a, dur=0.4)
+                    for i, li in enumerate(s["line_imgs"]):
+                        slide(canvas, li, CX, 1238 + i * 86, lt, 0.75 + i * 0.32, text_a)
+            else:
+                pop(canvas, s["pill"], CX, 560, lt, 0.05, exit_a)
+                if text_a > 0.01:
+                    pop(canvas, img, CX, 790, lt, 0.15, text_a, dur=0.4)
+                    for i, li in enumerate(s["line_imgs"]):
+                        slide(canvas, li, CX, 1010 + i * 100, lt, 0.55 + i * 0.32, text_a)
+            if in_b:
+                gra.render(canvas, lt - tb - 0.15, exit_a, y0=930 if dib is not None else 640)
         else:
             c = self.cta
             pop(canvas, c["a"], CX, 640, lt, 0.05, exit_a)
@@ -288,7 +445,10 @@ def make_audio(path, video, seed=1):
     bl = int(0.12 * SR); bt = np.arange(bl) / SR
     blip = np.sin(2 * np.pi * 1320 * bt) * np.exp(-bt * 30) * 0.15
     for s in video.scenes:
-        if s["kind"] == "fact": add(blip, s["t0"] + 0.2)
+        if s["kind"] == "fact":
+            add(blip, s["t0"] + 0.2)
+            if s.get("grafico") is not None:        # cambio a la parte del gráfico
+                add(whoosh * 0.6, s["t0"] + s["tb"] - 0.25); add(blip, s["t0"] + s["tb"] + 0.2)
     add(blip * 1.4, video.scenes[-1]["t0"] + 0.8)   # botón de suscripción
     music = np.tanh(out * 1.2); music /= np.max(np.abs(music)) * 1.12
 
@@ -321,8 +481,14 @@ def main():
     if "--preview" in sys.argv:
         prev = os.path.join(tempfile.gettempdir(), f"preview_{g['id']}")
         os.makedirs(prev, exist_ok=True)
-        frames = [v.render(int(sec * FPS)).resize((360, 640)) for sec in [sc['t0'] + 0.8 * (sc['t1'] - sc['t0']) for sc in v.scenes]]
-        sheet = Image.new("RGB", (360 * 6, 640))
+        secs = []
+        for sc in v.scenes:
+            if sc.get("grafico") is not None:
+                secs += [sc['t0'] + 0.85 * sc['tb'], sc['t0'] + sc['tb'] + 0.85 * (sc['t1'] - sc['t0'] - sc['tb'])]
+            else:
+                secs.append(sc['t0'] + 0.8 * (sc['t1'] - sc['t0']))
+        frames = [v.render(int(sec * FPS)).resize((360, 640)) for sec in secs]
+        sheet = Image.new("RGB", (360 * len(frames), 640))
         for i, f in enumerate(frames): sheet.paste(f, (i * 360, 0))
         sheet.save(os.path.join(prev, "hoja.png")); print(os.path.join(prev, "hoja.png")); return
     seed = sum(map(ord, g["id"]))
