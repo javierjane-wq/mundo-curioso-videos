@@ -8,7 +8,10 @@ Soporta:
     de elemento y de grupo, stroke-width, style="...".
   - transform (translate, scale, rotate, matrix, skewX/Y), <defs>, clip-path="url(#id)".
   - Partes animadas: <g data-anim="TIPO" data-origen="x y" data-periodo="s" data-amplitud="n"
-    data-fase="s">. TIPO: flotar, balancear, girar, latir, parpadear, brillar.
+    data-fase="s">. TIPO: flotar, balancear, girar, latir, parpadear, brillar, saltar (con
+    estiramiento y aplastamiento), orbitar, desplazar, sombra (sombra de contacto que acompaña
+    a un salto con el mismo periodo). Se pueden anidar: una parte animada
+    dentro de otra se mueve con ella (unos ojos que parpadean dentro de un cuerpo que salta).
 No soporta texto, filtros, máscaras ni patrones.
 
     from dibujos import Ilustracion, render_svg
@@ -200,7 +203,7 @@ def path_subpaths(d):
 
 # ---------- motor ----------
 INHERIT = ("fill", "stroke", "stroke-width", "fill-opacity", "stroke-opacity", "fill-rule")
-ANIMS = ("flotar", "balancear", "girar", "latir", "parpadear", "brillar")
+ANIMS = ("flotar", "balancear", "girar", "latir", "parpadear", "brillar", "saltar", "orbitar", "desplazar", "sombra")
 
 class Motor:
     def __init__(self, root, size):
@@ -414,81 +417,115 @@ class Motor:
             self.draw_shape(layer, el, m, st, op, clip)
 
 class Ilustracion:
-    """Dibujo SVG dividido en capas fijas y capas animadas, listo para componer en cualquier instante."""
+    """Dibujo SVG dividido en capas fijas y partes animadas (anidables), listo para componer en cualquier instante."""
     def __init__(self, svg, size):
         root = ET.fromstring(svg)
         self.mo = mo = Motor(root, size)
-        self.capas = []                       # (imagen, anim | None)
+        self.size = (mo.W, mo.H)
+        self.raiz = self._build(lambda target, on_anim: mo.draw(target, root, mo.base, {"fill": "#000000"}, None, on_anim), None)
+        self.animada = self._tiene_anim(self.raiz)
+
+    def _tiene_anim(self, nodo):
+        return any(isinstance(it, dict) for it in nodo["items"])
+
+    def _build(self, dibujar, anim):
+        """Dibuja con `dibujar(destino, on_anim)` y devuelve un nodo {anim, items: [imagen | nodo]}."""
+        mo = self.mo
+        nodo = {"anim": anim, "items": []}
         cur = [Image.new("RGBA", (mo.BW, mo.BH), (0, 0, 0, 0))]
         class Destino:                        # siempre dibuja en la capa fija actual
             def alpha_composite(self, im, dest=(0, 0)): cur[0].alpha_composite(im, dest)
         def flush():
-            self.capas.append((cur[0].resize((mo.W, mo.H), Image.LANCZOS), None))
+            if cur[0].getbbox(): nodo["items"].append(cur[0].resize((mo.W, mo.H), Image.LANCZOS))
             cur[0] = Image.new("RGBA", (mo.BW, mo.BH), (0, 0, 0, 0))
         def on_anim(el, m, st, op, clip):
             flush()
-            lay = Image.new("RGBA", (mo.BW, mo.BH), (0, 0, 0, 0))
-            for ch in el: mo.draw(lay, ch, m, st, clip, None)
-            if op < 0.999: lay.putalpha(lay.getchannel("A").point(lambda v: int(v * op)))
             o = num_list(el.get("data-origen"))
-            if len(o) < 2:   # centro de la parte animada
-                bb = lay.getbbox() or (0, 0, mo.BW, mo.BH)
-                ox, oy = (bb[0] + bb[2]) / 2 / SS, (bb[1] + bb[3]) / 2 / SS
+            org = apply(m, [(o[0], o[1])])[0] if len(o) >= 2 else None
+            an = dict(tipo=el.get("data-anim"), org=org, op=op,
+                      periodo=fnum(el.get("data-periodo"), 0) or None,
+                      amp=fnum(el.get("data-amplitud"), 0) or None,
+                      fase=fnum(el.get("data-fase"), 0), k=mo.k)
+            hijo = self._build(lambda target, oa: [mo.draw(target, ch, m, st, clip, oa) for ch in el], an)
+            if org is None:                   # sin origen: el centro de la parte animada
+                bb = self._compose(hijo, 0.0, raw=True).getbbox() or (0, 0, mo.W, mo.H)
+                an["ox"], an["oy"] = (bb[0] + bb[2]) / 2, (bb[1] + bb[3]) / 2
             else:
-                ox, oy = apply(m, [(o[0], o[1])])[0]; ox /= SS; oy /= SS
-            anim = dict(tipo=el.get("data-anim"), ox=ox, oy=oy,
-                        periodo=fnum(el.get("data-periodo"), 0) or None,
-                        amp=fnum(el.get("data-amplitud"), 0) or None,
-                        fase=fnum(el.get("data-fase"), 0), k=mo.k)
-            self.capas.append((lay.resize((mo.W, mo.H), Image.LANCZOS), anim))
-        mo.draw(Destino(), root, mo.base, {"fill": "#000000"}, None, on_anim)
+                an["ox"], an["oy"] = org[0] / SS, org[1] / SS
+            nodo["items"].append(hijo)
+        dibujar(Destino(), on_anim)
         flush()
-        self.capas = [(im, an) for im, an in self.capas if an is not None or im.getbbox()]
-        self.animada = any(an for _, an in self.capas)
-        self.size = (mo.W, mo.H)
+        return nodo
 
     @staticmethod
     def _xf(im, ox, oy, ang=0.0, sx=1.0, sy=1.0, dx=0.0, dy=0.0):
         """Rota/escala alrededor de (ox, oy) y desplaza."""
         r = math.radians(ang); co, si = math.cos(r), math.sin(r)
-        # matriz directa: T(o+d) * R * S * T(-o); Pillow necesita la inversa
         a, b, c, d = co * sx, si * sx, -si * sy, co * sy
         e = ox + dx - (a * ox + c * oy); f = oy + dy - (b * ox + d * oy)
         ia, ib, ic, id_, ie, if_ = inv((a, b, c, d, e, f))
         return im.transform(im.size, Image.AFFINE, (ia, ic, ie, ib, id_, if_), resample=Image.BICUBIC)
 
-    def frame(self, t):
+    def _compose(self, nodo, t, raw=False):
         out = Image.new("RGBA", self.size, (0, 0, 0, 0))
-        for im, an in self.capas:
-            if an is None: out.alpha_composite(im); continue
-            tipo = an["tipo"]; tt = t + an["fase"]; ox, oy = an["ox"], an["oy"]
-            if tipo == "flotar":
-                P = an["periodo"] or 2.4; A = (an["amp"] or 8) * an["k"]
-                out.alpha_composite(self._xf(im, ox, oy, dy=A * math.sin(2 * math.pi * tt / P)))
-            elif tipo == "balancear":
-                P = an["periodo"] or 2.0; A = an["amp"] or 8
-                out.alpha_composite(self._xf(im, ox, oy, ang=A * math.sin(2 * math.pi * tt / P)))
-            elif tipo == "girar":
-                P = an["periodo"] or 6.0
-                out.alpha_composite(self._xf(im, ox, oy, ang=-360 * tt / P))
-            elif tipo == "latir":
-                P = an["periodo"] or 1.2; A = (an["amp"] or 6) / 100
-                s = 1 + A * max(0, math.sin(2 * math.pi * tt / P)) ** 2
-                out.alpha_composite(self._xf(im, ox, oy, sx=s, sy=s))
-            elif tipo == "parpadear":
-                P = an["periodo"] or 3.0; ph = (tt % P) / P; dur = 0.16 / P
-                sy = 1.0
-                if ph > 1 - dur: sy = max(0.08, abs((ph - (1 - dur / 2)) / (dur / 2)))
-                out.alpha_composite(self._xf(im, ox, oy, sy=sy) if sy < 0.999 else im)
-            elif tipo == "brillar":
-                P = an["periodo"] or 1.6; A = 0.5 + 0.5 * math.sin(2 * math.pi * tt / P)
-                s = 0.85 + 0.25 * A
+        for it in nodo["items"]:
+            out.alpha_composite(it if not isinstance(it, dict) else self._compose(it, t))
+        an = nodo["anim"]
+        if raw or an is None: return out
+        if an["op"] < 0.999: out.putalpha(out.getchannel("A").point(lambda v: int(v * an["op"])))
+        return self._animar(out, an, t)
+
+    def _animar(self, im, an, t):
+        tipo = an["tipo"]; tt = t + an["fase"]; ox, oy = an["ox"], an["oy"]; k = an["k"]
+        P = an["periodo"]; A = an["amp"]; w = lambda per: 2 * math.pi * tt / per
+        if tipo == "flotar":
+            return self._xf(im, ox, oy, dy=(A or 8) * k * math.sin(w(P or 2.4)))
+        if tipo == "balancear":
+            return self._xf(im, ox, oy, ang=(A or 8) * math.sin(w(P or 2.0)))
+        if tipo == "girar":
+            return self._xf(im, ox, oy, ang=-360 * tt / (P or 6.0))
+        if tipo == "latir":
+            s = 1 + (A or 6) / 100 * max(0, math.sin(w(P or 1.2))) ** 2
+            return self._xf(im, ox, oy, sx=s, sy=s)
+        if tipo == "parpadear":
+            per = P or 3.0; ph = (tt % per) / per; dur = 0.16 / per
+            if ph > 1 - dur:
+                return self._xf(im, ox, oy, sy=max(0.08, abs((ph - (1 - dur / 2)) / (dur / 2))))
+            return im
+        if tipo == "brillar":
+            a = 0.5 + 0.5 * math.sin(w(P or 1.6)); s = 0.85 + 0.25 * a
+            tmp = self._xf(im, ox, oy, sx=s, sy=s)
+            tmp.putalpha(tmp.getchannel("A").point(lambda v: int(v * (0.35 + 0.65 * a))))
+            return tmp
+        if tipo == "saltar":
+            # salto con estiramiento en el aire y aplastamiento al caer; origen = punto de apoyo
+            per = P or 1.4; u = (tt % per) / per; h = (A or 30) * k
+            air, land = 0.72, 0.28              # fracción del ciclo en el aire / en el suelo
+            if u < air:
+                q = u / air; dy = -h * 4 * q * (1 - q)
+                st = 1 + 0.08 * math.sin(math.pi * q) * (1 if 0.1 < q < 0.9 else 0.4)
+                return self._xf(im, ox, oy, sx=1 / st, sy=st, dy=dy)
+            q = (u - air) / land; sq = 0.16 * math.sin(math.pi * q)
+            return self._xf(im, ox, oy, sx=1 + sq, sy=1 - sq)
+        if tipo == "sombra":
+            # sombra de contacto de algo que salta (mismo periodo): se encoge y aclara en el aire
+            per = P or 1.4; u = (tt % per) / per; air, land = 0.72, 0.28
+            if u < air:
+                q = u / air; hgt = 4 * q * (1 - q); s = 1 - 0.45 * hgt
                 tmp = self._xf(im, ox, oy, sx=s, sy=s)
-                tmp.putalpha(tmp.getchannel("A").point(lambda v: int(v * (0.35 + 0.65 * A))))
-                out.alpha_composite(tmp)
-            else:
-                out.alpha_composite(im)
-        return out
+                tmp.putalpha(tmp.getchannel("A").point(lambda v: int(v * (1 - 0.5 * hgt))))
+                return tmp
+            q = (u - air) / land; s = 1 + 0.12 * math.sin(math.pi * q)
+            return self._xf(im, ox, oy, sx=s, sy=1)
+        if tipo == "orbitar":
+            r = (A or 12) * k; a = w(P or 4.0)
+            return self._xf(im, ox, oy, dx=r * math.cos(a), dy=r * 0.55 * math.sin(a))
+        if tipo == "desplazar":
+            return self._xf(im, ox, oy, dx=(A or 20) * k * math.sin(w(P or 4.0)))
+        return im
+
+    def frame(self, t):
+        return self._compose(self.raiz, t)
 
 def render_svg(svg, size, t=0.0):
     """Imagen RGBA fija cuyo lado mayor mide `size` píxeles."""

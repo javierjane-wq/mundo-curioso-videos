@@ -11,7 +11,7 @@ Shorts verticales (1080×1920, unos 36 s) de curiosidades del mundo para el cana
    `https://raw.githubusercontent.com/javierjane-wq/mundo-curioso-videos/main/videos/<id>.mp4`
 5. El escenario de Make "Mundo Curioso 5000 · Publicar Short" (id 8175470) descarga ese enlace y lo programa en YouTube.
 
-Solo necesita Python con Pillow y numpy, y ffmpeg. Los dibujos los interpreta `dibujos.py`, sin librerías externas. Generar un vídeo tarda unos 2 minutos.
+Solo necesita Python con Pillow y numpy, y ffmpeg. Los dibujos los interpreta `dibujos.py`, sin librerías externas. Generar un vídeo tarda unos 3 minutos.
 
 ## Formato de cada dato
 
@@ -31,27 +31,42 @@ Solo necesita Python con Pillow y numpy, y ffmpeg. Los dibujos los interpreta `d
 
 ### Dibujo (`dibujo`)
 
-Un SVG dentro del JSON (usa comillas simples dentro del SVG). Lo interpreta `dibujos.py`. Estilo: **ilustración vectorial moderna**, como las de una buena app o un canal de divulgación, no un dibujo infantil. Mira los tres de `guiones/ejemplo.json` antes de dibujar.
+Un SVG dentro del JSON (usa comillas simples dentro del SVG). Lo interpreta `dibujos.py`. Estilo: **ilustración con acabado 3D de animación**: formas redondeadas y voluminosas, materiales brillantes y luz de estudio, como un fotograma de una película de animación moderna (sin copiar personajes de ninguna). Mira los tres de `guiones/ejemplo.json` antes de dibujar: son el nivel mínimo de calidad.
 
 **Composición**
 - `viewBox='0 0 400 400'`. Toda la escena va dentro de un círculo: define `<clipPath id='c'><circle cx='200' cy='200' r='180'/></clipPath>`, mete la escena en `<g clip-path='url(#c)'>…</g>` y cierra con un aro blanco: `<circle cx='200' cy='200' r='180' fill='none' stroke='#ffffff' stroke-width='10'/>`.
-- Una escena completa, no un objeto suelto: fondo (cielo, mar, espacio, interior…), un motivo principal grande que se reconozca a primera vista y 2 o 3 detalles de apoyo (nubes, sol, burbujas, estrellas, plantas…).
+- Una escena completa, no un objeto suelto: fondo (cielo, mar, espacio, interior…), un motivo principal grande que se reconozca a primera vista y 3 o 4 detalles de apoyo (nubes, sol, burbujas, estrellas, pájaros, peces…).
+- Las partes que se mueven deben quedar dentro del círculo incluso en el punto más extremo de su movimiento (deja de margen al menos su amplitud).
 
-**Volumen y luz**
-- Sin contornos negros. El volumen sale del color: cada forma importante con `linearGradient` o `radialGradient` (de claro a oscuro, con la luz arriba a la izquierda).
-- Sombra propia: una forma más oscura (`opacity` 0.2–0.35) en el lado derecho o abajo, recortada a la figura con su propio `clipPath`.
-- Brillos: trazos o manchas blancas con `opacity` 0.6–0.85 en el lado de la luz. Rayos de luz o halos con degradados que van a transparente (`stop-opacity='0'`).
-- Paleta armónica de 5 a 8 tonos. Fondos más claros y suaves que el motivo para que este destaque.
-- Las caritas (ojos con brillo, mejillas rosas y sonrisa) solo cuando el motivo es un personaje u objeto simpático (una gota, un planeta, un animal). En paisajes, edificios y objetos, nada de caras.
+**Acabado 3D** (sin contornos negros; el volumen sale de la luz, que viene de arriba a la izquierda)
+- **Sombreado esférico**: cada forma redondeada con `radialGradient` de 3 o 4 paradas, con el centro desplazado hacia la luz (`cx='0.35' cy='0.3'`): tono muy claro, tono medio y tono oscuro saturado en el borde.
+- **Caras planas** (edificios, cajas, pirámides): cara frontal iluminada con `linearGradient` claro y cara lateral derecha más oscura, para que se vea la profundidad.
+- **Brillo especular**: una elipse con `radialGradient` blanco a transparente en la zona de luz, y a veces un punto pequeño muy brillante.
+- **Luz de contorno**: en el lado de sombra, un trazo de la misma silueta con `stroke` en `linearGradient` (de transparente a un tono claro), recortado con un `clipPath` de la propia figura.
+- **Sombra propia** dentro de la figura (forma oscura con `opacity` 0.2–0.35 recortada con `clipPath`) y **sombra de contacto** en el suelo: elipse con `radialGradient` oscuro a transparente.
+- **Fondo de estudio**: degradado radial suave y algún círculo de luz desenfocado (`radialGradient` blanco a transparente).
+- Paleta armónica de 6 a 10 tonos, vivos pero no chillones. El motivo principal, más saturado que el fondo.
+- **Personajes**: si el motivo puede tener cara (una gota, un planeta, un animal, una nube), dale ojos grandes y brillantes: blanco con degradado, iris en degradado, pupila, un reflejo grande y otro pequeño. Mejillas con `radialGradient` rosa a transparente y boca con interior oscuro y lengua. En edificios, paisajes y objetos técnicos, sin cara.
 
-**Partes animadas** (un `<g>` con `data-anim`; dale vida a 2–4 partes por dibujo)
-- `flotar` (sube y baja: nubes, olas, burbujas), `balancear` (oscila: peces, banderas, objetos colgados), `girar` (planetas, ruedas, hélices), `latir` (corazones, estrellas grandes), `parpadear` (los ojos de un personaje: un grupo con los dos ojos) y `brillar` (destellos, soles, halos).
-- Opciones: `data-origen='x y'` (punto de giro o escala; por defecto, el centro de la parte), `data-periodo` (segundos por ciclo), `data-amplitud` (píxeles del viewBox en flotar, grados en balancear, % en latir) y `data-fase` (segundos de desfase entre partes parecidas).
-- No metas un grupo animado dentro de otro.
+**Movimiento** (cuanto más vivo, mejor: anima de 4 a 7 partes por dibujo, con fases distintas para que no se muevan todas a la vez)
+- Cada parte animada es un `<g data-anim='TIPO'>`. Tipos:
+  - `flotar`: sube y baja (nubes, humo, burbujas, objetos en el aire).
+  - `desplazar`: va y viene en horizontal (peces nadando, nubes, pájaros, coches).
+  - `balancear`: oscila alrededor de `data-origen` (colas, borlas, banderas, hojas, ramas).
+  - `girar`: gira sin parar (agujas de reloj, planetas, ruedas, hélices).
+  - `latir`: crece y decrece (corazones, estrellas grandes, botones).
+  - `saltar`: bota con estiramiento en el aire y aplastamiento al caer; `data-origen` es el punto de apoyo en el suelo. Ideal para personajes.
+  - `sombra`: la sombra de contacto de algo que salta; usa el mismo `data-periodo` y `data-fase` que el salto.
+  - `orbitar`: da vueltas en una elipse (lunas, satélites, abejas).
+  - `parpadear`: cierra un momento los ojos (un grupo con los dos ojos; `data-origen` en el centro de los ojos).
+  - `brillar`: destella creciendo y desvaneciéndose (soles, halos, chispas, llamas).
+- Se pueden **anidar**: una parte animada dentro de otra se mueve con ella (los ojos que parpadean dentro del cuerpo que salta; la cola que se balancea dentro del pez que nada).
+- Opciones: `data-origen='x y'` (punto de giro, escala o apoyo; por defecto, el centro de la parte), `data-periodo` (segundos por ciclo), `data-amplitud` (píxeles del viewBox en flotar, desplazar, orbitar y saltar; grados en balancear; % en latir) y `data-fase` (segundos de desfase).
 
 **Técnica**
-- Elementos: `circle`, `ellipse`, `rect` (con `rx`), `line`, `polyline`, `polygon`, `path` (M L H V C S Q T A Z), `g` con `transform`, `defs`, `linearGradient`, `radialGradient` y `clipPath`. Un `path` con varias subrutas hace huecos (regla par-impar).
+- Elementos: `circle`, `ellipse`, `rect` (con `rx`), `line`, `polyline`, `polygon`, `path` (M L H V C S Q T A Z), `g` con `transform`, `defs`, `linearGradient`, `radialGradient` (con `stop-opacity`) y `clipPath`. Un `path` con varias subrutas hace huecos (regla par-impar).
 - Sin texto, sin imágenes, sin filtros ni máscaras. Nada de personajes, logotipos ni marcas reales.
+- Para revisar un dibujo de cerca: `python3 dibujos.py dibujo.svg salida.png 600`.
 - El generador añade un halo de luz detrás, una sombra suave, la entrada animada y un ligero balanceo de todo el dibujo.
 
 ### Gráfico (`grafico`)
