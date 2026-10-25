@@ -1,0 +1,67 @@
+{
+  "id": "2026-10-25-1",
+  "paleta": 1,
+  "gancho": [
+    "4 datos del espacio",
+    "que te dejarán *flotando*"
+  ],
+  "pista": "EL ÚLTIMO QUEMA",
+  "datos": [
+    {
+      "grande": "16",
+      "contar": [
+        0,
+        16,
+        "{}"
+      ],
+      "lineas": [
+        "*amaneceres* al día",
+        "ven los astronautas",
+        "de la *Estación Espacial*"
+      ]
+    },
+    {
+      "grande": "99,8%",
+      "lineas": [
+        "de la *masa* del sistema",
+        "solar está en el *Sol*",
+        "¡Lo demás es *migajas*!"
+      ]
+    },
+    {
+      "grande": "98°",
+      "contar": [
+        0,
+        98,
+        "{}°"
+      ],
+      "lineas": [
+        "está inclinado *Urano*",
+        "Gira prácticamente",
+        "*tumbado* de lado"
+      ]
+    },
+    {
+      "grande": "465 °C",
+      "contar": [
+        0,
+        465,
+        "{} °C"
+      ],
+      "lineas": [
+        "hay en *Venus*",
+        "Más que en *Mercurio*,",
+        "que está más cerca del Sol"
+      ]
+    }
+  ],
+  "titulo": "4 datos del espacio que te dejarán flotando 🚀 #shorts",
+  "descripcion": "¿Cuál de estos datos del espacio no conocías? 👇 Suscríbete a Mundo Curioso 5000 para 3 curiosidades nuevas cada día. #curiosidades #espacio #astronomia #sabiasque #datoscuriosos",
+  "etiquetas": [
+    "espacio",
+    "astronomía",
+    "curiosidades",
+    "sabias que",
+    "shorts"
+  ]
+}

@@ -78,3 +78,15 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-10-24 · 2026-10-24-3 · Sudán tiene más de 200 pirámides, unas dos veces más que Egipto
 - 2026-10-24 · 2026-10-24-3 · Alaska es a la vez el estado más occidental y más oriental de EE. UU. (Aleutianas cruzan el meridiano 180)
 - 2026-10-24 · 2026-10-24-3 · Rusia (17,1 millones de km²) tiene más superficie que Plutón (unos 16,6 millones de km²)
+- 2026-10-25 · 2026-10-25-1 · Los astronautas de la Estación Espacial ven unos 16 amaneceres al día (una órbita cada ~90 min)
+- 2026-10-25 · 2026-10-25-1 · El Sol concentra el 99,8 % de la masa del sistema solar
+- 2026-10-25 · 2026-10-25-1 · Urano tiene una inclinación de unos 98°: gira prácticamente tumbado
+- 2026-10-25 · 2026-10-25-1 · Venus (unos 465 °C) es más caliente que Mercurio aunque está más lejos del Sol
+- 2026-10-25 · 2026-10-25-2 · El corazón de la gamba está en la cabeza (cefalotórax)
+- 2026-10-25 · 2026-10-25-2 · Los elefantes no pueden saltar
+- 2026-10-25 · 2026-10-25-2 · Los delfines duermen con medio cerebro mientras la otra mitad vigila
+- 2026-10-25 · 2026-10-25-2 · Los tardígrados sobrevivieron al vacío del espacio en el satélite FOTON-M3 (2007)
+- 2026-10-25 · 2026-10-25-3 · La Universidad de Al Qarawiyyin (Fez, 859) es la más antigua que sigue funcionando
+- 2026-10-25 · 2026-10-25-3 · En el Coliseo de Roma cabían unos 50.000 espectadores
+- 2026-10-25 · 2026-10-25-3 · La Gran Pirámide fue la construcción más alta del mundo durante unos 3.800 años
+- 2026-10-25 · 2026-10-25-3 · El fax se patentó en 1843 (Alexander Bain), 33 años antes que el teléfono (1876)
