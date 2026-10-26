@@ -90,3 +90,9 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-10-25 · 2026-10-25-3 · En el Coliseo de Roma cabían unos 50.000 espectadores
 - 2026-10-25 · 2026-10-25-3 · La Gran Pirámide fue la construcción más alta del mundo durante unos 3.800 años
 - 2026-10-25 · 2026-10-25-3 · El fax se patentó en 1843 (Alexander Bain), 33 años antes que el teléfono (1876)
+- 2026-10-26 · 2026-10-26-2 · El Sahara (más de 9 millones de km²) es casi tan grande como Estados Unidos
+- 2026-10-26 · 2026-10-26-2 · El Amazonas aporta casi el 20 % del agua que los ríos vierten al océano
+- 2026-10-26 · 2026-10-26-2 · El centro de la Tierra está a unos 5.200 °C, casi como la superficie del Sol (~5.500 °C)
+- 2026-10-26 · 2026-10-26-3 · El Canal de Panamá ahorra unos 12.500 km entre Nueva York y San Francisco
+- 2026-10-26 · 2026-10-26-3 · La Sagrada Familia, con 172,5 m, es la iglesia más alta del mundo (supera a Ulm, 161,5 m)
+- 2026-10-26 · 2026-10-26-3 · El primer vuelo de los Wright (1903) duró 12 s; 66 años después se pisó la Luna (1969)
