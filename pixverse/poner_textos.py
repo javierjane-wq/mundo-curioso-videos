@@ -31,6 +31,8 @@ import sys
 AQUI = os.path.dirname(os.path.abspath(__file__))
 TMP = os.path.join(AQUI, "tmp")
 FUENTE = "Noto Sans CJK SC Black"
+LOGO = os.path.join(AQUI, "logo.png")   # logotipo del canal (PNG, mejor con fondo transparente)
+LOGO_ANCHO = 170                        # px de ancho sobre el vídeo de 1080
 
 CABECERA = """[Script Info]
 ScriptType: v4.00+
@@ -44,6 +46,7 @@ Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour,
 Style: Main,{f},50,&H00FFFFFF,&H00FFFFFF,&H00000000,&H96000000,-1,0,0,0,100,100,0,0,1,4,3,8,30,30,250,1
 Style: Big,{f},96,&H0000E1FF,&H0000E1FF,&H00000000,&H96000000,-1,0,0,0,100,100,0,0,1,6,4,8,20,20,230,1
 Style: Tag,{f},30,&H00000000,&H00000000,&H0000E1FF,&H0000E1FF,-1,0,0,0,100,100,2,0,3,10,0,8,30,30,90,1
+Style: Brand,{f},22,&H26FFFFFF,&H26FFFFFF,&H00000000,&H96000000,-1,0,0,0,100,100,2,0,1,2,2,8,30,30,48,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -107,8 +110,11 @@ def marcar(linea):
     return "".join(AMARILLO + p + BLANCO if i % 2 else p for i, p in enumerate(partes))
 
 
-def construir_ass(textos, dur):
+def construir_ass(textos, dur, con_logo):
     ev = []
+    if not con_logo:
+        # Sin logo.png: el nombre del canal en pequeño arriba, como en los vídeos antiguos
+        ev.append(f"Dialogue: 2,{ts(0)},{ts(dur + 0.05)},Brand,,0,0,0,,MUNDO CURIOSO 5000")
     if textos.get("etiqueta"):
         ev.append(f"Dialogue: 1,{ts(0)},{ts(dur + 0.05)},Tag,,0,0,0,,"
                   + r"{\fad(150,0)}" + textos["etiqueta"])
@@ -144,12 +150,24 @@ def grabar(video, textos_json, salida):
     d = duracion(video)
     base = os.path.splitext(os.path.basename(salida))[0]
     ass = os.path.join(TMP, f"{base}.ass")
-    open(ass, "w", encoding="utf-8").write(construir_ass(textos, d))
+    con_logo = os.path.exists(LOGO)
+    open(ass, "w", encoding="utf-8").write(construir_ass(textos, d, con_logo))
     tmp = salida[:-4] + ".tmp.mp4"
-    vf = (f"scale=1080:1920:flags=lanczos,ass={ass},"
-          f"drawbox=x=0:y=ih-15:w=iw*t/{d:.2f}:h=15:color=0xFFE100@1:t=fill")
-    sh(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", video,
-        "-vf", vf, "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
+    base_vf = (f"scale=1080:1920:flags=lanczos,ass={ass},"
+               f"drawbox=x=0:y=ih-15:w=iw*t/{d:.2f}:h=15:color=0xFFE100@1:t=fill")
+    if con_logo:
+        # Logo arriba a la izquierda (zona que no tapan los botones de Shorts)
+        entradas = ["-i", video, "-loop", "1", "-i", LOGO]
+        filtro = ["-filter_complex",
+                  f"[0:v]{base_vf}[v];"
+                  f"[1:v]scale={LOGO_ANCHO}:-1,format=rgba,colorchannelmixer=aa=0.92[l];"
+                  f"[v][l]overlay=40:60:shortest=1[out]",
+                  "-map", "[out]", "-map", "0:a?"]
+    else:
+        entradas = ["-i", video]
+        filtro = ["-vf", base_vf]
+    sh(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", *entradas,
+        *filtro, "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
         "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k",
         "-movflags", "+faststart", tmp])
     os.replace(tmp, salida)

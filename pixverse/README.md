@@ -13,6 +13,8 @@ imagen y textos grabados, con música. Se genera con PixVerse V6 en OpenArt (360
 - `textos/<id>.json` — los textos y sus tiempos (formato en `poner_textos.py`).
 - `videos/<id>.mp4` — el Short final (1080×1920) que descarga Make.
 - `publicaciones.md` — `fecha · hora · id · título · tema`.
+- `logo.png` — logotipo del canal. `poner_textos.py` lo pone arriba a la izquierda en todos los
+  vídeos; si no existe, escribe "MUNDO CURIOSO 5000" en pequeño encima de la etiqueta.
 - Los temas usados van en `../curiosidades_usadas.md` (compartido con los vídeos antiguos del canal).
 
 Ids: `AAAA-MM-DD-px` (uno al día).
