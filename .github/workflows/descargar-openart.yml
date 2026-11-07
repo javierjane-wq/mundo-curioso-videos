@@ -1,0 +1,57 @@
+name: Descargar vídeo de OpenArt
+
+# Cuando se sube un pedido (pixverse/pedidos/<id>.json con {"url": "https://cdn.openart.ai/...mp4"}),
+# descarga el vídeo y lo guarda en pixverse/originales/<id>.mp4.
+on:
+  push:
+    branches: [main]
+    paths: ['pixverse/pedidos/*.json']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: descargar-openart
+  cancel-in-progress: false
+
+jobs:
+  descargar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Descargar los vídeos pendientes
+        run: |
+          set -euo pipefail
+          mkdir -p pixverse/originales
+          nuevos=0
+          for pedido in pixverse/pedidos/*.json; do
+            [ -e "$pedido" ] || continue
+            id=$(basename "$pedido" .json)
+            destino="pixverse/originales/$id.mp4"
+            [ -s "$destino" ] && continue
+            url=$(jq -r '.url' "$pedido")
+            case "$url" in
+              https://cdn.openart.ai/*) ;;
+              *) echo "::warning::$id: URL no permitida ($url)"; continue ;;
+            esac
+            echo "Descargando $id"
+            curl -fsSL --retry 3 --max-time 300 -o "$destino.tmp" "$url"
+            mv "$destino.tmp" "$destino"
+            nuevos=$((nuevos+1))
+          done
+          echo "NUEVOS=$nuevos" >> "$GITHUB_ENV"
+
+      - name: Guardar en el repositorio
+        if: env.NUEVOS != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add pixverse/originales
+          git commit -m "Vídeos de OpenArt descargados"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep 5
+          done
+          exit 1
