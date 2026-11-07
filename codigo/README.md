@@ -1,6 +1,6 @@
 # Mundo Curioso 5000 · Shorts dibujados por código
 
-Seis Shorts al día de **10 segundos**, cada uno con **un solo dato curioso** contado con una escena de
+Cinco Shorts al día de **10 segundos**, cada uno con **un solo dato curioso** contado con una escena de
 dibujos animados que Claude dibuja y anima con código (SVG fotograma a fotograma). 1080×1920, 30 fps,
 con música generada, textos grabados, logo del canal y barra de progreso. Sin créditos de OpenArt.
 
@@ -16,7 +16,7 @@ con música generada, textos grabados, logo del canal y barra de progreso. Sin c
 - Los vídeos NO se guardan en main: se suben a la rama `publicar-codigo` con `../herramientas/subir_video.py`,
   que sustituye el vídeo anterior en cada subida (así el repositorio no crece).
 
-Ids: `AAAA-MM-DD-cN` (N = 1…6 en el día).
+Ids: `AAAA-MM-DD-cN` (N = 1…5 en el día).
 
 ## Cómo contar el dato en 10 s
 

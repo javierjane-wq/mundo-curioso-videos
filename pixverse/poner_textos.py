@@ -33,6 +33,7 @@ TMP = os.path.join(AQUI, "tmp")
 FUENTE = "Noto Sans CJK SC Black"
 LOGO = os.path.join(AQUI, "logo.png")   # logotipo del canal (PNG, mejor con fondo transparente)
 LOGO_ANCHO = 170                        # px de ancho sobre el vídeo de 1080
+MAX_BYTES = 4_500_000                    # el plan gratis de Make admite archivos de hasta 5 MB
 
 CABECERA = """[Script Info]
 ScriptType: v4.00+
@@ -166,10 +167,13 @@ def grabar(video, textos_json, salida):
     else:
         entradas = ["-i", video]
         filtro = ["-vf", base_vf]
-    sh(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", *entradas,
-        *filtro, "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
-        "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k",
-        "-movflags", "+faststart", tmp])
+    for crf in (26, 30, 34):   # se comprime más si el archivo pasa de MAX_BYTES
+        sh(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", *entradas,
+            *filtro, "-c:v", "libx264", "-preset", "veryfast", "-crf", str(crf),
+            "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "128k",
+            "-movflags", "+faststart", tmp])
+        if os.path.getsize(tmp) <= MAX_BYTES:
+            break
     os.replace(tmp, salida)
     h = hoja(salida, os.path.join(TMP, f"{base}_revision.png"), paso=1.0, ancho=216, por_fila=5)
     print(json.dumps({"video": salida, "duracion": round(duracion(salida), 2),
