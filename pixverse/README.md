@@ -11,7 +11,7 @@ imagen y textos grabados, con música. Se genera con PixVerse V6 en OpenArt (360
   descargar de OpenArt) y lo sube como `originales/<id>.mp4`. Tarda unos 30 s.
 - `originales/<id>.mp4` — vídeo de PixVerse tal cual (360×640).
 - `textos/<id>.json` — los textos y sus tiempos (formato en `poner_textos.py`).
-- `videos/<id>.mp4` — el Short final (1080×1920) que descarga Make.
+- `videos/` — Shorts de los primeros días. Desde ahora el final se sube a la rama `publicar-pixverse`.
 - `publicaciones.md` — `fecha · hora · id · título · tema`.
 - `logo.png` — logotipo del canal. `poner_textos.py` lo pone arriba a la izquierda en todos los
   vídeos; si no existe, escribe "MUNDO CURIOSO 5000" en pequeño encima de la etiqueta.
@@ -48,6 +48,8 @@ Ids: `AAAA-MM-DD-px` (uno al día).
    `"estilo": "grande"` y su explicación con `"posicion": "debajo"`. Sin emojis (la fuente no los tiene).
 7. **Graba**: `python3 pixverse/poner_textos.py grabar pixverse/originales/<id>.mp4 pixverse/textos/<id>.json pixverse/videos/<id>.mp4`
    y revisa la hoja de revisión: textos legibles, sin cortes ni solapes, a tiempo con la imagen.
-8. Commit y push. URL pública:
-   `https://raw.githubusercontent.com/javierjane-wq/mundo-curioso-videos/main/pixverse/videos/<id>.mp4`
-9. **Publicar** con Make (escenario 8175470, "Mundo Curioso 5000 · Publicar Short").
+8. Graba el resultado en `pixverse/tmp/<id>.mp4` (no en `videos/`: los vídeos finales ya no se
+   guardan en main). Commit y push de pedido y textos. Sube el vídeo con
+   `python3 herramientas/subir_video.py subir pixverse/tmp/<id>.mp4 <id> publicar-pixverse`, que
+   imprime la URL pública.
+9. **Publicar** con Make (escenario 8175470, "Mundo Curioso 5000 · Publicar Short") justo después.
