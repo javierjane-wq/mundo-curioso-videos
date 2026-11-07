@@ -58,3 +58,23 @@ Un único dato sorprendente y verificable que se entienda **con imagen**: un pro
 6. Commit y push de la escena y los textos (no del vídeo).
 7. Sube el vídeo: `python3 herramientas/subir_video.py subir codigo/tmp/<id>.mp4 <id> publicar-codigo` → imprime la URL.
 8. Publica con Make (escenario 8175470) usando esa URL, justo después de subirlo.
+
+## Versión por código de los Shorts de PixVerse
+
+El vídeo largo semanal solo usa escenas por código (los vídeos de PixVerse no se reutilizan). Por eso,
+cada día, después de publicar el Short de PixVerse `<fecha>-px`, se dibuja una versión por código del
+mismo tema en `escenas/<fecha>-px.py` y `textos/<fecha>-px.json`, con el mismo estilo y las mismas reglas.
+No se publica como Short: solo sirve para el vídeo largo.
+
+## Vídeo largo semanal
+
+`compilar_largo.py` monta un vídeo horizontal (1920×1080, ~8 min) con todas las escenas de la semana:
+portada con el logo, cada curiosidad (escena vertical a la izquierda sobre su fondo desenfocado y, a la
+derecha, "CURIOSIDAD N" y un resumen), cierre con "¡SUSCRÍBETE!", música continua y capítulos.
+
+1. Escribe `largo/<id>.json` (formato en la cabecera de `compilar_largo.py`); id `AAAA-MM-DD-largo`.
+2. `python3 codigo/compilar_largo.py largo/<id>.json` (vuelve a dibujar cada escena; ~1 min por curiosidad)
+   → `codigo/tmp/<id>.mp4`, `codigo/tmp/<id>_capitulos.txt` y una hoja de revisión.
+3. `python3 herramientas/subir_video.py subir codigo/tmp/<id>.mp4 <id> publicar-largo` → URL.
+4. Make solo puede publicarlo si el plan admite archivos de ese tamaño (el plan gratis admite 5 MB;
+   Core, 100 MB). Si no, se avisa al usuario con el enlace para que lo suba él a YouTube.
