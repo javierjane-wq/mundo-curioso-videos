@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.4,  "lineas": ["Un robot en *MARTE*", "espera al atardecer"]},
+    {"inicio": 2.4,  "fin": 5.0,  "lineas": ["De día, el cielo", "es *NARANJA*…"]},
+    {"inicio": 5.0,  "fin": 7.6,  "lineas": ["…pero cuando", "el Sol *se pone*…"]},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["*AZUL*"], "estilo": "grande"},
+    {"inicio": 7.8,  "fin": 10.1, "lineas": ["El polvo marciano", "dispersa la luz azul"], "posicion": "debajo"}
+  ]
+}
