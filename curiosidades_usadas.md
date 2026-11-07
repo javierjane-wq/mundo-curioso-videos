@@ -96,3 +96,4 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-10-26 · 2026-10-26-3 · El Canal de Panamá ahorra unos 12.500 km entre Nueva York y San Francisco
 - 2026-10-26 · 2026-10-26-3 · La Sagrada Familia, con 172,5 m, es la iglesia más alta del mundo (supera a Ulm, 161,5 m)
 - 2026-10-26 · 2026-10-26-3 · El primer vuelo de los Wright (1903) duró 12 s; 66 años después se pisó la Luna (1969)
+- 2026-11-07 · 2026-11-07-px · Los atardeceres en Marte son azules: el polvo fino dispersa la luz azul cerca del Sol (el día es anaranjado)
