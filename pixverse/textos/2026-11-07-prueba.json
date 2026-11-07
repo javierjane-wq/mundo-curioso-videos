@@ -1,0 +1,11 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 1.6,  "lineas": ["Este animal mide", "*solo 5 cm…*"]},
+    {"inicio": 1.6,  "fin": 2.79, "lineas": ["…y tiene un arma", "en la *PINZA*"]},
+    {"inicio": 2.79, "fin": 5.2,  "lineas": ["Al cerrarla dispara", "una burbuja que", "*EXPLOTA…*"]},
+    {"inicio": 5.2,  "fin": 10.1, "lineas": ["*4.700 °C*"], "estilo": "grande"},
+    {"inicio": 5.4,  "fin": 7.25, "lineas": ["Casi tan caliente", "como el Sol"], "posicion": "debajo"},
+    {"inicio": 7.25, "fin": 10.1, "lineas": ["Así *aturde*", "a sus presas"], "posicion": "debajo"}
+  ]
+}
