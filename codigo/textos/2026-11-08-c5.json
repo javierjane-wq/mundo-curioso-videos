@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["La Gran Pirámide", "de *Guiza*, Egipto"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["Hoy la vemos", "color *arena*…"]},
+    {"inicio": 5.0,  "fin": 7.6,  "lineas": ["…pero hace más", "de *4.500 años*…"]},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["*BLANCA*"], "estilo": "grande"},
+    {"inicio": 7.8,  "fin": 10.1, "lineas": ["Caliza *pulida* que", "brillaba al sol"], "posicion": "debajo"}
+  ]
+}

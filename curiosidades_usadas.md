@@ -102,3 +102,4 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-11-08 · 2026-11-08-px · La Venus atrapamoscas solo se cierra si se tocan 2 de sus pelos sensores en pocos segundos («cuenta» los toques) y se cierra en unos 0,1 s
 - 2026-11-08 · 2026-11-08-c3 · El ojo ve el mundo al revés: el cristalino proyecta la imagen invertida en la retina y el cerebro la interpreta del derecho
 - 2026-11-08 · 2026-11-08-c4 · El velcro se inspiró en los cardos de bardana que se pegaban al perro de George de Mestral tras un paseo por los Alpes (1941): sus ganchitos se enganchan en bucles
+- 2026-11-08 · 2026-11-08-c5 · La Gran Pirámide de Guiza estaba recubierta de caliza blanca pulida (de Tura) que brillaba al sol; hoy se ve color arena porque perdió ese revestimiento
