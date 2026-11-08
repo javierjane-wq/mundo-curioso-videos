@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["Tu *OJO* mira", "un manzano"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["La luz entra", "por la *pupila* y", "se cruza dentro…"]},
+    {"inicio": 5.0,  "fin": 7.5,  "lineas": ["…y en el fondo", "del ojo, el árbol", "sale *dado la vuelta*"]},
+    {"inicio": 7.5,  "fin": 10.1, "lineas": ["*¡AL REVÉS!*"], "estilo": "grande"},
+    {"inicio": 7.7,  "fin": 10.1, "lineas": ["Tu *cerebro*", "lo pone derecho"], "posicion": "debajo"}
+  ]
+}

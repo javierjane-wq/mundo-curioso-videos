@@ -100,3 +100,4 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-11-08 · 2026-11-08-c1 · El camarón pistola cierra su pinza tan rápido que crea una burbuja que alcanza unos 4.700 °C (al menos 5.000 K), casi como la superficie del Sol
 - 2026-11-08 · 2026-11-08-c2 · El grafito de la mina del lápiz y el diamante son el mismo elemento, carbono puro; solo cambia cómo se ordenan sus átomos
 - 2026-11-08 · 2026-11-08-px · La Venus atrapamoscas solo se cierra si se tocan 2 de sus pelos sensores en pocos segundos («cuenta» los toques) y se cierra en unos 0,1 s
+- 2026-11-08 · 2026-11-08-c3 · El ojo ve el mundo al revés: el cristalino proyecta la imagen invertida en la retina y el cerebro la interpreta del derecho
