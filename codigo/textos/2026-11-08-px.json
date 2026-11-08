@@ -1,0 +1,11 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.6,  "lineas": ["Esta planta", "*caza insectos…*"]},
+    {"inicio": 2.6,  "fin": 4.6,  "lineas": ["…pero no se cierra", "al *primer* toque"]},
+    {"inicio": 4.6,  "fin": 7.15, "lineas": ["Necesita que toquen", "*2 pelitos* seguidos"]},
+    {"inicio": 7.15, "fin": 10.1, "lineas": ["*0,1 s*"], "estilo": "grande"},
+    {"inicio": 7.3,  "fin": 8.7,  "lineas": ["Y se cierra en una", "*décima* de segundo"], "posicion": "debajo"},
+    {"inicio": 8.7,  "fin": 10.1, "lineas": ["¡Sabe *contar*", "hasta dos!"], "posicion": "debajo"}
+  ]
+}
