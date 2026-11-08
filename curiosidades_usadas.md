@@ -101,3 +101,4 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-11-08 · 2026-11-08-c2 · El grafito de la mina del lápiz y el diamante son el mismo elemento, carbono puro; solo cambia cómo se ordenan sus átomos
 - 2026-11-08 · 2026-11-08-px · La Venus atrapamoscas solo se cierra si se tocan 2 de sus pelos sensores en pocos segundos («cuenta» los toques) y se cierra en unos 0,1 s
 - 2026-11-08 · 2026-11-08-c3 · El ojo ve el mundo al revés: el cristalino proyecta la imagen invertida en la retina y el cerebro la interpreta del derecho
+- 2026-11-08 · 2026-11-08-c4 · El velcro se inspiró en los cardos de bardana que se pegaban al perro de George de Mestral tras un paseo por los Alpes (1941): sus ganchitos se enganchan en bucles
