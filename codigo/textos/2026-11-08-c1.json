@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["El *camarón pistola*", "sale de caza"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["Abre su *pinza*", "gigante…"]},
+    {"inicio": 5.0,  "fin": 7.5,  "lineas": ["…y al cerrarla", "*de golpe*…"]},
+    {"inicio": 7.5,  "fin": 10.1, "lineas": ["*4.700 °C*"], "estilo": "grande"},
+    {"inicio": 7.7,  "fin": 10.1, "lineas": ["Crea una burbuja", "casi tan caliente", "como *el Sol*"], "posicion": "debajo"}
+  ]
+}
