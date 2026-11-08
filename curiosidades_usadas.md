@@ -98,3 +98,4 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-10-26 · 2026-10-26-3 · El primer vuelo de los Wright (1903) duró 12 s; 66 años después se pisó la Luna (1969)
 - 2026-11-07 · 2026-11-07-px · Los atardeceres en Marte son azules: el polvo fino dispersa la luz azul cerca del Sol (el día es anaranjado)
 - 2026-11-08 · 2026-11-08-c1 · El camarón pistola cierra su pinza tan rápido que crea una burbuja que alcanza unos 4.700 °C (al menos 5.000 K), casi como la superficie del Sol
+- 2026-11-08 · 2026-11-08-c2 · El grafito de la mina del lápiz y el diamante son el mismo elemento, carbono puro; solo cambia cómo se ordenan sus átomos
