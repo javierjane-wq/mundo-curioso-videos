@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["Una *VELA* encendida", "en casa…"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["Su llama se estira", "*hacia arriba*"]},
+    {"inicio": 5.0,  "fin": 7.6,  "lineas": ["…pero en el", "*ESPACIO*…"]},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["*ESFERA AZUL*"], "estilo": "grande"},
+    {"inicio": 7.8,  "fin": 10.1, "lineas": ["Sin gravedad, el aire", "caliente no sube"], "posicion": "debajo"}
+  ]
+}

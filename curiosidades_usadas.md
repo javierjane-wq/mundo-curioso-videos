@@ -103,3 +103,4 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-11-08 · 2026-11-08-c3 · El ojo ve el mundo al revés: el cristalino proyecta la imagen invertida en la retina y el cerebro la interpreta del derecho
 - 2026-11-08 · 2026-11-08-c4 · El velcro se inspiró en los cardos de bardana que se pegaban al perro de George de Mestral tras un paseo por los Alpes (1941): sus ganchitos se enganchan en bucles
 - 2026-11-08 · 2026-11-08-c5 · La Gran Pirámide de Guiza estaba recubierta de caliza blanca pulida (de Tura) que brillaba al sol; hoy se ve color arena porque perdió ese revestimiento
+- 2026-11-09 · 2026-11-09-c1 · En el espacio la llama de una vela es una esfera azulada: sin gravedad el aire caliente no sube (no hay convección) y la llama no se estira hacia arriba
