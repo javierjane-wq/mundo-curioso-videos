@@ -106,3 +106,4 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-11-09 · 2026-11-09-c1 · En el espacio la llama de una vela es una esfera azulada: sin gravedad el aire caliente no sube (no hay convección) y la llama no se estira hacia arriba
 - 2026-11-09 · 2026-11-09-c2 · Al congelarse, el agua ocupa alrededor de un 9 % más de volumen (el hielo es menos denso que el agua): por eso una botella llena revienta en el congelador
 - 2026-11-09 · 2026-11-09-px · El pez arquero caza insectos fuera del agua derribándolos con un chorro de agua que escupe con la boca y que llega hasta unos 2 m
+- 2026-11-09 · 2026-11-09-c3 · El lago de Maracaibo (Venezuela) es el lugar con más rayos del mundo: unos 233 rayos por km² al año según el satélite TRMM de la NASA (relámpago del Catatumbo)

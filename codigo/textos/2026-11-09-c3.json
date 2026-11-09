@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["Lago de *MARACAIBO*", "en Venezuela"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["Por la noche", "llegan los *RAYOS*…"]},
+    {"inicio": 5.0,  "fin": 7.6,  "lineas": ["…y no paran:", "uno, otro, *OTRO*…"]},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["*¡233!*"], "estilo": "grande"},
+    {"inicio": 7.8,  "fin": 10.1, "lineas": ["rayos por km² al año", "*¡récord mundial!*"], "posicion": "debajo"}
+  ]
+}
