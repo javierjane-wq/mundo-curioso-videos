@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["Una *BOTELLA*", "llena de agua…"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["…entra en el", "*CONGELADOR*"]},
+    {"inicio": 5.0,  "fin": 7.6,  "lineas": ["El agua se vuelve", "*HIELO* y…"]},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["*¡+9 %!*"], "estilo": "grande"},
+    {"inicio": 7.8,  "fin": 10.1, "lineas": ["El hielo ocupa más", "y revienta la botella"], "posicion": "debajo"}
+  ]
+}
