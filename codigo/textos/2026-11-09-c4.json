@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["México, *1943*:", "un campo de *MAÍZ*"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["Del suelo empieza", "a salir *HUMO*…"]},
+    {"inicio": 5.0,  "fin": 7.6,  "lineas": ["…la tierra tiembla", "y *algo crece*…"]},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["*¡336 m!*"], "estilo": "grande"},
+    {"inicio": 7.8,  "fin": 10.1, "lineas": ["El volcán *Paricutín*", "creció eso en 1 año"], "posicion": "debajo"}
+  ]
+}
