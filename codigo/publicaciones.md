@@ -7,3 +7,4 @@ fecha · hora · id · título · tema
 2026-11-09 · 10:19 · 2026-11-09-c1 · Enciende una vela en el espacio y mira qué pasa 🕯️🚀 #shorts · Espacio: sin gravedad la llama de una vela es una esfera azulada
 2026-11-09 · 11:41 · 2026-11-09-c2 · Nunca metas una botella llena de agua al congelador 🧊💥 #shorts · Física: al congelarse el agua ocupa un 9 % más y revienta la botella
 2026-11-09 · 14:17 · 2026-11-09-c3 · El lugar con más rayos del planeta está en Venezuela ⚡🌩️ #shorts · Récords: el lago de Maracaibo, unos 233 rayos por km² al año
+2026-11-09 · 18:23 · 2026-11-09-c4 · 1943: un volcán brotó en mitad de un maizal 🌋🌽 #shorts · Tierra: el volcán Paricutín nació en un maizal y creció 336 m en un año
