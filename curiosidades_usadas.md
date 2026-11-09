@@ -105,3 +105,4 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-11-08 · 2026-11-08-c5 · La Gran Pirámide de Guiza estaba recubierta de caliza blanca pulida (de Tura) que brillaba al sol; hoy se ve color arena porque perdió ese revestimiento
 - 2026-11-09 · 2026-11-09-c1 · En el espacio la llama de una vela es una esfera azulada: sin gravedad el aire caliente no sube (no hay convección) y la llama no se estira hacia arriba
 - 2026-11-09 · 2026-11-09-c2 · Al congelarse, el agua ocupa alrededor de un 9 % más de volumen (el hielo es menos denso que el agua): por eso una botella llena revienta en el congelador
+- 2026-11-09 · 2026-11-09-px · El pez arquero caza insectos fuera del agua derribándolos con un chorro de agua que escupe con la boca y que llega hasta unos 2 m
