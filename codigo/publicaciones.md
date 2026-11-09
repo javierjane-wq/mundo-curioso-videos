@@ -4,3 +4,4 @@ fecha · hora · id · título · tema
 2026-11-08 · 13:26 · 2026-11-08-c3 · Tus ojos te engañan: ven todo boca abajo 👁️🙃 #shorts · Cuerpo humano: la imagen llega invertida a la retina y el cerebro la endereza
 2026-11-08 · 19:19 · 2026-11-08-c4 · Un paseo con su perro inventó el velcro 🐕🌿 #shorts · Inventos: el velcro se inspiró en los cardos pegados al perro de George de Mestral
 2026-11-08 · 20:49 · 2026-11-08-c5 · Antes blanca y brillante, hoy color arena: la Gran Pirámide 🏜️✨ #shorts · Historia: la Gran Pirámide estaba recubierta de caliza blanca pulida
+2026-11-09 · 10:19 · 2026-11-09-c1 · Enciende una vela en el espacio y mira qué pasa 🕯️🚀 #shorts · Espacio: sin gravedad la llama de una vela es una esfera azulada
