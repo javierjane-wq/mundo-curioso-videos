@@ -1,0 +1,12 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.4,  "lineas": ["Este pez caza", "*insectos…*"]},
+    {"inicio": 2.4,  "fin": 4.9,  "lineas": ["…que están", "*fuera del agua*"]},
+    {"inicio": 4.9,  "fin": 6.2,  "lineas": ["Apunta con", "*mucho cuidado…*"]},
+    {"inicio": 6.2,  "fin": 7.45, "lineas": ["…y les *dispara*", "un chorro de agua"]},
+    {"inicio": 7.45, "fin": 10.1, "lineas": ["*2 METROS*"], "estilo": "grande"},
+    {"inicio": 7.55, "fin": 8.75, "lineas": ["Hasta ahí puede", "llegar su *disparo*"], "posicion": "debajo"},
+    {"inicio": 8.75, "fin": 10.1, "lineas": ["La presa cae", "y se la *come*"], "posicion": "debajo"}
+  ]
+}
