@@ -5,3 +5,4 @@ fecha · hora · id · título · tema
 2026-11-08 · 19:19 · 2026-11-08-c4 · Un paseo con su perro inventó el velcro 🐕🌿 #shorts · Inventos: el velcro se inspiró en los cardos pegados al perro de George de Mestral
 2026-11-08 · 20:49 · 2026-11-08-c5 · Antes blanca y brillante, hoy color arena: la Gran Pirámide 🏜️✨ #shorts · Historia: la Gran Pirámide estaba recubierta de caliza blanca pulida
 2026-11-09 · 10:19 · 2026-11-09-c1 · Enciende una vela en el espacio y mira qué pasa 🕯️🚀 #shorts · Espacio: sin gravedad la llama de una vela es una esfera azulada
+2026-11-09 · 11:41 · 2026-11-09-c2 · Nunca metas una botella llena de agua al congelador 🧊💥 #shorts · Física: al congelarse el agua ocupa un 9 % más y revienta la botella
