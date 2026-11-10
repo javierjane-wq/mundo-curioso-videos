@@ -12,3 +12,4 @@ fecha · hora · id · título · tema
 2026-11-10 · 09:16 · 2026-11-10-c1 · Los girasoles hacen esto cada noche y casi nadie lo sabe 🌻🌙 #shorts · Naturaleza: los girasoles jóvenes siguen al Sol y de noche vuelven a girarse hacia el este
 2026-11-10 · 12:02 · 2026-11-10-c2 · La Estatua de la Libertad no siempre fue verde 🗽🟠 #shorts · Química: la Estatua de la Libertad era color cobre y la oxidación la volvió verde
 2026-11-10 · 14:19 · 2026-11-10-c3 · ¿Por qué existe el microondas? Culpa de una chocolatina 🍫📡 #shorts · Inventos: el microondas nació cuando a Percy Spencer se le derritió una chocolatina junto a un magnetrón de radar (1945)
+2026-11-10 · 19:28 · 2026-11-10-c4 · Solo tenía 3 pisos y la Torre de Pisa ya se torcía 🏗️😱 #shorts · Historia: la Torre de Pisa empezó a inclinarse en 1178, con solo 3 pisos construidos, por el suelo blando
