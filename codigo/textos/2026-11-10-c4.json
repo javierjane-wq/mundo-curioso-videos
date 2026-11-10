@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["La Torre de *PISA*", "empezó recta"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["Se empezó a construir", "en el año *1173*"]},
+    {"inicio": 5.0,  "fin": 7.45, "lineas": ["…pero el suelo", "era *blando*…"]},
+    {"inicio": 7.45, "fin": 10.1, "lineas": ["*1178*"], "estilo": "grande"},
+    {"inicio": 7.7,  "fin": 10.1, "lineas": ["¡Se inclinó con", "solo *3 pisos*!"], "posicion": "debajo"}
+  ]
+}
