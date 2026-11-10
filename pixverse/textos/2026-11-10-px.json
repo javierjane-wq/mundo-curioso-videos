@@ -1,0 +1,12 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 1.8,  "lineas": ["¿Puedes hacerte", "*cosquillas* tú?"]},
+    {"inicio": 1.8,  "fin": 4.0,  "lineas": ["Por más que", "lo intentes…", "*¡no funciona!*"]},
+    {"inicio": 4.0,  "fin": 6.6,  "lineas": ["Tu *cerebelo*", "ya sabe lo que", "vas a sentir"]},
+    {"inicio": 6.6,  "fin": 7.8,  "lineas": ["Pero si te las", "hace *otra persona*…"]},
+    {"inicio": 7.8,  "fin": 10.1, "lineas": ["*¡SORPRESA!*"], "estilo": "grande"},
+    {"inicio": 7.9,  "fin": 9.0,  "lineas": ["Tu cerebro no", "puede *predecirlo*"], "posicion": "debajo"},
+    {"inicio": 9.0,  "fin": 10.1, "lineas": ["…y te mueres", "de la *risa*"], "posicion": "debajo"}
+  ]
+}
