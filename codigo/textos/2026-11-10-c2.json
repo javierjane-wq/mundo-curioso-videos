@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.4,  "lineas": ["La *Estatua de la*", "*Libertad* en 1886"]},
+    {"inicio": 2.4,  "fin": 5.0,  "lineas": ["Brillaba como", "una *moneda de cobre*"]},
+    {"inicio": 5.0,  "fin": 7.6,  "lineas": ["…pero con los años,", "*aire y lluvia*…"]},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["*¡VERDE!*"], "estilo": "grande"},
+    {"inicio": 7.8,  "fin": 10.1, "lineas": ["El cobre se oxidó:", "esa capa la protege"], "posicion": "debajo"}
+  ]
+}

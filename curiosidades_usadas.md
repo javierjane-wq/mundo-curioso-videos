@@ -110,3 +110,4 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-11-09 · 2026-11-09-c4 · El volcán Paricutín (México) nació en 1943 en el maizal del campesino Dionisio Pulido y en su primer año creció unos 336 m
 - 2026-11-09 · 2026-11-09-c5 · Las palomitas estallan a unos 180 °C: el agua del interior del grano de maíz se convierte en vapor, la presión rompe la cáscara y el almidón se hincha como espuma
 - 2026-11-10 · 2026-11-10-c1 · Los girasoles jóvenes siguen al Sol de este a oeste durante el día y por la noche vuelven a girarse hacia el este para esperar el amanecer (Atamian et al., Science 2016)
+- 2026-11-10 · 2026-11-10-c2 · La Estatua de la Libertad (1886) era del color del cobre brillante; el aire y la lluvia oxidaron su piel de cobre y la cubrieron de una pátina verde que hoy la protege
