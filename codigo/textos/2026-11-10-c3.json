@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.4,  "lineas": ["1945: un ingeniero", "prueba un *radar*"]},
+    {"inicio": 2.4,  "fin": 5.0,  "lineas": ["Lleva una *chocolatina*", "en el bolsillo…"]},
+    {"inicio": 5.0,  "fin": 7.6,  "lineas": ["…y se *derrite*", "¡sin fuego!"]},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["*MICROONDAS*"], "estilo": "grande"},
+    {"inicio": 7.8,  "fin": 10.1, "lineas": ["Así se inventó", "el *horno microondas*"], "posicion": "debajo"}
+  ]
+}

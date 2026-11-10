@@ -112,3 +112,4 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-11-10 · 2026-11-10-c1 · Los girasoles jóvenes siguen al Sol de este a oeste durante el día y por la noche vuelven a girarse hacia el este para esperar el amanecer (Atamian et al., Science 2016)
 - 2026-11-10 · 2026-11-10-c2 · La Estatua de la Libertad (1886) era del color del cobre brillante; el aire y la lluvia oxidaron su piel de cobre y la cubrieron de una pátina verde que hoy la protege
 - 2026-11-10 · 2026-11-10-px · No puedes hacerte cosquillas a ti mismo: el cerebelo predice la sensación de tu propio movimiento y la atenúa; si te las hace otra persona no puede predecirla (Blakemore, Wolpert y Frith, 1998-2000)
+- 2026-11-10 · 2026-11-10-c3 · El microondas nació por accidente: en 1945 Percy Spencer (Raytheon) trabajaba junto a un magnetrón de radar y la chocolatina de su bolsillo se derritió; así descubrió que las microondas calientan la comida
