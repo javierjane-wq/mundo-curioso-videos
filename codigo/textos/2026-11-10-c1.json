@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.4,  "lineas": ["Un *girasol* joven", "mira al amanecer"]},
+    {"inicio": 2.4,  "fin": 5.0,  "lineas": ["Durante el día", "*sigue al Sol*"]},
+    {"inicio": 5.0,  "fin": 7.6,  "lineas": ["…pero cuando", "llega la *noche*…"]},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["*¡AL ESTE!*"], "estilo": "grande"},
+    {"inicio": 7.8,  "fin": 10.1, "lineas": ["Se gira de vuelta", "para esperar al Sol"], "posicion": "debajo"}
+  ]
+}
