@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["¿De qué color", "es el *SOL*?"]},
+    {"inicio": 2.5,  "fin": 4.9,  "lineas": ["Desde la Tierra", "lo vemos *amarillo*"]},
+    {"inicio": 4.9,  "fin": 7.45, "lineas": ["…pero si subes", "al *espacio*…"]},
+    {"inicio": 7.45, "fin": 10.1, "lineas": ["*BLANCO*"], "estilo": "grande"},
+    {"inicio": 7.7,  "fin": 10.1, "lineas": ["La *atmósfera*", "lo tiñe de amarillo"], "posicion": "debajo"}
+  ]
+}
