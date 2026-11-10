@@ -9,3 +9,4 @@ fecha · hora · id · título · tema
 2026-11-09 · 14:17 · 2026-11-09-c3 · El lugar con más rayos del planeta está en Venezuela ⚡🌩️ #shorts · Récords: el lago de Maracaibo, unos 233 rayos por km² al año
 2026-11-09 · 18:23 · 2026-11-09-c4 · 1943: un volcán brotó en mitad de un maizal 🌋🌽 #shorts · Tierra: el volcán Paricutín nació en un maizal y creció 336 m en un año
 2026-11-09 · 20:59 · 2026-11-09-c5 · Cada palomita es una mini olla a presión 🍿💥 #shorts · Cocina: las palomitas estallan a unos 180 °C cuando el agua del grano se vuelve vapor
+2026-11-10 · 09:16 · 2026-11-10-c1 · Los girasoles hacen esto cada noche y casi nadie lo sabe 🌻🌙 #shorts · Naturaleza: los girasoles jóvenes siguen al Sol y de noche vuelven a girarse hacia el este
