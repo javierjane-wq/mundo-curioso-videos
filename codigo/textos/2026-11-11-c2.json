@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["El *ARCOÍRIS*", "parece un arco…"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["…porque desde", "el *suelo* solo", "ves la mitad"]},
+    {"inicio": 5.0,  "fin": 7.5,  "lineas": ["Pero si subes", "en *avión*…"]},
+    {"inicio": 7.5,  "fin": 10.1, "lineas": ["*CÍRCULO*"], "estilo": "grande"},
+    {"inicio": 7.7,  "fin": 10.1, "lineas": ["El suelo nos tapa", "la otra *mitad*"], "posicion": "debajo"}
+  ]
+}
