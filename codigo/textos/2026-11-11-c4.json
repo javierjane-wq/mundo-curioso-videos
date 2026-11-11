@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["El tren más *RÁPIDO*", "del mundo…"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["Arranca con *ruedas*", "como cualquiera…"]},
+    {"inicio": 5.0,  "fin": 7.5,  "lineas": ["…pero luego las", "guarda y *FLOTA*"]},
+    {"inicio": 7.5,  "fin": 10.1, "lineas": ["*603 km/h*"], "estilo": "grande"},
+    {"inicio": 7.7,  "fin": 10.1, "lineas": ["Flota sobre *imanes*", "Japón, récord 2015"], "posicion": "debajo"}
+  ]
+}
