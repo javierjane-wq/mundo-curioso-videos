@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["Este *ICEBERG*", "parece pequeño…"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["…pero solo", "ves su *punta*"]},
+    {"inicio": 5.0,  "fin": 7.5,  "lineas": ["¿Qué esconde", "bajo el *agua*?"]},
+    {"inicio": 7.5,  "fin": 10.1, "lineas": ["*90 %*"], "estilo": "grande"},
+    {"inicio": 7.7,  "fin": 10.1, "lineas": ["del hielo queda", "*bajo el mar*"], "posicion": "debajo"}
+  ]
+}
