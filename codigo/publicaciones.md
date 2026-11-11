@@ -16,3 +16,4 @@ fecha · hora · id · título · tema
 2026-11-10 · 21:38 · 2026-11-10-c5 · Lo has dibujado mal toda la vida: el Sol es blanco ☀️🚀 #shorts · Espacio: el Sol es blanco; lo vemos amarillo porque la atmósfera dispersa la parte azul de su luz
 2026-11-11 · 10:18 · 2026-11-11-c1 · Aquí el embarazado es el papá: caballitos de mar 🌊👶 #shorts · Animales: en los caballitos de mar el macho se queda embarazado y da a luz hasta unas 2.000 crías
 2026-11-11 · 12:24 · 2026-11-11-c2 · Desde un avión, el arcoíris cambia de forma 🌈✈️ #shorts · Física: el arcoíris es un círculo completo; desde el suelo el horizonte tapa la mitad de abajo
+2026-11-11 · 14:21 · 2026-11-11-c3 · Solo ves el 10 %: lo que esconde un iceberg 🧊🌊 #shorts · Tierra: alrededor del 90 % de un iceberg está bajo el agua
