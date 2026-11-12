@@ -23,3 +23,4 @@ fecha · hora · id · título · tema
 2026-11-12 · 11:25 · 2026-11-12-c2 · ¿Rosa o azul? La tierra decide el color de esta flor 🌸💙 #shorts · Naturaleza: las hortensias salen azules en tierra ácida (aluminio disponible) y rosas en tierra alcalina
 2026-11-12 · 14:22 · 2026-11-12-c3 · Un niño de 11 años inventó el polo… ¡sin querer! 🍊🧊 #shorts · Inventos: Frank Epperson inventó el polo con 11 años en 1905 al dejar un refresco con palito fuera en una noche helada
 2026-11-12 · 18:44 · 2026-11-12-c4 · Cuernos vikingos: el mito que nació en una ópera 🎭⚔️ #shorts · Historia: los vikingos no llevaban cascos con cuernos; la imagen nació con el vestuario de la ópera de Wagner (1876)
+2026-11-12 · 21:32 · 2026-11-12-c5 · ¿Por qué tu manzana se pone marrón? La culpa es del aire 🍎💨 #shorts · Química: la manzana cortada se pone marrón porque el oxígeno y una enzima (polifenol oxidasa) oxidan sus compuestos
