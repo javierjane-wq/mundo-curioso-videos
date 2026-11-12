@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["En *1905*, un niño", "de *11 años*…"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["…dejó su refresco", "fuera con el *palito*"]},
+    {"inicio": 5.0,  "fin": 7.6,  "lineas": ["…y esa noche", "*heló*…"]},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["*¡EL POLO!*"], "estilo": "grande"},
+    {"inicio": 7.8,  "fin": 10.1, "lineas": ["Lo inventó", "*Frank Epperson*"], "posicion": "debajo"}
+  ]
+}
