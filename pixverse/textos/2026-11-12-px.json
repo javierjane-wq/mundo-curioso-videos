@@ -1,0 +1,11 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.2,  "lineas": ["Este lagarto tiene", "un *superpoder*…"]},
+    {"inicio": 2.2,  "fin": 4.8,  "lineas": ["Si le *amenazan*,", "salta al río…"]},
+    {"inicio": 4.8,  "fin": 7.4,  "lineas": ["…y *CORRE* sobre", "el agua", "a dos patas"]},
+    {"inicio": 7.4,  "fin": 10.1, "lineas": ["*4,5 m*"], "estilo": "grande"},
+    {"inicio": 7.6,  "fin": 8.85, "lineas": ["sobre el agua", "sin *hundirse*"], "posicion": "debajo"},
+    {"inicio": 8.85, "fin": 10.1, "lineas": ["Sus pies crean", "*bolsas de aire*"], "posicion": "debajo"}
+  ]
+}

@@ -123,3 +123,4 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-11-11 · 2026-11-11-c5 · Los anillos de Saturno se extienden hasta unos 282.000 km del planeta, pero su grosor típico en los anillos principales es de solo unos 10 m (NASA); vistos de canto casi desaparecen
 - 2026-11-12 · 2026-11-12-c1 · Los dedos de la mano no tienen músculos: los mueven tendones, como hilos, de los que tiran músculos situados en el antebrazo (flexores y extensores) y en la palma
 - 2026-11-12 · 2026-11-12-c2 · El color de las hortensias (Hydrangea macrophylla) depende del suelo: en tierra ácida (pH 5,0-5,5) el aluminio está disponible y las flores salen azules; en tierra alcalina (pH 6,0 o más) salen rosas (Clemson HGIC)
+- 2026-11-12 · 2026-11-12-px · El lagarto basilisco puede correr sobre el agua a dos patas unos 4,5 m antes de hundirse (a unos 1,5 m/s): sus pies golpean el agua y crean bolsas de aire que lo sostienen (National Geographic)
