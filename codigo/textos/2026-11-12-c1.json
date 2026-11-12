@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["Mueves los *DEDOS*", "todo el día…"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["¿Qué *músculos*", "hay dentro?"]},
+    {"inicio": 5.0,  "fin": 7.6,  "lineas": ["Veamos la mano", "por *DENTRO*…"]},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["*NINGUNO*"], "estilo": "grande"},
+    {"inicio": 7.8,  "fin": 10.1, "lineas": ["Tiran *tendones*", "desde el antebrazo"], "posicion": "debajo"}
+  ]
+}

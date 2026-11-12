@@ -121,3 +121,4 @@ No repetir ninguna de estas. Añade aquí cada curiosidad nueva el mismo día qu
 - 2026-11-11 · 2026-11-11-c3 · Alrededor del 90 % de un iceberg está bajo el agua: el hielo es algo menos denso que el agua de mar y solo asoma la «punta» (USGS)
 - 2026-11-11 · 2026-11-11-c4 · El tren más rápido del mundo es el maglev japonés L0 (SCMaglev): el 21 de abril de 2015 alcanzó 603 km/h en la vía de pruebas de Yamanashi (récord Guinness); arranca sobre ruedas y a partir de unos 150 km/h las guarda y flota unos 10 cm sobre imanes superconductores
 - 2026-11-11 · 2026-11-11-c5 · Los anillos de Saturno se extienden hasta unos 282.000 km del planeta, pero su grosor típico en los anillos principales es de solo unos 10 m (NASA); vistos de canto casi desaparecen
+- 2026-11-12 · 2026-11-12-c1 · Los dedos de la mano no tienen músculos: los mueven tendones, como hilos, de los que tiran músculos situados en el antebrazo (flexores y extensores) y en la palma
