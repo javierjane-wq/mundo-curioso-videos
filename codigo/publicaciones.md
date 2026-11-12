@@ -21,3 +21,4 @@ fecha · hora · id · título · tema
 2026-11-11 · 20:50 · 2026-11-11-c5 · Gigantes pero finísimos: los anillos de Saturno 🪐😮 #shorts · Espacio: los anillos de Saturno se extienden hasta unos 282.000 km pero su grosor típico es de solo unos 10 m
 2026-11-12 · 10:29 · 2026-11-12-c1 · Mira tu mano: tus dedos no tienen ni un músculo 🖐️🦴 #shorts · Cuerpo humano: los dedos no tienen músculos; los mueven tendones desde el antebrazo y la palma
 2026-11-12 · 11:25 · 2026-11-12-c2 · ¿Rosa o azul? La tierra decide el color de esta flor 🌸💙 #shorts · Naturaleza: las hortensias salen azules en tierra ácida (aluminio disponible) y rosas en tierra alcalina
+2026-11-12 · 14:22 · 2026-11-12-c3 · Un niño de 11 años inventó el polo… ¡sin querer! 🍊🧊 #shorts · Inventos: Frank Epperson inventó el polo con 11 años en 1905 al dejar un refresco con palito fuera en una noche helada
