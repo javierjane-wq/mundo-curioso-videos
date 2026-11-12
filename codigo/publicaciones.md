@@ -19,3 +19,4 @@ fecha · hora · id · título · tema
 2026-11-11 · 14:21 · 2026-11-11-c3 · Solo ves el 10 %: lo que esconde un iceberg 🧊🌊 #shorts · Tierra: alrededor del 90 % de un iceberg está bajo el agua
 2026-11-11 · 18:56 · 2026-11-11-c4 · Este tren no toca la vía: flota a 603 km/h 🚄🧲 #shorts · Récords: el maglev japonés L0 alcanzó 603 km/h en 2015 flotando sobre imanes
 2026-11-11 · 20:50 · 2026-11-11-c5 · Gigantes pero finísimos: los anillos de Saturno 🪐😮 #shorts · Espacio: los anillos de Saturno se extienden hasta unos 282.000 km pero su grosor típico es de solo unos 10 m
+2026-11-12 · 10:29 · 2026-11-12-c1 · Mira tu mano: tus dedos no tienen ni un músculo 🖐️🦴 #shorts · Cuerpo humano: los dedos no tienen músculos; los mueven tendones desde el antebrazo y la palma
