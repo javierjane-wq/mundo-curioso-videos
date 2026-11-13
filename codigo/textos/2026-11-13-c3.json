@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["¿Hasta qué velocidad", "va una *bicicleta*?"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["Pegada a un *coche*", "que le corta el aire…"]},
+    {"inicio": 5.0,  "fin": 7.6,  "lineas": ["…pedaleó cada vez", "*más y más rápido*…"]},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["*296 km/h*"], "estilo": "grande"},
+    {"inicio": 7.8,  "fin": 10.1, "lineas": ["*Récord mundial*", "en bici (2018)"], "posicion": "debajo"}
+  ]
+}
