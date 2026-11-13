@@ -26,3 +26,4 @@ fecha · hora · id · título · tema
 2026-11-12 · 21:32 · 2026-11-12-c5 · ¿Por qué tu manzana se pone marrón? La culpa es del aire 🍎💨 #shorts · Química: la manzana cortada se pone marrón porque el oxígeno y una enzima (polifenol oxidasa) oxidan sus compuestos
 2026-11-13 · 09:21 · 2026-11-13-c1 · El Everest no es la montaña más alta: esta se esconde bajo el mar 🌋🌊 #shorts · Tierra: el Mauna Kea mide más de 10.000 m desde su base en el fondo del mar (solo asoma ~4.200 m), más que el Everest
 2026-11-13 · 12:44 · 2026-11-13-c2 · 70 °C y ya hierve: así es el agua en la cima del Everest 🏔️♨️ #shorts · Física: en la cima del Everest el agua hierve a unos 70 °C porque la presión del aire es mucho menor
+2026-11-13 · 13:44 · 2026-11-13-c3 · Pedaleó a 296 km/h pegada a un coche 🚴💨 #shorts · Récords: la bicicleta más rápida, 296 km/h en el rebufo de un coche (Denise Mueller-Korenek, Bonneville, 2018, Guinness)
