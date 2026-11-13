@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["¿De qué color es", "un *oso polar*?"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["Lo vemos *BLANCO*", "como la nieve…"]},
+    {"inicio": 5.0,  "fin": 7.6,  "lineas": ["…pero si miras", "*debajo del pelo*…"]},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["*PIEL NEGRA*"], "estilo": "grande"},
+    {"inicio": 7.8,  "fin": 10.1, "lineas": ["y su pelo es", "*transparente*"], "posicion": "debajo"}
+  ]
+}
