@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["Este volcán de", "*HAWÁI* parece", "pequeñito…"]},
+    {"inicio": 2.5,  "fin": 4.8,  "lineas": ["Asoma unos *4.200 m*", "sobre el mar"]},
+    {"inicio": 4.8,  "fin": 7.5,  "lineas": ["…pero bajo", "el agua *sigue*…"]},
+    {"inicio": 7.5,  "fin": 10.1, "lineas": ["*+10.000 m*"], "estilo": "grande"},
+    {"inicio": 7.7,  "fin": 10.1, "lineas": ["Más alto que", "el *Everest*", "desde su base"], "posicion": "debajo"}
+  ]
+}
