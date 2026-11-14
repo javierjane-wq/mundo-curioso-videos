@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["En tumbas del", "antiguo *Egipto*…"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["…se han hallado", "tarros de *miel*"]},
+    {"inicio": 5.0,  "fin": 7.6,  "lineas": ["Llevaban ahí", "*miles de años*…"]},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["*¡INTACTA!*"], "estilo": "grande"},
+    {"inicio": 7.8,  "fin": 10.1, "lineas": ["Tiene muy poca *agua*", "y es muy *ácida*"], "posicion": "debajo"}
+  ]
+}
