@@ -32,3 +32,4 @@ fecha · hora · id · título · tema
 2026-11-14 · 11:36 · 2026-11-14-c2 · Nació para tus paredes y acabó en tus paquetes 📦🫧 #shorts · Inventos: el plástico de burbujas se inventó en 1957 (Fielding y Chavannes) como papel pintado con relieve; triunfó después como embalaje
 2026-11-14 · 13:46 · 2026-11-14-c3 · Miel de hace miles de años… ¡y sigue intacta! 🍯🏺 #shorts · Química: en tumbas egipcias se han hallado tarros de miel de miles de años conservados; casi no se estropea por su poca agua y su acidez
 2026-11-14 · 19:28 · 2026-11-14-c4 · ¿Señalas la torre y dices Big Ben? Error 🔔⏰ #shorts · Historia: Big Ben es la campana de 13,7 toneladas, no la torre (Torre Elizabeth desde 2012)
+2026-11-14 · 21:03 · 2026-11-14-c5 · Ahora mismo estás brillando (y no lo ves) ✨🧍 #shorts · Cuerpo humano: el cuerpo emite luz visible unas 1.000 veces más tenue de lo que capta el ojo (Kobayashi et al., 2009)
