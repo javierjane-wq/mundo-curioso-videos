@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["¿De qué color es", "una *zanahoria*?"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["Hoy casi todas", "son *NARANJAS*…"]},
+    {"inicio": 5.0,  "fin": 7.6,  "lineas": ["…pero las *primeras*", "que se cultivaron…"]},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["*MORADAS*"], "estilo": "grande"},
+    {"inicio": 7.8,  "fin": 10.1, "lineas": ["o *amarillas*: las", "naranjas, después"], "posicion": "debajo"}
+  ]
+}
