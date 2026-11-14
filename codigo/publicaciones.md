@@ -28,3 +28,4 @@ fecha · hora · id · título · tema
 2026-11-13 · 12:44 · 2026-11-13-c2 · 70 °C y ya hierve: así es el agua en la cima del Everest 🏔️♨️ #shorts · Física: en la cima del Everest el agua hierve a unos 70 °C porque la presión del aire es mucho menor
 2026-11-13 · 13:44 · 2026-11-13-c3 · Pedaleó a 296 km/h pegada a un coche 🚴💨 #shorts · Récords: la bicicleta más rápida, 296 km/h en el rebufo de un coche (Denise Mueller-Korenek, Bonneville, 2018, Guinness)
 2026-11-13 · 19:19 · 2026-11-13-c4 · ¿Blanco? Mira lo que esconde el pelo del oso polar 🐻‍❄️🖤 #shorts · Animales: el oso polar tiene la piel negra y el pelo transparente (sin pigmento); parece blanco porque refleja la luz
+2026-11-14 · 10:02 · 2026-11-14-c1 · Las zanahorias no siempre fueron naranjas 🥕💜 #shorts · Naturaleza/historia de los alimentos: las primeras zanahorias cultivadas eran moradas o amarillas; las naranjas llegaron después, en Europa
