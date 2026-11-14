@@ -31,3 +31,4 @@ fecha · hora · id · título · tema
 2026-11-14 · 10:02 · 2026-11-14-c1 · Las zanahorias no siempre fueron naranjas 🥕💜 #shorts · Naturaleza/historia de los alimentos: las primeras zanahorias cultivadas eran moradas o amarillas; las naranjas llegaron después, en Europa
 2026-11-14 · 11:36 · 2026-11-14-c2 · Nació para tus paredes y acabó en tus paquetes 📦🫧 #shorts · Inventos: el plástico de burbujas se inventó en 1957 (Fielding y Chavannes) como papel pintado con relieve; triunfó después como embalaje
 2026-11-14 · 13:46 · 2026-11-14-c3 · Miel de hace miles de años… ¡y sigue intacta! 🍯🏺 #shorts · Química: en tumbas egipcias se han hallado tarros de miel de miles de años conservados; casi no se estropea por su poca agua y su acidez
+2026-11-14 · 19:28 · 2026-11-14-c4 · ¿Señalas la torre y dices Big Ben? Error 🔔⏰ #shorts · Historia: Big Ben es la campana de 13,7 toneladas, no la torre (Torre Elizabeth desde 2012)
