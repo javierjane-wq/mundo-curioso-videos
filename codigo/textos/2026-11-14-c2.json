@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["El plástico", "de *burbujas*…"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["Hoy protege", "cosas *frágiles*"]},
+    {"inicio": 5.0,  "fin": 7.6,  "lineas": ["…pero en *1957*", "lo inventaron para…"]},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["*DECORAR*"], "estilo": "grande"},
+    {"inicio": 7.8,  "fin": 10.1, "lineas": ["¡Era *papel pintado*", "para las paredes!"], "posicion": "debajo"}
+  ]
+}
