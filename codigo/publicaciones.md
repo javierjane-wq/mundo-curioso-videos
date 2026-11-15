@@ -37,3 +37,4 @@ fecha · hora · id · título · tema
 2026-11-15 · 12:38 · 2026-11-15-c2 · Este búho mira hacia atrás… ¡y aún sigue girando! 🦉🔄 #shorts · Animales: el búho gira la cabeza hasta 270° porque sus ojos tubulares no se mueven (National Geographic, Johns Hopkins 2013)
 2026-11-15 · 14:37 · 2026-11-15-c3 · La Luna nunca nos da la espalda 🌕👀 #shorts · Espacio: la Luna siempre muestra la misma cara porque gira sobre sí misma en ~27 días, lo mismo que tarda en orbitar la Tierra (NASA, Space.com)
 2026-11-15 · 18:32 · 2026-11-15-c4 · Miles de voltios bajo sus patas… y ni se inmuta ⚡🐦 #shorts · Física: un pájaro posado en un cable no se electrocuta porque sus dos patas están al mismo voltaje y la corriente no pasa por su cuerpo (MIT Ask an Engineer)
+2026-11-15 · 20:40 · 2026-11-15-c5 · Un solo huevo de avestruz = 24 de gallina 🥚🪺 #shorts · Récords: el huevo de avestruz es el más grande de un ave viva; su volumen equivale a unos 24 huevos de gallina (Guinness World Records)
