@@ -34,3 +34,4 @@ fecha · hora · id · título · tema
 2026-11-14 · 19:28 · 2026-11-14-c4 · ¿Señalas la torre y dices Big Ben? Error 🔔⏰ #shorts · Historia: Big Ben es la campana de 13,7 toneladas, no la torre (Torre Elizabeth desde 2012)
 2026-11-14 · 21:03 · 2026-11-14-c5 · Ahora mismo estás brillando (y no lo ves) ✨🧍 #shorts · Cuerpo humano: el cuerpo emite luz visible unas 1.000 veces más tenue de lo que capta el ojo (Kobayashi et al., 2009)
 2026-11-15 · 10:06 · 2026-11-15-c1 · Esa nube esponjosa pesa lo mismo que 100 elefantes ☁️🐘 #shorts · Tierra/naturaleza: una nube cúmulo típica pesa unas 500 toneladas, como unos 100 elefantes (USGS, NCAR)
+2026-11-15 · 12:38 · 2026-11-15-c2 · Este búho mira hacia atrás… ¡y aún sigue girando! 🦉🔄 #shorts · Animales: el búho gira la cabeza hasta 270° porque sus ojos tubulares no se mueven (National Geographic, Johns Hopkins 2013)
