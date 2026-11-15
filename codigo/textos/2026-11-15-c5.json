@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["Este es un huevo", "de *GALLINA*"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["Pero el *récord*", "es de otra ave…"]},
+    {"inicio": 5.0,  "fin": 7.5,  "lineas": ["¡El huevo de", "*AVESTRUZ*!"]},
+    {"inicio": 7.5,  "fin": 10.1, "lineas": ["*24 HUEVOS*"], "estilo": "grande"},
+    {"inicio": 7.7,  "fin": 10.1, "lineas": ["de gallina caben", "en uno de *avestruz*"], "posicion": "debajo"}
+  ]
+}
