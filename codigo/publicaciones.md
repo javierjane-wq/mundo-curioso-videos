@@ -36,3 +36,4 @@ fecha · hora · id · título · tema
 2026-11-15 · 10:06 · 2026-11-15-c1 · Esa nube esponjosa pesa lo mismo que 100 elefantes ☁️🐘 #shorts · Tierra/naturaleza: una nube cúmulo típica pesa unas 500 toneladas, como unos 100 elefantes (USGS, NCAR)
 2026-11-15 · 12:38 · 2026-11-15-c2 · Este búho mira hacia atrás… ¡y aún sigue girando! 🦉🔄 #shorts · Animales: el búho gira la cabeza hasta 270° porque sus ojos tubulares no se mueven (National Geographic, Johns Hopkins 2013)
 2026-11-15 · 14:37 · 2026-11-15-c3 · La Luna nunca nos da la espalda 🌕👀 #shorts · Espacio: la Luna siempre muestra la misma cara porque gira sobre sí misma en ~27 días, lo mismo que tarda en orbitar la Tierra (NASA, Space.com)
+2026-11-15 · 18:32 · 2026-11-15-c4 · Miles de voltios bajo sus patas… y ni se inmuta ⚡🐦 #shorts · Física: un pájaro posado en un cable no se electrocuta porque sus dos patas están al mismo voltaje y la corriente no pasa por su cuerpo (MIT Ask an Engineer)
