@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["La *LUNA* da vueltas", "a la Tierra…"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["y siempre nos enseña", "la *MISMA CARA*"]},
+    {"inicio": 5.0,  "fin": 7.5,  "lineas": ["…porque también", "*GIRA* sobre sí misma"]},
+    {"inicio": 7.5,  "fin": 10.1, "lineas": ["*27 DÍAS*"], "estilo": "grande"},
+    {"inicio": 7.7,  "fin": 10.1, "lineas": ["Gira y da la vuelta", "en el *mismo tiempo*"], "posicion": "debajo"}
+  ]
+}
