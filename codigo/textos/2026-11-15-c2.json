@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["Este *búho* tiene", "un truco increíble"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["Sus ojos *no pueden*", "moverse…"]},
+    {"inicio": 5.0,  "fin": 7.6,  "lineas": ["…así que gira", "la *cabeza* hasta…"]},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["*270°*"], "estilo": "grande"},
+    {"inicio": 7.8,  "fin": 10.1, "lineas": ["¡Tres cuartos", "de vuelta!"], "posicion": "debajo"}
+  ]
+}
