@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.6,  "lineas": ["1787: un relojero", "crea su *DESPERTADOR*"]},
+    {"inicio": 2.6,  "fin": 5.0,  "lineas": ["Pero no se podía", "*cambiar la hora*…"]},
+    {"inicio": 5.0,  "fin": 7.45, "lineas": ["…solo sonaba", "a una hora *fija*:"]},
+    {"inicio": 7.45, "fin": 10.1, "lineas": ["*4:00*"], "estilo": "grande"},
+    {"inicio": 7.65, "fin": 10.1, "lineas": ["de la madrugada,", "*nunca* a otra hora"], "posicion": "debajo"}
+  ]
+}
