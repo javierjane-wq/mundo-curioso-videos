@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.7,  "lineas": ["¿Por qué la *cebolla*", "te hace llorar?"]},
+    {"inicio": 2.7,  "fin": 5.0,  "lineas": ["Al cortarla, rompes", "sus *células*…"]},
+    {"inicio": 5.0,  "fin": 7.5,  "lineas": ["…y sale algo", "*invisible*…"]},
+    {"inicio": 7.5,  "fin": 10.1, "lineas": ["*UN GAS*"], "estilo": "grande"},
+    {"inicio": 7.7,  "fin": 10.1, "lineas": ["que irrita tus ojos:", "*lloras* para limpiarlo"], "posicion": "debajo"}
+  ]
+}
