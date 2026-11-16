@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,   "fin": 2.5,  "lineas": ["Esto es una", "mazorca de *CACAO*"]},
+    {"inicio": 2.5, "fin": 5.0,  "lineas": ["Sus semillas dan", "el *chocolate*…"]},
+    {"inicio": 5.0, "fin": 7.5,  "lineas": ["…pero los *aztecas*", "las usaban como…"]},
+    {"inicio": 7.5, "fin": 10.1, "lineas": ["*DINERO*"], "estilo": "grande"},
+    {"inicio": 7.7, "fin": 10.1, "lineas": ["Pagaban con granos:", "*1 grano = 1 tamal*"], "posicion": "debajo"}
+  ]
+}
