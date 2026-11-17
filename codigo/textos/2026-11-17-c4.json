@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["Cae un *copo*", "de nieve…"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["A simple vista es", "una *motita* blanca"]},
+    {"inicio": 5.0,  "fin": 7.5,  "lineas": ["…pero si lo miras", "*muy de cerca*…"]},
+    {"inicio": 7.55, "fin": 10.1, "lineas": ["*6 PUNTAS*"], "estilo": "grande"},
+    {"inicio": 7.75, "fin": 10.1, "lineas": ["El agua al helarse", "forma *hexágonos*"], "posicion": "debajo"}
+  ]
+}
