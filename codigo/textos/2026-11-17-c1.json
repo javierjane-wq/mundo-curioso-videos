@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["Esta es la", "*rana de bosque*"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["En invierno", "se *congela*…"]},
+    {"inicio": 5.0,  "fin": 7.45, "lineas": ["…y su corazón", "*deja de latir*"]},
+    {"inicio": 7.45, "fin": 10.1, "lineas": ["¡REVIVE!"], "estilo": "grande"},
+    {"inicio": 7.65, "fin": 10.1, "lineas": ["En primavera se", "*descongela* y salta"], "posicion": "debajo"}
+  ]
+}
