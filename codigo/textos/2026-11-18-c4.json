@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.2,  "lineas": ["En la selva de", "*Sumatra* crece…"]},
+    {"inicio": 2.2,  "fin": 4.4,  "lineas": ["…una flor sin hojas,", "tallo ni *raíces*"]},
+    {"inicio": 4.4,  "fin": 6.6,  "lineas": ["Vive en una liana", "y cuando *se abre*…"]},
+    {"inicio": 6.6,  "fin": 10.1, "lineas": ["*111 CM*"], "estilo": "grande"},
+    {"inicio": 6.8,  "fin": 10.1, "lineas": ["¡La flor más grande!", "Huele *fatal* y", "atrae moscas"], "posicion": "debajo"}
+  ]
+}
