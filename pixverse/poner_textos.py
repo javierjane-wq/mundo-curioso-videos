@@ -9,6 +9,10 @@
       Amplía el vídeo a 1080x1920, graba los textos y la barra de progreso,
       conserva el audio y saca una hoja PNG del resultado para revisarlo.
 
+  python3 pixverse/poner_textos.py grabar <video.mp4> <textos.json> <salida.mp4> --cierre
+      Igual, y además en los últimos 1,8 s aparece el cierre "¡SÍGUEME!" (píldora roja con
+      "un dato nuevo cada día") para los Shorts. Sin --cierre el resultado no cambia.
+
 Formato de textos.json:
 {
   "etiqueta": "¿LO SABÍAS?",
@@ -55,6 +59,39 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
 AMARILLO = r"{\c&H00E1FF&}"
 BLANCO = r"{\c&HFFFFFF&}"
+
+# Cierre "¡SÍGUEME!" (solo con --cierre). Coordenadas en PlayRes 576x1024 (x1,875 = píxeles reales).
+CIERRE_DUR = 1.8
+CIERRE_X, CIERRE_Y = 288, 773            # centro de la píldora (~540, 1450 px)
+CIERRE_W, CIERRE_H = 405, 106            # ~760 x 200 px
+
+
+def _pildora(w, h):
+    """Rectángulo con esquinas muy redondeadas (dibujo ASS, origen arriba a la izquierda)."""
+    r = h * 0.48
+    c = r * 0.45   # control de la curva
+    return (f"m {r:.1f} 0 l {w - r:.1f} 0 b {w - c:.1f} 0 {w:.1f} {c:.1f} {w:.1f} {r:.1f} "
+            f"l {w:.1f} {h - r:.1f} b {w:.1f} {h - c:.1f} {w - c:.1f} {h:.1f} {w - r:.1f} {h:.1f} "
+            f"l {r:.1f} {h:.1f} b {c:.1f} {h:.1f} 0 {h - c:.1f} 0 {h - r:.1f} "
+            f"l 0 {r:.1f} b 0 {c:.1f} {c:.1f} 0 {r:.1f} 0")
+
+
+def eventos_cierre(dur):
+    """Píldora roja con "¡SÍGUEME!" que entra con rebote y late suavemente hasta el final."""
+    ini, fin = ts(max(0.0, dur - CIERRE_DUR)), ts(dur + 0.05)
+    anim = (r"\fscx0\fscy0\t(0,180,\fscx110\fscy110)\t(180,300,\fscx100\fscy100)"
+            r"\t(300,650,\fscx103\fscy103)\t(650,1000,\fscx97\fscy97)"
+            r"\t(1000,1350,\fscx103\fscy103)\t(1350,1700,\fscx97\fscy97)\t(1700,1900,\fscx100\fscy100)")
+    ink = r"\3c&H141A2A&"
+    fondo = (r"{\an5\pos(%d,%d)\bord5\shad4\1c&H1721E6&%s\4c&H000000&\4a&H80&\p1%s}" %
+             (CIERRE_X, CIERRE_Y, ink, anim) + _pildora(CIERRE_W, CIERRE_H) + r"{\p0}")
+    grande = (r"{\an5\pos(%d,%d)\fs58\bord3\shad0\1c&HFFFFFF&%s%s}¡SÍGUEME!" %
+              (CIERRE_X, CIERRE_Y - 17, ink, anim))
+    peque = (r"{\an5\pos(%d,%d)\fs28\bord2\shad0\1c&HFFFFFF&%s%s}un dato nuevo cada día" %
+             (CIERRE_X, CIERRE_Y + 30, ink, anim))
+    return [f"Dialogue: 10,{ini},{fin},Main,,0,0,0,,{fondo}",
+            f"Dialogue: 11,{ini},{fin},Main,,0,0,0,,{grande}",
+            f"Dialogue: 11,{ini},{fin},Main,,0,0,0,,{peque}"]
 
 
 def sh(cmd, **kw):
@@ -111,7 +148,7 @@ def marcar(linea):
     return "".join(AMARILLO + p + BLANCO if i % 2 else p for i, p in enumerate(partes))
 
 
-def construir_ass(textos, dur, con_logo):
+def construir_ass(textos, dur, con_logo, cierre=False):
     ev = []
     if not con_logo:
         # Sin logo.png: el nombre del canal en pequeño arriba, como en los vídeos antiguos
@@ -132,6 +169,8 @@ def construir_ass(textos, dur, con_logo):
             anim = (r"{\fad(150,0)}" if margen else
                     r"{\fscx130\fscy130\t(0,180,\fscx100\fscy100)}")
         ev.append(f"Dialogue: 0,{ts(ini)},{ts(fin)},{estilo},,0,0,{margen},,{anim}{texto}")
+    if cierre:
+        ev += eventos_cierre(dur)
     return CABECERA + "\n".join(ev) + "\n"
 
 
@@ -145,14 +184,14 @@ def analizar(video):
                      ensure_ascii=False, indent=2))
 
 
-def grabar(video, textos_json, salida):
+def grabar(video, textos_json, salida, cierre=False):
     os.makedirs(TMP, exist_ok=True)
     textos = json.load(open(textos_json, encoding="utf-8"))
     d = duracion(video)
     base = os.path.splitext(os.path.basename(salida))[0]
     ass = os.path.join(TMP, f"{base}.ass")
     con_logo = os.path.exists(LOGO)
-    open(ass, "w", encoding="utf-8").write(construir_ass(textos, d, con_logo))
+    open(ass, "w", encoding="utf-8").write(construir_ass(textos, d, con_logo, cierre))
     tmp = salida[:-4] + ".tmp.mp4"
     base_vf = (f"scale=1080:1920:flags=lanczos,ass={ass},"
                f"drawbox=x=0:y=ih-15:w=iw*t/{d:.2f}:h=15:color=0xFFE100@1:t=fill")
@@ -185,7 +224,7 @@ if __name__ == "__main__":
     if len(sys.argv) >= 3 and sys.argv[1] == "analizar":
         analizar(sys.argv[2])
     elif len(sys.argv) >= 5 and sys.argv[1] == "grabar":
-        grabar(sys.argv[2], sys.argv[3], sys.argv[4])
+        grabar(sys.argv[2], sys.argv[3], sys.argv[4], cierre="--cierre" in sys.argv[5:])
     else:
         print(__doc__)
         sys.exit(1)
