@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.6,  "lineas": ["El primer *semáforo*", "Londres, 1868"]},
+    {"inicio": 2.6,  "fin": 5.0,  "lineas": ["De noche se encendía", "con luces de *gas*"]},
+    {"inicio": 5.0,  "fin": 7.35, "lineas": ["…pero en menos", "de *un mes*…"]},
+    {"inicio": 7.35, "fin": 10.1, "lineas": ["*¡EXPLOTÓ!*"], "estilo": "grande"},
+    {"inicio": 7.55, "fin": 10.1, "lineas": ["El gas quemó", "al *policía*"], "posicion": "debajo"}
+  ]
+}
