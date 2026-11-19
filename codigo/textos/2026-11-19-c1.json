@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["Este es el", "*pez globo*"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["Nada lento y", "parece *indefenso*…"]},
+    {"inicio": 5.0,  "fin": 7.4,  "lineas": ["…pero si un", "*depredador*", "se acerca…"]},
+    {"inicio": 7.4,  "fin": 10.1, "lineas": ["¡SE INFLA!"], "estilo": "grande"},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["Traga *agua* y se", "vuelve una bola", "de *pinchos*"], "posicion": "debajo"}
+  ]
+}
