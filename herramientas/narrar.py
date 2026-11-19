@@ -13,10 +13,17 @@ narración debe terminar antes del cierre "¡SÍGUEME!" (dur - 1,8 s): si no cab
 x1,25 y, si aun así no cabe, se avisa con un error (hay que acortar las frases).
 Con cierre, en los últimos 1,8 s se dice VOZ_CIERRE.
 
+Voces alternas: para los ids AAAA-MM-DD-cN la voz rota en orden por ROTACION (Dora, Alex, Santa),
+continuando de un vídeo al siguiente y de un día al otro, así que dos Shorts seguidos nunca llevan
+la misma voz. "voz_ia" en textos.json la fuerza a mano.
+  python3 herramientas/narrar.py voz <id>      # dice qué voz le toca a ese id
+
 La primera vez instala kokoro-onnx y descarga el modelo (~350 MB, desde GitHub) en
 ~/.cache/kokoro; las siguientes usa lo descargado.
 """
+import datetime
 import os
+import re
 import subprocess
 import sys
 import urllib.request
@@ -27,6 +34,8 @@ VOZ = "em_alex"            # voz del canal: em_alex (hombre), ef_dora (mujer), e
 VELOCIDAD = 1.1            # ritmo base, algo ágil para Shorts
 VELOCIDAD_MAX = 1.25       # más rápido ya no se entiende bien
 VOZ_CIERRE = "¡Sígueme para más!"
+ROTACION = ["ef_dora", "em_alex", "em_santa"]   # todas las voces en español de Kokoro
+NOMBRES = {"ef_dora": "Dora (mujer)", "em_alex": "Alex (hombre)", "em_santa": "Santa (hombre grave)"}
 SR = 24000
 CIERRE_DUR = 1.8
 MARGEN = 0.12              # pausa mínima entre frases (s)
@@ -73,6 +82,15 @@ def decir(frase, voz=VOZ, velocidad=VELOCIDAD):
     return audio
 
 
+def voz_para(vid):
+    """Voz que le toca a un id: rota por ROTACION con 4 Shorts al día (c1…c4)."""
+    m = re.match(r"(\d{4}-\d{2}-\d{2})-c(\d+)$", vid or "")
+    if not m:
+        return VOZ
+    dia = datetime.date.fromisoformat(m.group(1)).toordinal()
+    return ROTACION[(dia * 4 + int(m.group(2)) - 1) % len(ROTACION)]
+
+
 def _colocar(frases, velocidad, voz):
     """[(inicio, audio)] respetando el orden y sin solaparse."""
     puestos, libre = [], 0.0
@@ -84,9 +102,9 @@ def _colocar(frases, velocidad, voz):
     return puestos, libre - MARGEN
 
 
-def pista(textos, dur, cierre=False, voz=None):
+def pista(textos, dur, cierre=False, voz=None, vid=None):
     """Devuelve (audio float32 de `dur` s, info) con la narración colocada."""
-    voz = voz or textos.get("voz_ia") or VOZ
+    voz = voz or textos.get("voz_ia") or voz_para(vid)
     frases = [(float(t["inicio"]), t["voz"].strip()) for t in textos["textos"] if t.get("voz", "").strip()]
     if not frases:
         raise ValueError("Ningún texto lleva \"voz\": no hay nada que narrar")
@@ -122,7 +140,10 @@ def guardar_wav(audio, ruta):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) >= 3 and sys.argv[1] == "prueba":
+    if len(sys.argv) >= 3 and sys.argv[1] == "voz":
+        v = voz_para(sys.argv[2])
+        print(v, "·", NOMBRES.get(v, v))
+    elif len(sys.argv) >= 3 and sys.argv[1] == "prueba":
         voz = sys.argv[3] if len(sys.argv) > 3 else VOZ
         salida = sys.argv[4] if len(sys.argv) > 4 else "prueba_voz.wav"
         print(guardar_wav(decir(sys.argv[2], voz), salida))

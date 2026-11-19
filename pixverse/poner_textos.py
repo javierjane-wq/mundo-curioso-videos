@@ -30,7 +30,8 @@ Formato de textos.json:
 - estilo "grande": cifra enorme en amarillo (una línea corta).
 - posicion "debajo": el texto va bajo la cifra grande, si coinciden en el tiempo.
 - "voz" (opcional, solo se usa con --voz): frase hablada que empieza en el "inicio" de ese texto.
-  "voz_ia" (opcional, arriba del todo): voz de Kokoro (por defecto la de herramientas/narrar.py).
+  "voz_ia" (opcional, arriba del todo): fuerza una voz de Kokoro; si no, la voz rota según el id
+  del vídeo de salida (ver herramientas/narrar.py).
 """
 import json
 import os
@@ -194,7 +195,7 @@ def pista_voz(textos, d, cierre, base):
     """Genera el WAV de la narración y lo deja en TMP. Devuelve (ruta, info)."""
     sys.path.insert(0, os.path.join(os.path.dirname(AQUI), "herramientas"))
     import narrar
-    audio, info = narrar.pista(textos, d, cierre)
+    audio, info = narrar.pista(textos, d, cierre, vid=base)
     return narrar.guardar_wav(audio, os.path.join(TMP, f"{base}_voz.wav")), info
 
 
