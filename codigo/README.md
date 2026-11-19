@@ -78,3 +78,18 @@ derecha, "CURIOSIDAD N" y un resumen), cierre con "¡SUSCRÍBETE!", música cont
 3. `python3 herramientas/subir_video.py subir codigo/tmp/<id>.mp4 <id> publicar-largo` → URL.
 4. Make solo puede publicarlo si el plan admite archivos de ese tamaño (el plan gratis admite 5 MB;
    Core, 100 MB). Si no, se avisa al usuario con el enlace para que lo suba él a YouTube.
+
+## Vídeo largo diario «en forma de historia»
+
+`historia.py` monta cada día un vídeo horizontal (1920×1080, ~3 min) que cuenta 5 curiosidades de un mismo
+tema como un viaje narrado: escenas propias dibujadas en horizontal (mismo estilo que los Shorts), narración
+con Kokoro, subtítulos, cifra clave en grande, música suave distinta en cada episodio (`MUSICA`), botón
+"SUSCRÍBETE" fijo que late con campanita y despedida con botón grande y cursor. Se publica con Metricool.
+
+1. Escribe `historias/<AAAA-MM-DD>-historia.py` (formato en la cabecera de `historia.py`; ejemplo completo:
+   `historias/2026-11-19-historia.py`).
+2. `python3 codigo/historia.py preview codigo/historias/<id>.py` y mira la hoja; corrige.
+3. `python3 codigo/historia.py render codigo/historias/<id>.py` (~10 min) → `codigo/tmp/<id>.mp4`,
+   `_capitulos.txt` y `_revision.png`.
+4. `python3 herramientas/subir_video.py subir codigo/tmp/<id>.mp4 <id> publicar-historia` → URL, y
+   programarlo enseguida en Metricool (YouTube, tipo "video"). Registro: `historias/publicaciones.md`.

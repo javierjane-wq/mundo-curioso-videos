@@ -285,7 +285,7 @@ def esc_luces(t, dur, m):
     luz = 1 - apaga
     s.append(f"<rect width='{W}' height='{H}' fill='#000' opacity='{0.45 * apaga:.2f}'/>")
     enc = [seg(t, m[2] + 0.2 + i * 0.6, m[2] + 1.0 + i * 0.6) for i in range(6)]
-    grupo = seg(t, m[-1] - 0.2, m[-1] + 1.6)
+    grupo = seg(t, m[-1] - 0.2, m[-1] + 0.6)
     if grupo < 1:
         o = 1 - grupo
         s.append(f"<g opacity='{o:.2f}'>")

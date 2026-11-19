@@ -3,7 +3,8 @@
 
     python3 herramientas/subir_video.py subir <video.mp4> <id> <rama>   -> imprime la URL pública
 
-<rama>: "publicar-codigo" (Shorts por código), "publicar-pixverse" (Short de PixVerse) o "publicar-largo" (vídeo largo semanal).
+<rama>: "publicar-codigo" (Shorts por código), "publicar-pixverse" (Short de PixVerse), "publicar-largo" (vídeo largo semanal)
+o "publicar-historia" (vídeo largo diario en forma de historia, codigo/historia.py).
 Cada subida SUSTITUYE (force-push) el contenido de la rama por un único commit sin historia que
 solo contiene <id>.mp4: el vídeo anterior queda huérfano y GitHub lo elimina, así que el
 repositorio no crece. Por eso hay que lanzar Make justo después de subir (Make lo descarga
@@ -38,7 +39,7 @@ def subir(video, vid, rama):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 5 and sys.argv[1] == "subir" and sys.argv[4] in ("publicar-codigo", "publicar-pixverse", "publicar-largo"):
+    if len(sys.argv) == 5 and sys.argv[1] == "subir" and sys.argv[4] in ("publicar-codigo", "publicar-pixverse", "publicar-largo", "publicar-historia"):
         subir(sys.argv[2], sys.argv[3], sys.argv[4])
     else:
         print(__doc__); sys.exit(1)
