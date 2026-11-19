@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.2,  "lineas": ["¿Así es una *gota*", "de lluvia?"], "voz": "¿Así es una gota de lluvia?"},
+    {"inicio": 2.2,  "fin": 4.6,  "lineas": ["Siempre la dibujamos", "con *punta*…"], "voz": "Siempre la dibujamos con punta."},
+    {"inicio": 4.6,  "fin": 6.9,  "lineas": ["…pero al caer", "la punta *no existe*"], "voz": "Pero al caer, esa punta no existe."},
+    {"inicio": 6.9,  "fin": 10.1, "lineas": ["*¡APLASTADA!*"], "estilo": "grande", "voz": "¡Va aplastada!"},
+    {"inicio": 7.1,  "fin": 10.1, "lineas": ["El aire la deja", "como un *pan de*", "*hamburguesa*"], "posicion": "debajo"}
+  ]
+}
