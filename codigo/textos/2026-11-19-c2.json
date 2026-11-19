@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["En la *ANTÁRTIDA*", "hay un glaciar", "muy especial"]},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["De su hielo sale", "agua *transparente*…"]},
+    {"inicio": 5.0,  "fin": 7.4,  "lineas": ["…pero cuando", "toca el *aire*…"]},
+    {"inicio": 7.4,  "fin": 10.1, "lineas": ["¡ROJA!"], "estilo": "grande"},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["Su *hierro* se oxida:", "las *Cataratas*", "*de Sangre*"], "posicion": "debajo"}
+  ]
+}
