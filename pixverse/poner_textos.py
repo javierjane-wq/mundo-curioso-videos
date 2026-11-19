@@ -13,6 +13,10 @@
       Igual, y además en los últimos 1,8 s aparece el cierre "¡SÍGUEME!" (píldora roja con
       "un dato nuevo cada día") para los Shorts. Sin --cierre el resultado no cambia.
 
+  python3 pixverse/poner_textos.py grabar <video.mp4> <textos.json> <salida.mp4> --cierre --voz
+      Además narra con voz de IA las frases "voz" de cada texto (herramientas/narrar.py), y la
+      música baja sola mientras se habla. Sin --voz el resultado no cambia.
+
 Formato de textos.json:
 {
   "etiqueta": "¿LO SABÍAS?",
@@ -25,6 +29,8 @@ Formato de textos.json:
 - *asteriscos*: palabra en amarillo.
 - estilo "grande": cifra enorme en amarillo (una línea corta).
 - posicion "debajo": el texto va bajo la cifra grande, si coinciden en el tiempo.
+- "voz" (opcional, solo se usa con --voz): frase hablada que empieza en el "inicio" de ese texto.
+  "voz_ia" (opcional, arriba del todo): voz de Kokoro (por defecto la de herramientas/narrar.py).
 """
 import json
 import os
@@ -184,7 +190,15 @@ def analizar(video):
                      ensure_ascii=False, indent=2))
 
 
-def grabar(video, textos_json, salida, cierre=False):
+def pista_voz(textos, d, cierre, base):
+    """Genera el WAV de la narración y lo deja en TMP. Devuelve (ruta, info)."""
+    sys.path.insert(0, os.path.join(os.path.dirname(AQUI), "herramientas"))
+    import narrar
+    audio, info = narrar.pista(textos, d, cierre)
+    return narrar.guardar_wav(audio, os.path.join(TMP, f"{base}_voz.wav")), info
+
+
+def grabar(video, textos_json, salida, cierre=False, voz=False):
     os.makedirs(TMP, exist_ok=True)
     textos = json.load(open(textos_json, encoding="utf-8"))
     d = duracion(video)
@@ -206,6 +220,21 @@ def grabar(video, textos_json, salida, cierre=False):
     else:
         entradas = ["-i", video]
         filtro = ["-vf", base_vf]
+    info_voz = None
+    if voz:
+        wav, info_voz = pista_voz(textos, d, cierre, base)
+        n = 2 if con_logo else 1
+        entradas += ["-i", wav]
+        if con_logo:
+            video_fc = filtro[1]
+        else:
+            video_fc = f"[0:v]{base_vf}[out]"
+        # La música baja sola (sidechain) mientras habla la voz
+        audio_fc = (f"[{n}:a]aresample=48000,asplit[n1][n2];"
+                    f"[0:a]aresample=48000,volume=0.8[mus];"
+                    f"[mus][n1]sidechaincompress=threshold=0.02:ratio=12:attack=15:release=400[duck];"
+                    f"[duck][n2]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.95[a]")
+        filtro = ["-filter_complex", f"{video_fc};{audio_fc}", "-map", "[out]", "-map", "[a]"]
     for crf in (26, 30, 34):   # se comprime más si el archivo pasa de MAX_BYTES
         sh(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", *entradas,
             *filtro, "-c:v", "libx264", "-preset", "veryfast", "-crf", str(crf),
@@ -216,7 +245,8 @@ def grabar(video, textos_json, salida, cierre=False):
     os.replace(tmp, salida)
     h = hoja(salida, os.path.join(TMP, f"{base}_revision.png"), paso=1.0, ancho=216, por_fila=5)
     print(json.dumps({"video": salida, "duracion": round(duracion(salida), 2),
-                      "mb": round(os.path.getsize(salida) / 1e6, 2), "hoja_revision": h},
+                      "mb": round(os.path.getsize(salida) / 1e6, 2), "hoja_revision": h,
+                      **({"narracion": info_voz} if info_voz else {})},
                      ensure_ascii=False, indent=2))
 
 
@@ -224,7 +254,8 @@ if __name__ == "__main__":
     if len(sys.argv) >= 3 and sys.argv[1] == "analizar":
         analizar(sys.argv[2])
     elif len(sys.argv) >= 5 and sys.argv[1] == "grabar":
-        grabar(sys.argv[2], sys.argv[3], sys.argv[4], cierre="--cierre" in sys.argv[5:])
+        grabar(sys.argv[2], sys.argv[3], sys.argv[4], cierre="--cierre" in sys.argv[5:],
+               voz="--voz" in sys.argv[5:])
     else:
         print(__doc__)
         sys.exit(1)
