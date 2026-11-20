@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.4,  "lineas": ["Uno de los primeros", "*ORDENADORES*"], "voz": "ENIAC, uno de los primeros ordenadores."},
+    {"inicio": 2.4,  "fin": 4.6,  "lineas": ["Ocupaba una", "*sala entera*"], "voz": "Ocupaba una sala entera."},
+    {"inicio": 4.6,  "fin": 6.7,  "lineas": ["…y en la báscula", "*pesaba…*"], "voz": "Y pesaba…"},
+    {"inicio": 6.7,  "fin": 10.1, "lineas": ["*27 TONELADAS*"], "estilo": "grande", "voz": "¡Veintisiete toneladas!"},
+    {"inicio": 6.9,  "fin": 10.1, "lineas": ["Con *17.468*", "válvulas dentro"], "posicion": "debajo"}
+  ]
+}
