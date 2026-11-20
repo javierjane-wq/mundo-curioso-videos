@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.3,  "lineas": ["Esto es", "*HIELO SECO*"], "voz": "Esto es hielo seco."},
+    {"inicio": 2.3,  "fin": 4.6,  "lineas": ["*Dióxido de carbono*", "a *-78 °C*"], "voz": "Dióxido de carbono, a menos setenta y ocho grados."},
+    {"inicio": 4.6,  "fin": 7.0,  "lineas": ["El hielo normal", "se hace *agua*…"], "voz": "El hielo normal gotea, pero este…"},
+    {"inicio": 7.0,  "fin": 10.1, "lineas": ["*¡GAS!*"], "estilo": "grande", "voz": "¡Se hace gas!"},
+    {"inicio": 7.2,  "fin": 10.1, "lineas": ["Pasa de sólido a gas", "sin ser *líquido*"], "posicion": "debajo"}
+  ]
+}
