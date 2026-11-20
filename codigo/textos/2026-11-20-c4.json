@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,   "fin": 2.3,  "lineas": ["El *KETCHUP*", "de tus patatas…"], "voz": "Seguro que le echas ketchup a las patatas."},
+    {"inicio": 2.3, "fin": 4.6,  "lineas": ["Pero en los", "*años 1830*…"], "voz": "Pero hace casi doscientos años,"},
+    {"inicio": 4.6, "fin": 7.2,  "lineas": ["…un médico dijo", "que *curaba*"], "voz": "un médico dijo que curaba la indigestión."},
+    {"inicio": 7.2, "fin": 10.1, "lineas": ["*¡MEDICINA!*"], "estilo": "grande", "voz": "¡Era medicina!"},
+    {"inicio": 7.4, "fin": 10.1, "lineas": ["¡Y lo vendían", "en *pastillas*!"], "posicion": "debajo"}
+  ]
+}
