@@ -1,0 +1,50 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {
+      "inicio": 0,
+      "fin": 2.5,
+      "lineas": [
+        "Mira el puntito",
+        "negro: tu *PUPILA*"
+      ],
+      "voz": "Mira el puntito negro de tu ojo."
+    },
+    {
+      "inicio": 2.5,
+      "fin": 5.2,
+      "lineas": [
+        "Con mucha luz",
+        "mide solo *2-4 mm*"
+      ],
+      "voz": "Con mucha luz, es pequeñita."
+    },
+    {
+      "inicio": 5.2,
+      "fin": 7.3,
+      "lineas": [
+        "…pero si apagas",
+        "*la luz*…"
+      ],
+      "voz": "Pero apaga la luz…"
+    },
+    {
+      "inicio": 7.3,
+      "fin": 10.1,
+      "lineas": [
+        "*8 mm*"
+      ],
+      "estilo": "grande",
+      "voz": "¡Enorme!"
+    },
+    {
+      "inicio": 7.6,
+      "fin": 10.1,
+      "lineas": [
+        "Se abre para",
+        "atrapar más luz"
+      ],
+      "posicion": "debajo"
+    }
+  ]
+}
