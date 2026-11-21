@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,   "fin": 2.4,  "lineas": ["La campana más", "*GRANDE* del mundo"], "voz": "Esta es la campana más grande del mundo."},
+    {"inicio": 2.4, "fin": 4.9,  "lineas": ["Pesa unas", "*202 toneladas*"], "voz": "Pesa doscientas dos toneladas."},
+    {"inicio": 4.9, "fin": 7.2,  "lineas": ["…pero un *incendio*", "la agrietó…"], "voz": "Pero un incendio la agrietó."},
+    {"inicio": 7.2, "fin": 10.1, "lineas": ["*¡NUNCA SONÓ!*"], "estilo": "grande", "voz": "¡Nunca sonó!"},
+    {"inicio": 7.4, "fin": 10.1, "lineas": ["Perdió un trozo", "de *11 toneladas*"], "posicion": "debajo"}
+  ]
+}
