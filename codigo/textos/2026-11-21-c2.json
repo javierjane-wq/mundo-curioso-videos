@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,   "fin": 2.5,  "lineas": ["En este desierto", "las rocas *se mueven*"], "voz": "En este desierto, las rocas se mueven solas."},
+    {"inicio": 2.5, "fin": 5.0,  "lineas": ["Dejan *huellas*", "larguísimas…"], "voz": "Dejan huellas larguísimas. ¿Cómo lo hacen?"},
+    {"inicio": 5.0, "fin": 7.3,  "lineas": ["…el secreto:", "una noche *helada*"], "voz": "El secreto: una noche helada."},
+    {"inicio": 7.3, "fin": 10.1, "lineas": ["*HIELO*"], "estilo": "grande", "voz": "¡Hielo!"},
+    {"inicio": 7.5, "fin": 10.1, "lineas": ["Placas de hielo", "que el viento empuja"], "posicion": "debajo"}
+  ]
+}
