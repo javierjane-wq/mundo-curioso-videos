@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,   "fin": 2.5,  "lineas": ["1928: una placa", "llena de *bacterias*"], "voz": "Fleming cultivaba bacterias en una placa."},
+    {"inicio": 2.5, "fin": 5.0,  "lineas": ["Se le *coló* un moho", "por descuido…"], "voz": "Pero se le coló un moho."},
+    {"inicio": 5.0, "fin": 7.2,  "lineas": ["…y las bacterias", "de alrededor *murieron*"], "voz": "Y las bacterias de alrededor murieron."},
+    {"inicio": 7.2, "fin": 10.1, "lineas": ["*PENICILINA*"], "estilo": "grande", "voz": "¡Penicilina!"},
+    {"inicio": 7.4, "fin": 10.1, "lineas": ["El moho fabricaba", "un *antibiótico*"], "posicion": "debajo"}
+  ]
+}
