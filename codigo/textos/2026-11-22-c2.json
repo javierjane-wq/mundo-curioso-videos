@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,   "fin": 2.5,  "lineas": ["Un *huevo* en", "agua del grifo…"], "voz": "Echamos un huevo en agua del grifo."},
+    {"inicio": 2.5, "fin": 5.0,  "lineas": ["…y se hunde", "hasta *el fondo*"], "voz": "Y se hunde hasta el fondo."},
+    {"inicio": 5.0, "fin": 7.4,  "lineas": ["Pero si le echas", "mucha *sal*…"], "voz": "Pero si le echas mucha sal…"},
+    {"inicio": 7.4, "fin": 10.1, "lineas": ["*¡FLOTA!*"], "estilo": "grande", "voz": "¡Flota!"},
+    {"inicio": 7.6, "fin": 10.1, "lineas": ["El agua salada es", "más *densa* que él"], "posicion": "debajo"}
+  ]
+}
