@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,   "fin": 2.5,  "lineas": ["Con *frío*, tu piel", "hace algo raro…"], "voz": "Con frío, tu piel hace algo raro."},
+    {"inicio": 2.5, "fin": 5.0,  "lineas": ["Cada pelito tiene", "un *músculo* diminuto"], "voz": "Cada pelito tiene un músculo diminuto."},
+    {"inicio": 5.0, "fin": 7.3,  "lineas": ["Y si sopla", "*viento helado*…"], "voz": "Y si sopla viento helado…"},
+    {"inicio": 7.3, "fin": 10.1, "lineas": ["*¡DE PIE!*"], "estilo": "grande", "voz": "¡De pie!"},
+    {"inicio": 7.5, "fin": 10.1, "lineas": ["El músculo tira:", "*piel de gallina*"], "posicion": "debajo"}
+  ]
+}
