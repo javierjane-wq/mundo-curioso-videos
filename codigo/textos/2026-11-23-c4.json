@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,   "fin": 2.3,  "lineas": ["La calabaza más", "*PESADA* del mundo…"], "voz": "La calabaza más pesada del mundo…"},
+    {"inicio": 2.3, "fin": 4.4,  "lineas": ["Mientras crece,", "*una vaca* pesa más"], "voz": "Mientras crece, la vaca pesa más."},
+    {"inicio": 4.4, "fin": 6.6,  "lineas": ["…pero llega", "*otra vaca* y…"], "voz": "Llega otra vaca y…"},
+    {"inicio": 6.6, "fin": 10.1, "lineas": ["*1.431 KG*"], "estilo": "grande", "voz": "¡Mil cuatrocientos kilos!"},
+    {"inicio": 6.8, "fin": 10.1, "lineas": ["Más del doble", "que *una vaca*"], "posicion": "debajo"}
+  ]
+}
