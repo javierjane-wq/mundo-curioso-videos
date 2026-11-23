@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,   "fin": 2.4,  "lineas": ["Una sonda vuela", "hacia *SATURNO*"], "voz": "Una sonda vuela hacia Saturno."},
+    {"inicio": 2.4, "fin": 4.8,  "lineas": ["Quiere ver", "su *POLO NORTE*…"], "voz": "Quiere ver su polo norte."},
+    {"inicio": 4.8, "fin": 7.2,  "lineas": ["…y allí hay una", "tormenta con *forma*…"], "voz": "Y allí arriba hay una tormenta con forma de…"},
+    {"inicio": 7.2, "fin": 10.1, "lineas": ["*HEXÁGONO*"], "estilo": "grande", "voz": "¡Un hexágono!"},
+    {"inicio": 7.4, "fin": 10.1, "lineas": ["Mide unos 30.000 km:", "*más de 2 Tierras*"], "posicion": "debajo"}
+  ]
+}
