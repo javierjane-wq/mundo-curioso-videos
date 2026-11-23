@@ -1,0 +1,50 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {
+      "inicio": 0,
+      "fin": 2.3,
+      "lineas": [
+        "La *anguila eléctrica*",
+        "del Amazonas…"
+      ],
+      "voz": "La anguila eléctrica del Amazonas…"
+    },
+    {
+      "inicio": 2.3,
+      "fin": 4.6,
+      "lineas": [
+        "Su cuerpo es",
+        "como una *pila*"
+      ],
+      "voz": "Su cuerpo es como una pila."
+    },
+    {
+      "inicio": 4.6,
+      "fin": 6.8,
+      "lineas": [
+        "Y si la",
+        "*molestas*…"
+      ],
+      "voz": "Si la molestas…"
+    },
+    {
+      "inicio": 6.8,
+      "fin": 10.1,
+      "lineas": [
+        "*860 VOLTIOS*"
+      ],
+      "estilo": "grande",
+      "voz": "¡Ochocientos sesenta!"
+    },
+    {
+      "inicio": 7.0,
+      "fin": 10.1,
+      "lineas": [
+        "Casi *4 veces* un",
+        "enchufe de casa"
+      ],
+      "posicion": "debajo"
+    }
+  ]
+}
