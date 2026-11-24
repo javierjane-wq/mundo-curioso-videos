@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0, "fin": 2.4, "lineas": ["Esta vasija china", "tiene *8 dragones*"], "voz": "Esta vasija china tiene ocho dragones."},
+    {"inicio": 2.4, "fin": 5.0, "lineas": ["Cada uno sujeta", "una *bola* en la boca"], "voz": "Cada uno sujeta una bola."},
+    {"inicio": 5.0, "fin": 7.3, "lineas": ["…y si la tierra", "*tiembla*…"], "voz": "Si la tierra tiembla…"},
+    {"inicio": 7.3, "fin": 10.1, "lineas": ["*AÑO 132*"], "estilo": "grande", "voz": "¡Terremoto!"},
+    {"inicio": 7.5, "fin": 10.1, "lineas": ["El primer detector", "de *terremotos*"], "posicion": "debajo"}
+  ]
+}
