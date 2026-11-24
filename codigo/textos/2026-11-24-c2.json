@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.4,  "lineas": ["Mete una *pajita*", "en un vaso de agua"], "voz": "Mete una pajita en un vaso de agua."},
+    {"inicio": 2.4,  "fin": 5.0,  "lineas": ["Mírala de lado:", "¡parece *ROTA*!"], "voz": "Mírala de lado: parece rota."},
+    {"inicio": 5.0,  "fin": 7.4,  "lineas": ["Pero no lo está:", "es cosa de la *luz*…"], "voz": "Pero no lo está. Es cosa de la luz."},
+    {"inicio": 7.4,  "fin": 10.1, "lineas": ["*¡SE DOBLA!*"], "estilo": "grande", "voz": "¡Se dobla!"},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["En el agua va", "un *25 %* más lenta", "y cambia de rumbo"], "posicion": "debajo"}
+  ]
+}
