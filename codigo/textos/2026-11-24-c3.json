@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.4,  "lineas": ["Manos contra pies:", "¿qué *uñas* crecen más?"], "voz": "Manos contra pies: ¿qué uñas crecen más?"},
+    {"inicio": 2.4,  "fin": 5.0,  "lineas": ["Todas crecen", "un *poquito* cada día…"], "voz": "Todas crecen cada día."},
+    {"inicio": 5.0,  "fin": 7.4,  "lineas": ["…pero las de la", "*mano* corren más"], "voz": "Pero las de la mano ganan."},
+    {"inicio": 7.4,  "fin": 10.1, "lineas": ["*¡EL DOBLE!*"], "estilo": "grande", "voz": "¡El doble!"},
+    {"inicio": 7.6,  "fin": 10.1, "lineas": ["Mano: *3,5 mm* al mes", "pie: solo 1,6 mm"], "posicion": "debajo"}
+  ]
+}
