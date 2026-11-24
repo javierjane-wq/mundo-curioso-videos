@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["Este templo de *ROMA*", "tiene casi 1.900 años"], "voz": "Este templo romano tiene casi mil novecientos años."},
+    {"inicio": 2.5,  "fin": 4.8,  "lineas": ["Su gran cúpula", "tiene un *agujero*"], "voz": "Su cúpula tiene un agujero."},
+    {"inicio": 4.8,  "fin": 7.45, "lineas": ["…y dentro cabe", "una *bola* perfecta"], "voz": "Y cabe una bola."},
+    {"inicio": 7.45, "fin": 10.1, "lineas": ["*43 METROS*"], "estilo": "grande", "voz": "¡Encaja!"},
+    {"inicio": 7.65, "fin": 10.1, "lineas": ["Igual de alto", "que de ancho"], "posicion": "debajo"}
+  ]
+}
