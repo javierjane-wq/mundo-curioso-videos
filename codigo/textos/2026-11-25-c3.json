@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.5,  "lineas": ["Esta planta *odia*", "que la toquen"], "voz": "Esta planta odia que la toquen."},
+    {"inicio": 2.5,  "fin": 5.0,  "lineas": ["Es la *mimosa púdica*", "y una oruga quiere", "comérsela…"], "voz": "Es la mimosa. Y una oruga quiere comérsela."},
+    {"inicio": 5.0,  "fin": 7.35,  "lineas": ["…pero en cuanto", "la *toca*…"], "voz": "Pero en cuanto la toca…"},
+    {"inicio": 7.35, "fin": 10.1, "lineas": ["*¡SE CIERRA!*"], "estilo": "grande", "voz": "¡Se cierra!"},
+    {"inicio": 7.55, "fin": 10.1, "lineas": ["Suelta agua de sus", "*bisagras* y se pliega"], "posicion": "debajo"}
+  ]
+}
