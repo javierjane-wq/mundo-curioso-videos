@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.4,  "lineas": ["Las estatuas *griegas*", "parecen blancas…"], "voz": "Las estatuas griegas parecen blancas."},
+    {"inicio": 2.4,  "fin": 4.7,  "lineas": ["Hoy las vemos de", "*mármol blanco*"], "voz": "Hoy las vemos de mármol blanco."},
+    {"inicio": 4.7,  "fin": 7.0,  "lineas": ["…pero quedan", "*restos de pintura*"], "voz": "Pero quedan restos de pintura…"},
+    {"inicio": 7.0,  "fin": 10.1, "lineas": ["*¡A COLOR!*"], "estilo": "grande", "voz": "¡Iban pintadas!"},
+    {"inicio": 7.2,  "fin": 10.1, "lineas": ["Estaban *pintadas*;", "el color se *borró*"], "posicion": "debajo"}
+  ]
+}
