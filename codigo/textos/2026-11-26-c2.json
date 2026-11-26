@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.3,  "lineas": ["Este *imán* atrae", "un *clavo* de hierro"], "voz": "Este imán atrae un clavo de hierro."},
+    {"inicio": 2.3,  "fin": 4.6,  "lineas": ["Ahora calentamos", "el clavo con *fuego*"], "voz": "Ahora calentamos el clavo con fuego."},
+    {"inicio": 4.6,  "fin": 6.9,  "lineas": ["Se pone *al rojo*…", "y de repente…"], "voz": "Se pone al rojo y, de repente…"},
+    {"inicio": 6.9,  "fin": 10.1, "lineas": ["*¡770 °C!*"], "estilo": "grande", "voz": "¡Lo suelta!"},
+    {"inicio": 7.1,  "fin": 10.1, "lineas": ["el hierro *pierde*", "su *magnetismo*"], "posicion": "debajo"}
+  ]
+}
