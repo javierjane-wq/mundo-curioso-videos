@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.3,  "lineas": ["En *1810* nació", "la *lata* de conserva"], "voz": "En mil ochocientos diez nació la lata."},
+    {"inicio": 2.3,  "fin": 4.4,  "lineas": ["¿Y para abrirla?", "*¡Martillo y cincel!*"], "voz": "¿Y para abrirla? ¡Martillo y cincel!"},
+    {"inicio": 4.4,  "fin": 6.6,  "lineas": ["El *abrelatas*", "no llegó hasta…"], "voz": "El abrelatas no llegó hasta…"},
+    {"inicio": 6.6,  "fin": 10.1, "lineas": ["*¡48 AÑOS!*"], "estilo": "grande", "voz": "¡Cuarenta y ocho años!"},
+    {"inicio": 6.8,  "fin": 10.1, "lineas": ["después: en *1858*", "(Ezra Warner, EE. UU.)"], "posicion": "debajo"}
+  ]
+}
