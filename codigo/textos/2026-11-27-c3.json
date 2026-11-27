@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.4,  "lineas": ["Un astronauta salta", "en la *TIERRA*…"], "voz": "Este astronauta salta en la Tierra."},
+    {"inicio": 2.4,  "fin": 4.6,  "lineas": ["…y apenas despega", "*un palmo*"], "voz": "Y apenas despega."},
+    {"inicio": 4.6,  "fin": 7.0,  "lineas": ["Pero en la *LUNA*", "la gravedad tira", "*mucho menos*…"], "voz": "Pero en la Luna la gravedad es mucho menor."},
+    {"inicio": 7.0,  "fin": 10.1, "lineas": ["*¡6 VECES!*"], "estilo": "grande", "voz": "¡Seis veces más!"},
+    {"inicio": 7.2,  "fin": 10.1, "lineas": ["más alto que", "en la *Tierra*"], "posicion": "debajo"}
+  ]
+}
