@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,    "fin": 2.4,  "lineas": ["El *HIPOPÓTAMO*", "sale del agua…"], "voz": "El hipopótamo sale del agua."},
+    {"inicio": 2.4,  "fin": 4.9,  "lineas": ["…y el sol de África", "le *quema* la piel"], "voz": "Y el sol le quema la piel."},
+    {"inicio": 4.9,  "fin": 7.0,  "lineas": ["Entonces *suda*…", "pero no es normal"], "voz": "Entonces suda, pero no es normal."},
+    {"inicio": 7.0,  "fin": 10.1, "lineas": ["*¡ROJO!*"], "estilo": "grande", "voz": "¡Suda rojo!"},
+    {"inicio": 7.2,  "fin": 10.1, "lineas": ["Un *protector solar*", "natural"], "posicion": "debajo"}
+  ]
+}
