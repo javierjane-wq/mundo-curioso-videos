@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0, "fin": 2.3, "lineas": ["Esta bombilla vive", "con los *bomberos*"], "voz": "Esta bombilla vive con los bomberos."},
+    {"inicio": 2.3, "fin": 4.5, "lineas": ["Se encendió", "en el año *1901*…"], "voz": "Se encendió en mil novecientos uno."},
+    {"inicio": 4.5, "fin": 6.8, "lineas": ["…pasan los días,", "los años… y *sigue*"], "voz": "Pasan los años… y sigue."},
+    {"inicio": 6.8, "fin": 10.1, "lineas": ["*125 AÑOS*"], "estilo": "grande", "voz": "¡Ciento veinticinco!"},
+    {"inicio": 7.0, "fin": 10.1, "lineas": ["Récord *Guinness*", "(Livermore, EE. UU.)"], "posicion": "debajo"}
+  ]
+}
