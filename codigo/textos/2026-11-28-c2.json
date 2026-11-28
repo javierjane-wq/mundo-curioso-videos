@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,   "fin": 2.4,  "lineas": ["Esta *masa* blandita", "tiene un secreto"], "voz": "Esta masa tiene un secreto."},
+    {"inicio": 2.4, "fin": 4.9,  "lineas": ["Nació para quitar", "el *hollín* de la pared"], "voz": "Nació para limpiar paredes."},
+    {"inicio": 4.9, "fin": 7.4,  "lineas": ["Pero las casas", "dejaron el *carbón*…"], "voz": "Pero ya nadie usaba carbón…"},
+    {"inicio": 7.4, "fin": 10.1, "lineas": ["*¡JUGUETE!*"], "estilo": "grande", "voz": "¡Un juguete!"},
+    {"inicio": 7.6, "fin": 10.1, "lineas": ["Y triunfó como", "*masa de modelar*"], "posicion": "debajo"}
+  ]
+}
