@@ -1,0 +1,10 @@
+{
+  "etiqueta": "¿LO SABÍAS?",
+  "textos": [
+    {"inicio": 0,   "fin": 2.3,  "lineas": ["Una *gota* de agua", "cae en la sartén"], "voz": "Una gota de agua cae en la sartén."},
+    {"inicio": 2.3, "fin": 4.7,  "lineas": ["Y la sartén está", "*muy caliente*…"], "voz": "Y la sartén está muy caliente."},
+    {"inicio": 4.7, "fin": 7.0,  "lineas": ["¿Hierve al momento?", "Pues *no*…"], "voz": "¿Hierve al momento? Pues no…"},
+    {"inicio": 7.0, "fin": 10.1, "lineas": ["*¡FLOTA!*"], "estilo": "grande", "voz": "¡Flota!"},
+    {"inicio": 7.2, "fin": 10.1, "lineas": ["sobre un cojín", "de su propio *vapor*"], "posicion": "debajo"}
+  ]
+}
